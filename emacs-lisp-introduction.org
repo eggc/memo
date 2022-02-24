@@ -1,0 +1,225 @@
+以下は qiita に書いた記事。
+
+私は日頃 emacs を使っています。emacs では設定を Lisp で書く必要があります。世界の誰かが作ったカスタマイズを使うのも便利ですが、せっかくなので自分でもカスタマイズしてみたい。というわけで  [入門](http://www.math.s.chiba-u.ac.jp/~matsu/lisp/emacs-lisp-intro-jp_toc.html) を読みながら手を動かしてみようと思いました。
+
+結局読んだのは全体の1/4程度ですが、それをまとめたものを下記に残します。語調は断定的になっていますが、自信は全くありません。誤りが見つかったらご指摘いただければと思います。
+
+* Emacs Lisp 入門
+
+Lisp は List processing という言葉に由来するように、リストによってプログラムを表現する言語である。とはいえ、いきなりリストについて説明することはできないので、基本的な語句から紹介する。
+
+** アトムとリスト
+
+これ以上分解できないものを *アトム* という。アトムには number, symbol, string がある。たとえば下のようなものがアトムである。（アトムはこれだけではなく char, array などもあるが、この記事では扱わない）
+
+#+begin_src emacs-lisp
+1037 ;number の例
+symbol-example ; symbol の例
+"this is string" ; string の例
+#+end_src
+
+0個以上のアトムを ~()~ で囲んだものを *リスト* という。たとえば下のようなものがリストである。
+
+#+begin_src emacs-lisp
+(1 2 3 4 5) ; number からなるリスト
+(one two three) ; symbol からなるリスト
+(+ 1 2) ; symbol, number からなるリスト
+(message "hello world") ; symbol string からなるリスト
+#+end_src
+
+また、リストはリストを含むこともできる。いくつでもネストして良い。
+
+#+begin_src emacs-lisp
+(1 2 3 (4 (5)) (6))
+(* (- 10 5) (+ 1 2))
+("I have" (apple orange banana))
+#+end_src
+
+** アトムの評価、変数
+
+Lisp ではアトムを *評価* することができる。Lisp が number や stringを評価したとき、返す値はそのものとなる。たとえば ~100~ を評価すると Lisp は 100 を返す。  ~"hello"~ を評価した値は hello を返す。emacs で 100 とタイプしたあと C-x C-e を叩くと、実際に試す事ができる。
+
+number や string とちがって symbol を評価した時、Lisp は symbol を *変数* とみなし、そこに格納されている値を返す。たとえば  emacs で使われている ~fill-column~ という symbol を評価すると Lisp は 70 を返す（環境により異なる）。誰も使っていない変数を参照すると Lisp は nil を返す。まとめると下のようになる。
+
+#+begin_src emacs-lisp
+100 ; これを評価すると 100 を返す
+"hello" ; これを評価すると hello を返す
+fill-column ; これを評価すると 70 を返す
+uninitialized-symbol ; これを評価すると nil を返す
+#+end_src
+
+** リストの評価、関数
+
+Lisp ではリストも *評価* することができる。Lisp があるリストを評価するとき、それを *関数* として実行する。言い換えると Lisp は先頭の要素を関数名、残りの要素を関数の引数として実行する。たとえば symbol と number からなるリスト ~(+ 1 2)~ を実行すると Lisp は、関数 ~+~ に対して引数 ~1~ と ~2~ を与えた結果、つまり 3 を返す。
+
+他の例として、返す値にはさほど意味はないが、ディスプレイに文字を出力する（副作用をもたらす）ような関数もある。その代表例が message 関数である。たとえば  ~(message "Hello World!")~ というリストを評価すると、Lisp は "Hello World" とエコーエリアに出力し Hello World を返す。
+
+また、関数が定義されていない場合はエラーとなる。まとめると下のようになる。
+
+#+begin_src emacs-lisp
+(+ 1 2) ; これを評価すると 3 を返す
+(message "Hello World!") ; これを評価すると Hello World を返し、ディスプレイに表示
+(1 2 3 4 5) ; これを評価すると「1 という関数が存在しません」というエラーを表示して停止
+#+end_src
+
+リストを評価する時 Lisp は常にネストされたリストやアトムの内側を評価しようとする。
+
+#+begin_src emacs-lisp
+(* (- 10 5) (+ 1 2)) ; (10-5)*(1+2) を計算し 15 を返す
+(* fill-column 2) ; シンボル fill-column を評価し 70 を得たあと (* 70 2) を計算し 140 を返す。
+#+end_src
+
+** 評価の抑止
+
+評価可能であるもの（アトムとリスト）をまとめて *S式* と呼ぶ。これは symbolic-expression に由来する。
+
+Lisp は与えられたS式を関数とみなして評価しようとするが、これが迷惑なことがある。これを抑止したい場合には *クォート* を先頭に与える。たとえば  ~'(1 2 3 4 5)~ の評価結果はエラーとならず  ~(1 2 3 4 5)~ を返す。
+
+** 制御文
+
+Lisp の世界では boolean を表す型は存在しない。真理値を扱う必要があるときは  ~nil~ を「偽」として、その他はすべて「真」として扱う。
+
+Lisp の if 文は関数であり、次の形式で表される。 ~(if 条件判定 真のときの返り値 偽のときの返り値)~ 具体的な例は下のようになる。
+
+#+begin_src emacs-lisp
+(message (if (> num 0) "num は 0 より大きい" "num は 0 以下"))
+#+end_src
+
+** 特殊形式 setq, defun
+
+関数とよく似ているがそれとは異なる動作をするものを *特殊形式(special form)* とよぶ。特殊形式には、たとえば変数に代入する ~setq~ がある。
+
+#+begin_src emacs-lisp
+(setq hoge 1) ; hoge に 1 を代入する
+(setq hoge 1 fuga 2) ; hoge に 1 を代入し fuga に 2 を代入する。
+#+end_src
+
+もし setq が単なる関数であれば、上の例では hoge が現れた時にその評価が行われ ~(setq nli 1)~ を評価することになる。しかし、setq はそのような振る舞いをしないようになっている。
+
+関数を定義するには ~defun~ という特殊形式を使う。
+
+#+begin_src emacs-lisp
+(defun function-name (arg) ; 関数名と仮引数
+  "this is my original function" ; 関数の説明
+  (interactive "p")  ; emacs でインタラクティブ実行を可能にする
+  (message "arg * 5 = %d" (* arg 5)) ; 関数の本体
+)
+#+end_src
+
+説明文は省略してもかまわない。インタラクティブ実行しない場合は、さらに省略できる。
+
+#+begin_src emacs-lisp
+(defun function-name (arg)
+  (message "arg * 5 = %d" (* arg 5))
+)
+#+end_src
+
+** 特殊形式 quote, function
+
+他の特殊形式として quote と function がある。特殊形式 quote は評価の抑止の節で紹介した ~'~ と同じ意味である。クォートをつけた式はそれ以上評価されない。たとえば 'hoge を実行するとシンボル hoge を返す。使い道がなさそうに見えるが、下のようにリストを操作する例を見ると、クォートが役に立つ場面がわかる。
+
+#+begin_src emacs-lisp
+; 下記2つは同じ意味である。
+(setq my-list (quote (1 2 3)))
+(setq my-list '(1 2 3))
+#+end_src
+
+関数に対しても同じことができる。関数に対するクォートはフックを使う際によく利用する。たとえば下記の例では text-mode が有効になった時に「テキストモード、はじめました」を表示する。
+
+#+begin_src emacs-lisp
+(defun text-mode-message () (message "テキストモード、はじめました"))
+(add-hook 'text-mode-hook 'text-mode-message)
+#+end_src
+
+上記の lisp プログラムをバイトコンパイルするときには、クォートを使うよりも特殊形式 function を使うほうが好ましい。function は省略した記号 ~#'~ を使って書かれることが多い。
+
+#+begin_src emacs-lisp
+; 下記2つは同じ意味である。
+(add-hook (function text-mode-hook) (function text-mode-message))
+(add-hook #'text-mode-hook #'text-mode-message)
+#+end_src
+
+** コンスセル
+
+コンスセルは2つの任意要素 CAR, CDR の対である。コンスセルを作るには関数 cons を利用する。
+
+#+begin_src emacs-lisp
+(cons "hello" 2)
+#+end_src
+
+上記の関数を評価した値は、 CAR が "hello" であり CDR が 2 のコンスセルである。Emacs の実行環境で試した場合は ~("hello" . 2)~ と表示される。コンスセルは、その要素としてコンスセルを持つことができる。
+
+#+begin_src emacs-lisp
+(cons "boo" (cons "hello" (cons "goodbye" nil)))
+#+end_src
+
+上記の関数を評価した値は下記のような構造を持ったコンスセルとなる。
+
+- CAR "boo"
+- CDR
+    - CAR "hello"
+    - CDR
+        - CAR "goodbye"
+        - CDR nil
+
+これは一般に連結リスト(linked list)と呼ばれるデータ構造をなす。最後の nil はリストが終わりであることを表すマーカで、終端記号と呼ばれる。Emacs の実行環境では ~("boo" "hello" "goodbye")~ と表示される。
+
+つまり、これまでリストと呼んでいたものはコンスセルだとも言える。たとえばリスト ~("a" "b" "c")~ に対してその CAR, CDR を計算すると、それがコンスセルであることがわかる。
+
+#+begin_src emacs-lisp
+(car '("a" "b" "c")) ;; a を返す
+(cdr '("a" "b" "c")) ;; ("b" "c") を返す
+#+end_src
+
+** 例題
+
+与えられた数が 3 の倍数なら Fizz、5 の倍数なら Buzz を出力し、それ以外の数ならその数値そのものを出力するようなプログラム [fizz-buzz](https://ja.wikipedia.org/wiki/Fizz_Buzz) を書いてみた。
+
+#+begin_src emacs-lisp
+(defun fizz-buzz (num)
+  (if (equal (% num 15) 0)
+      (message "fizz-buzz")
+    (if (equal (% num 3) 0)
+        (message "fizz")
+      (if (equal (% num 5) 0)
+          (message "buzz")
+        (message "%d" num)
+        )
+      )
+    )
+  )
+#+end_src
+
+別解
+
+#+begin_src emacs-lisp
+(defun fizz-buzz (num)
+  (message (or
+    (if (zerop (% num 15)) "fizz buzz")
+    (if (zerop (% num 5)) "buzz")
+    (if (zerop (% num 3)) "fizz")
+    (number-to-string num)
+  ))
+)
+#+end_src
+
+動作確認のため 1〜100 の数で fizz-buzz を行うプログラムも書いた。
+
+#+begin_src emacs-lisp
+(let ((num 1))
+  (while (< num 100)
+    (fizz-buzz num)
+    (setq num (+ num 1))
+  )
+)
+#+end_src
+
+下記のプログラムは上と同じ結果だが、再帰処理を行う。
+
+#+begin_src emacs-lisp
+(defun fizz-buzz-r (num)
+  (if (> num 0) (fizz-buzz-r (- num 1)))
+  (fizz-buzz num)
+)
+(fizz-buzz-r 100)
+#+end_src
