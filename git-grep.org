@@ -1,0 +1,131 @@
+以下の記事は会社の勉強会(?)で発表するために書いたもの。
+
+git grep はソースコードからキーワード検索するコマンドです。git grep がなくても、エディタの検索機能を使えば困らないかもしれません。でも git grep はかなり高速ですし、オプションを使うと結構いろいろな事ができるので、使っていきましょう。
+
+** git grep
+
+バージョン管理しているファイルの中から Office を含む行をすべて出力する。
+
+#+begin_src bash
+  git grep Office
+#+end_src
+
+** git grep ~<pathspec>~
+
+~<pathspec>~ （ディレクトリ or ファイル）ありで検索する。
+
+#+begin_src bash
+  git grep Office app/models/office.rb
+
+  git grep Office app/models/
+
+  # header_not_found を含む yml ファイルを探す
+  # 最後の引数をクォーテーションしないとシェルがアスタリスクを展開して別の意味になってしまう
+  git grep header_not_found '*.yml'
+
+  # キーワード pdf を検索する
+  # ただし与えられた pathspec にマッチするファイルは検索しない
+  git grep pdf :^app/assets/javascripts/plugins/
+
+  # 上と同じ意味だがシェルの誤解を防ぐためにクォーテーションで囲む
+  git grep pdf ':!app/assets/javascripts/plugins/'
+#+end_src
+
+ここで記号 ~:^~ は magic signature と呼ばれる記号で、この文字から始まる ~<pathspec>~ は検索対象外となる。 ~:!~ も同じく magic signature として使えるが、シェルが別の意味で解釈してしまう事があるので注意。[[https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec][pathspec]] も参照。
+
+** git grep ~<tree>~
+
+ブランチ、タグ、コミットハッシュを指定して探索する。
+
+#+begin_src bash
+  git grep Office my-special-feature-branch
+  git grep Office v2017_07_20__07_55_05
+  git grep Office 1e5f76f623007fea783ad8c68be2e45a59974e48
+
+  # <tree> と <pathspec> 両方あるパターン
+  git grep Office v2017_07_20__07_55_05 -- app/models
+#+end_src
+
+** git grep --word-regexp
+
+単語とマッチする物を探す。 ~-w~ でもOK。
+
+#+begin_src bash
+# user を探す。current_user や user_type などはヒットしない
+git grep -w user
+#+end_src
+
+** git grep と正規表現
+
+3種類の正規表現に対応している
+
+#+begin_src bash
+git grep --basic-regexp # 最も原始的な正規表現
+git grep --extended-regexp # 拡張正規表現：繰り返しとかが使える。
+git grep --perl-regexp # perl 互換正規表現： \d や否定先読みが使える。
+#+end_src
+
+例は下記の通り。 ~--perl-regexp~ は ~-P~ と書いても良い。
+
+#+begin_src bash
+  # 文字列 "d{4}" を探す
+  git grep --basic-regexp '\d{4}'
+
+  # 文字列 "dddd" を探す
+  git grep --extended-regexp '\d{4}'
+
+  # 任意の4桁の数字を探す
+  git grep --perl-regexp '\d{4}'
+
+  # Office を探すが OfficeMember は探さない
+  git grep -P 'Office(?!Member)'
+
+  # OfficeMember と office_member は探す
+  # ただし OfficeMemberSetting と office_member_setting は探さない
+  git grep -P 'OfficeMember(?!Setting)|office_member(?!_setting)'
+#+end_src
+
+** git grep --fix-string
+
+正規表現を使わないで検索を行う。
+
+#+begin_src bash
+  git grep -F '\d'
+#+end_src
+
+** git grep --show-function
+
+マッチした行と関連している関数やなにかの宣言を一緒に出力する。
+hunk-header を計算するのと同じルールで決まっているらしい。
+このフラグによって出力された行は先頭に = がつく。
+ruby のファイルの場合は、クラス名の行を同時に出力するようだ。
+yaml のファイルの場合は、より上位のキーを同時に出力するようだ。
+
+#+begin_src bash
+  git grep -p office 'app/models/**/*.rb'
+
+  git grep -p office 'config/**/*.yml'
+#+end_src
+
+** git grep --function-context
+
+--show-function と似ているが宣言した行だけでなく関係有る範囲を全て出力するようだ。
+ruby 以外の言語では関数だけ出力できたりするのかもしれない。
+
+#+begin_src bash
+  git grep -W office 'app/models/**/*.rb'
+#+end_src
+
+** git grep --open-files-in-pager
+
+ページャーを指定する。面白いけど、あまり使わなさそう。
+以下は bat をインストールしている場合の例。
+
+#+begin_src bash
+git grep -Obat office
+#+end_src
+
+** 最後に
+
+実はまだ他にもあるので、網羅したい人は [[https://git-scm.com/docs/git-grep][ドキュメント]] を読んでみてください。
+完全に余談ですが [[https://rhysd.hatenablog.com/entry/2021/11/23/211530][hgrep]] もあるらしいです。
