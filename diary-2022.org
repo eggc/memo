@@ -1,0 +1,61 @@
+* 2022/02/24 (木)
+
+- https://explainshell.com/ でわからないワンライナーとかを分析できるらしくて良いね
+- ubuntu のマニュアルで書いてあるのを参照しているらしくて、BSD のコマンドとオプション違うので注意
+- Unicode -> character set
+- UTF8 -> character encoding schema: Unicode code point <-> bytes
+
+| minimum code points | maximum code points |    byte1 |    byte2 |    byte3 |    byte4 |
+|---------------------+---------------------+----------+----------+----------+----------|
+| U+0000              | U+007F              | 0xxxxxxx |          |          |          |
+| U+0080              | U+07FF              | 110xxxxx | 10xxxxxx |          |          |
+| U+0800              | U+FFFF              | 1110xxxx | 10xxxxxx | 10xxxxxx |          |
+| U+10000             | U+10FFFF            | 11110xxx | 10xxxxxx | 10xxxxxx | 10xxxxxx |
+
+例： ぱ → unicode code point U+3071 → 3071 -> 0b101111111111 -> 変換表の x にビットを逐次埋めていく -> 11101011 10111111 10111111
+
+仕事用の ssh-key を使っていたら個人用の github アカウントに全く芝が生えないのでなんかその辺いい感じに切り替える方法ないんやろか。
+git の署名の所が参照されてるようなので git config local でアカウント切り替えたらいいんじゃなかろうか。
+https://qiita.com/0084ken/items/f4a8b0fbff135a987fea この記事をみたらやはりそんな感じがした。
+
+* 2022/02/23 (水)
+
+- 先週読めなかったクリーンアーキテクチャの続き読むか…。
+- gh コマンドと jq であそんだ。
+
+* 2022/02/13 (日)
+
+- google analytics/google analytics GA4 (ユーザアクション解析)個別にいれなくても google tag manager を使うと動的に埋め込めて凄い。
+- rust はほとんどの文が式で、値を返す。
+- https://qiita.com/hinastory/items/543ae9749c8bccb9afbc rust で fizz buzz の色んなパターンを書いてみたという記事。15 通りある。軽い狂気を感じる。
+- https://developers.google.com/books ユーザ登録とか無しで本の情報取れるらしい。すごい。
+- vuejs で子→親に情報を渡すには emit でイベント発行する。
+- ヒューマンバグ大学という youtube チャンネルが有るんだって。
+
+* 2022/02/07 (月)
+
+「今日中にこの問題の原因について明らかにせよ」みたいな強い物言いが営業を通じてプログラマに飛び込んでくることがある。
+そういうのを守るのもマネージャーの仕事なのだという。なるほどねえ。
+
+* 2022/02/06 (日)
+- nextjs のもっと軽量な vite っていうフレームワークがあるらしい。
+- サイドバーがうまく定義出てきてないのが辛いので一旦削除する。
+- js のチャンク(code spliting)に意味はあるのか？
+  - https://qiita.com/seya/items/06b160adb7801ae9e66f
+  - 1個のファイルに bundle してると、なにか一つ更新すると全部更新だがチャンクがあれば差分更新できる
+  - CDN とかもそうかも
+- vuejs のコンポーネントライブラリ vuefity というのがある。
+- 犬画像が取れる API サービス https://dog.ceo/dog-api/ いくらでも犬がとれる。すごい。
+- trdsql というのがあって、json のレコードをテーブルインポートしたりできるらしい。すげえ。
+
+js/ts のデバッグをする時にプリントデバッグだけだと辛いのでデバッガを入れたい。
+node が提供している方法は、サーバークライアント方式になっていて
+debugger を書いたところでプログラムが待ち状態に入る。
+
+#+begin_src bash
+node --inspect-brk node_modules/.bin/jest -- tests/File.test.ts
+#+end_src
+
+クライアントとして chrome の開発者ツールみたいなのをそのまま使える。
+ただわざわざ chrome のウィンドウでなにかするのはあんまり好みではないので他の方法を知りたい。
+このめんどくさい設定地獄から抜け出すなら vscode を使うべきなんだろうなってのは思う。

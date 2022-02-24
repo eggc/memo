@@ -1,0 +1,22 @@
+* EasyPG
+
+emacs でテキストの暗号化はできたなーというのはなんとなく覚えていたけどやり方は忘れていたので改めて調べる。
+「拡張子 .gpg にするだけで暗号化出来るよ」というのをどこかのサイトで読んだけど試してみたらエラーになった。
+
+> epg-context--make: GPG error: "no usable configuration", OpenPGP
+
+~gpg~ コマンドをインストールしてないとこれが出てくるらしい。なので ~brew install gnupg~ を実行する。
+さてもう一度 .gpg なファイルを作って保存してみた。すると下のようなプロンプトが出てきた。
+
+#+begin_src
+Select recipients for encryption.
+If no one is selected, symmetric encryption will be performed.
+- ‘m’ to mark a key on the line
+- ‘u’ to unmark a key on the line
+[Cancel][OK]
+#+end_src
+
+これは何か暗号化の方法を選ばせているようなのだが選択肢が一個もないのでどうしようもない。
+gpg で事前に鍵を作っておかないといけないらしい。
+しかし github にアクセスする時に使っている秘密鍵・公開鍵を使えばいいんじゃないかと思ったので調べた。
+それなりにめんどくさそうなので諦めよう。暇なときにでもいつかまたやってみる。

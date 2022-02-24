@@ -1,0 +1,26 @@
+# rbspy というプロファイラ使ってみた
+
+プログラムの実行時間とかを調べるツールをプロファイラと呼ぶ。かつては ruby の標準添付ライブラリに [[https://docs.ruby-lang.org/ja/2.6.0/library/profiler.html][profile]] というのが同梱されていた。メンテナンスされてなかったため ruby 2.7 あたりで消えた。今では使えない。代わりとなるツールは色んな人が提供しているようだけど、あれこれ調べた末に [[https://rbspy.github.io/][rbspy]] というのを使ってみることにした。今回調べた中では Github Star が 2.2k で 1位だったので良さそうと思った。ちなみに Rubymine にも入ってるらしい。
+
+~brew install rbspy~ でインストールできる。rbspy に rails server のプロセス ID を教えてみたら、何かしら情報が取れてるのがわかった。rbspy はプロセスの中を見に行くので強い権限が必要というのは注意。権限を与えてかつ環境変数を引き継ぐために ~sudo --preserve-env rbspy record~ ... だいたいこんな感じのコマンドで調べることになった。プロファイルを終了すると SGV ファイルが出力される。これはフレームグラフというもの。フレームグラフとはなにかというのは [[https://deeeet.com/writing/2016/05/29/go-flame-graph/][この記事]] が参考になる。[[https://www.brendangregg.com/flamegraphs.html][この記事]] が大本じゃないかと思うが英語なのでちゃんと読んでない。
+
+- 色はランダムなので気にしなくていい
+- 横軸が長いほどCPU消費が多い（ということだと思う）
+
+これちょっと rails server みたいにメソッド呼び出しのネストが深すぎるとあまり有効な分析方法とは言えないが、CLIだけで完結するようなツールの場合はかなり見通しが良い感じになるのではないだろうか。検索機能を使えばギリギリ分析できる。たとえば controller で検索とか。自分で実装した関数が重いかどうかぐらいはわかる。
+
+# その他のプロファイラ
+
+以下はちゃんと調べてない。
+
+[[https://github.com/tmm1/rblineprof][rblineprof]] というプロファイラがある。
+これはドキュメントが少なくて、最小の機能だけ持っている感じ。
+[[https://moneyforward.com/engineers_blog/2020/11/26/performance-improvement/][moneyforward の記事]] で紹介されている。ちょっと物足りない気がする。
+
+[[https://github.com/tmm1/stackprof][stackprof]] というプロファイラもある。
+rblineprof の機能プラスアルファな感じ。
+[[https://blog.agile.esm.co.jp/entry/2021/01/05/202153][永和システムマネジメントの記事]] で紹介されている。
+グラフ表示とかできて楽しそう。
+
+[[https://ruby-prof.github.io/][ruby-prof]] というのもある。ドキュメントが充実しているらしい。
+ちゃんと見てない。あとでみてもいいかも。
