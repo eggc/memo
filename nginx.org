@@ -1,0 +1,101 @@
+nginx のメモ
+
+* [[https://nginx.org/en/docs/beginners_guide.html][nginx beginners guide]]
+
+nginx では1つの設定をディレクティブ(directive)と呼ぶ。ディレクティブはパラメータとして文字列を取るものやブロックを取るものがある。ブロックをとるディレクティブには ~http~, ~server~, ~location~ などがある。 ~server~ は nginx をウェブサーバーとして機能させるためのディレクティブである。
+
+#+begin_src conf
+server {
+   ...
+}
+#+end_src
+
+ブロックの中にはそのスコープで有効にするディレクティブを書くことができる。下の例は ~listen~ ディレクティブを使って、ウェブサーバーが80番ポートへのリクエストを受け付けるように設定している。
+
+#+begin_src conf
+server {
+  listen 80;
+}
+#+end_src
+
+次は ~location~ ディレクティブを使って、nginx をウェブサーバーとして働かせる簡単な例を見る。
+
+#+begin_src conf
+server {
+    location / {
+        root /data/www;
+    }
+
+    location /images/ {
+        root /data;
+    }
+}
+#+end_src
+
+この例では ~server~ がリクエストを受けると ~location~ のパラメータとリクエスト URI を突き合わせて返すファイルを決定する。たとえばリクエスト ~/hogehoge.html~ は ~location /~  にマッチする。ブロックの内部にある ~root /data/www~ ディレクティブを参照する。 ~root~ ディレクティブはパラメータと URI を結合して返すべきローカルファイルを決める。リクエスト URI ~/hogehoge.html~ に対してはローカルファイル ~/data/www/hogehoge.html~ を返す。 複数の location があるときは、nginx はプレフィックスが URI と最長マッチした location ブロックを採用する。なので上の例では ~/images/hoge.png~ がリクエストされたときサーバーは2番めの ~location~ ブロックを選択しローカルファイル ~/data/images/hoge.png~ を返す。
+
+次の例では、アプリケーションサーバーがすでに http://localhost:8080 で動いている前提で、nginx がそのプロキシサーバとして働くようにする。
+
+#+begin_src conf
+server {
+    location / {
+        proxy_pass http://localhost:8080;
+    }
+
+    location ~ \.(git|jpg|png)$ {
+        root /data/images;
+    }
+}
+#+end_src
+
+1つ目の location ブロックで使用されている ~proxy_pass~ ディレクティブにより、このサーバーに対するリクエストは、サーバー http://localhost:8080 のリクエストに内部的に変換され、そのレスポンスを返す。2つ目の location ブロックはチルダで始まる引数を持っている。これは nginx に対して、リクエスト URI に対する正規表現マッチを行うことを指示している。URI が .git, .jpg, .png のいずれかで終わる時は、サーバーはこのブロックを選択してローカルファイルを返す。正規表現マッチは通常のマッチよりも優先される。
+
+* [[https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/][HTTP Load Balancing]]
+
+サーバーグループを定義するには ~upstream~ ディレクティブを使う。upstream の第一パラメータはグループ名である。
+
+#+begin_src conf
+http {
+    upstream backend {
+        server backend1.example.com weight=5;
+        server backend2.example.com;
+        server 192.0.0.1 backup;
+    }
+
+    server {
+        location / {
+            proxy_pass http://backend;
+        }
+    }
+}
+#+end_src
+
+この例では ~backend~ サーバーグループを定義している。このサーバーグループには3つのサーバーが含まれる。そして、プロキシ設定によりすべてのリクエストを ~backend~ サーバーグループに転送している。この設定だけで nginx は各サーバーグループに対してロードバランスを実行する。特に設定を明示していないのでラウンドロビンアルゴリズムを使用する。他には least connections アルゴリズムなど、いくつかの選択肢がある。
+
+* [[https://github.com/defunkt/unicorn/blob/master/examples/nginx.conf][unicorn の nginx 設定例]]
+
+ドメインソケットで設定する場合は、サーバーグループにサーバーを細かく書かなくても一行だけで良いらしい。
+
+#+begin_src conf
+  upstream app_server {
+    # fail_timeout=0 means we always retry an upstream even if it failed
+    # to return a good HTTP response (in case the unicorn master nukes a
+    # single worker for timing out).
+    server unix:/path/to/.unicorn.sock fail_timeout=0;
+  }
+
+server {
+  location @app {
+    proxy_pass http://app_server;
+  }
+
+  try_files $uri/index.html $uri.html $uri @app;
+}
+
+#+end_src
+
+location の第一パラメータは ~@~ がついているが、これは名前付きロケーションというもの。このロケーションは普通のリクエストには使われないが、内部リダイレクトの時に使われる。ネストすることはできない。内部リダイレクトとは、プロキシサーバーとして働く時によく使われるもので、リクエストがリダイレクトされたことを隠蔽しながらリダイレクトしてレスポンスを返す仕組みのことを言う。 ~index~, ~error_page~, ~try_files~ ディレクティブで使う。
+
+~try_files~ ディレクティブはN個のパラメータを取り、先頭から順にマッチを試み、成功したらそのファイルを返す。上の例では ~$uni/index.html~, ~$uri.html~, ~$uri~ の順にファイルの存在を調べ、それでもマッチしなかった場合には ~@app~ すなわち unicorn のサーバーグループに対して内部リダイレクトを行う。ここでの ~$uri~ はリクエスト URI そのものだと考えて良い。
+
+ディレクティブについて詳しく知るには [[https://heartbeats.jp/hbblog/2012/04/nginx05.html][この記事]] が参考になった。
