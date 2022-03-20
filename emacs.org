@@ -1,4 +1,87 @@
-* EasyPG
+* emacs-lisp
+どのようなプログラムであっても、一つのファイルにすべてを書き込むのは好ましくない。小さなモジュールに分割するべきだ。最も簡単な方法は load 関数を使って下のように読み込む。拡張子は省略しても良い。ちょっと作ってみた関数とかは適当な名前をつけて隔離しておき下のようにして読み込めばいい。
+
+#+begin_src emacs-lisp
+(load "~/my-lisp/hogehoge.el")
+#+end_src
+
+より高機能な方法として require を使う方法がある。
+
+#+begin_src emacs-lisp
+(require hoge-feature)
+#+end_src
+
+~require~ の引数には ~feature~ と呼ばれるものを与える。 ~feature~ とは読み込もうとしているパッケージの名前で、パスではない。自分で ~feature~ を作るには次のようなファイルを作る。
+
+#+begin_src emacs-lisp
+(provide 'hoge-feature)
+(message "hoge-feature is loaded")
+#+end_src
+
+この ~feature~ はメッセージを出力するだけのモジュールである。このファイルを ~~/my-lisp/hoge-feature.el~ として保存してみよう。最後に下記のプログラムを実行すれば ~~/my-lisp/hoge-feature.el~ が読み込まれる。
+
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/my-lisp/")
+(require hoge-feature)
+#+end_src
+
+変数 ~load-path~ は feature の探索範囲を示すリストで、このリストに ~~/my-lisp/~ を加えることでそこにあるファイルを見つけることができる。 ~require~ を使えば2重に読み込んでしまうことを避けられるので、依存関係は ~require~ を使って読み込むべきである。
+
+* emacs
+** 文字コードについて
+
+C-x RET f で sjis で外部エンコーディングと内部エンコーディングを指定できる。
+
+** フォントについて
+
+[[https://qiita.com/j8takagi/items/01aecdd28f87cdd3cd2c][この記事]]を読んでみる。そこで紹介されていた[[http://extra-vision.blogspot.com/2016/07/emacs.html][この記事]]がとても情報が充実していて良い記事だった。
+冷静になってみるとこんな背景の知識というのは必要なくて、どうすればフォントが変えれるのかという設定だけわかっていれば良いのかもしれない。
+最終的なコードは下のようになったのでそれだけメモしておく。
+
+#+begin_src emacs-lisp
+(set-fontset-font "fontset-default" 'unicode "Ricty" nil 'prepend)
+(set-face-attribute 'default nil :family "Ricty" :height 200)
+#+end_src
+
+- フォントファミリ: フォントの集合。 Meiryo など。
+- フォント: フォントファミリ、サイズ、厚みなどが指示されたフォントファミリのインスタンス。 Meiryo bold 14px など。
+- キャラクタセット(charset): 文字のグループ。各文字には番号が割り振られている。ASCII, japanese-jisx0208, unicode など。文字集合と訳される。
+- フォントセット: キャラクタセットとフォントの対応関係を示したもの。
+
+#+begin_src emacs-lisp
+  ;; Emacs で使用可能な charset の一覧を表示する
+  ;; 適当な文字集合にカーソルを当てて RET を押すとそこに含まれる文字の一覧を表示する
+  M-x list-character-sets
+
+  ;; Emacs で使用可能な(定義済みの) fontset の一覧を表示する
+  ;; ここで表示される内容は XLFD の末尾にフォントセットの名前を与えたもの。
+  ;; フォントセットの詳細を見るには describe-fontset を使う
+  M-x list-fontsets
+
+  ;; 使用可能なフォントファミリの一覧を表示する
+  (font-family-list)
+  ;; 使用可能なフォントのXLFDを表示する（XLFD というのはフォントの太字、斜体などのバリエーションを表現した文字列）
+  (x-list-fonts "Inconsolata")
+  ;; XLFD を使わない場合は font-spec 関数によってフォントを指示する。こちらのほうがわかりやすい。
+  (font-spec :family "MeiryoKe_Console" :size 14)
+  ;; XLFD の他には font config 形式という形式でフォントを指示することも可能なようだが省略する。
+
+  ;; デフォルトのフレーム（ウィンドウ）の設定する
+  ;; 座標とかも指定できるけど今回はフォントを XLFD によって設定する
+  (setq default-frame-alist '((font . "-*-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")))
+
+  ;; 現在のフレーム（ウィンドウ）のフォントを XLFD によって設定する
+  (set-frame-font "-*-Inconsolata-bold-italic-normal-*-*-*-*-*-m-0-iso10646-1")
+
+  ;: カーソル位置のフォントのXLFD を表示する
+  ;; たとえば 🙇 （絵文字）のところでカーソル当てて期待したフォントが使われてるか確かめたりできる。
+  (font-xlfd-name (font-at (point)))
+
+  M-x describe-char
+#+end_src
+
+* emacs-packages
+** EasyPG
 
 emacs でテキストの暗号化はできたなーというのはなんとなく覚えていたけどやり方は忘れていたので改めて調べる。
 「拡張子 .gpg にするだけで暗号化出来るよ」というのをどこかのサイトで読んだけど試してみたらエラーになった。

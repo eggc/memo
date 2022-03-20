@@ -1,3 +1,90 @@
+
+* 2022/03/20 (日)
+
+クリーンアーキテクチャよむかあ。
+- https://www.ag-grid.com/ という datatable みたいなライブラリ
+- https://react-select.com/ これは select のライブラリ。使ったことある。
+- https://github.com/axios/axios で非同期通信
+- https://vuex.vuejs.org/ja/ vuex という状態管理方法(redux みたいなの？)
+- prime video
+  - [[https://www.amazon.co.jp/dp/B08BYZQQTZ][upload]]
+  - [[https://www.amazon.co.jp/gp/video/detail/B08BYJL8KY/ref=atv_dp_season_select_s1][the boys]]
+- rails application のリファクタリングの参考になるかもしれない
+  - https://inside.estie.co.jp/entry/2021/04/07/090000
+  - https://qiita.com/kbaba1001/items/e265ad1e40f238931468
+  - https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468
+  - https://magazine.rubyist.net/articles/0058/0058-ForeWord.html
+
+* 2022/03/18 (金)
+
+- 仕事の中にも、ダークソウルの篝火みたいな安心のできる場所は必要なんだと思う。仲間がいればなお良い。
+
+* 2022/03/15 (火)
+
+- GraphQL の pagination
+  - cursor-based pagination というのが最近のはやり
+  - cursor-based なら facebook が決めた relay というパターンが有る
+  - ruby の graphql-ruby は relay-style で出力できるようになっている。connection_type メソッドを使えば良い。
+  - よくある offset-base pagination がしたいなら kaminari を使えば良い。
+- apollo studio が一番使いやすい
+- grapql はバージョニングできないので変更するときは非推奨にしてから時間を置いて廃止とする
+  - https://github.com/xuorig/graphql-schema_comparator これを使うと差分がわかるので破壊的変更に注意を出せる
+  - https://github.com/cjoudrey/graphql-schema-linter graphql の schema をちゃんとする
+- 仕様書？
+  - https://spec.graphql.org/
+
+* 2022/03/13 (日)
+
+- またクリーンアーキテクチャ読むか…。めんど。
+- PlannetScale というサービスが有るらしい。MySQL 互換 DB が使えるらしい。Youtube でも使っているとか。スケーリングできる。無料プランもある。マイグレーションのダウンタイムがない？
+- 一つのリポジトリを複数のチームで育てているときに、全体的な変更を加えた場合、その変更を受け入れるか判断するためのルールが決まってないのが辛さの原因のような気がする。
+- rust
+  - タプル型構造体というのがあり、フィールド名がない。これは別名的に使うと良いらしい。
+  - 構造体に紐付けられた関数はメソッドとなる。メソッドの引数から self を取り除くとスタティックになる。
+- vuejs
+  - composition function というのがある。composables ディレクトリに関数をいれる。慣例的に useXxxx という感じにする。その composition function をインポートすればどのコンポーネントからも利用できる。
+
+* 2022/03/09 (水)
+
+- 英語学習のクイズ？ https://quizlet.com/merletlists/folders/engineer-vocabulary-lists/sets
+
+* 2022/03/06 (日)
+
+- クリーンアーキテクチャ読む。
+- alfred
+  - clipboard history が便利
+  - workflow を使えば自動出社 & slack 通知できる
+- vuejs の話聞く
+  - provide/indect は親コンポーネントの属性を子孫コンポーネントで使えるようにするという機能
+    - react global context みたいな感じ
+  - teleport はコンポーネントの DOM ツリーをそのまま別のコンポーネントに移し替えれる機能(モーダルで使う)
+  - Composition API は setup というメソッドの中にデータと操作を近い場所に書けるようになる([[https://www.ragate.co.jp/blog/articles/9888][紹介記事]])
+    - reactive で変更可能な属性を持てる
+    - 今まで vue2 で使われてたものは Composition API に変わっていくらしい
+- ちょっとしたイベントに参加することになった。やたら緊張する。
+
+* 2022/03/05 (土)
+
+https://qiita.com/Ladicle/items/feb5f9dce9adf89652cf この記事を見てから emacs で nerd font のアイコンを使いたいと思った。ricty + nerd にしたかったけど配布されてなかった。自分でビルドするのは大変だと知っているのでやりたくない。検索でヒットする https://github.com/macchaberrycream/RictyDiminished-Nerd-Fonts これは明らかに古くて、絵文字が足りない。最初、絵文字が足りてないことに気づかなくて、設定が悪いのかと思ってめちゃくちゃ悩んでしまった。
+
+unicode にはプライベート領域というのがあって、何でも使っていいことになってるぽい。たとえば U+E708 は nerd-font では nf-dev-github_alt という名前を持っていて github のアイコン  がアサインされている。しかし上記の URL からダウンロードしてきたフォントはそのアイコンをビルド時に含めてないので文字が見つからなくて emacs のフォールバックが動く。結果よくわからないフォント（おそらく中国語フォント）の U+E708 が表示されるということが起きていた。Emacs ではフォントがないときのフォールバックの仕組みが無駄に凄い。たとえば絵文字 😁 とかは普通のフォントには含まれてない。こういう絵文字は Symbola というフォントを自動的に使うようになっている。無駄に凄いので設定がややこしくて原因を調べるのが大変だった。
+
+* 2022/02/27 (日)
+
+クリーンアーキテクチャ読む。java 前提になってるところが頭に入ってこない。
+
+* 2022/02/26 (土)
+
+Emacs での文字コード/フォントの扱いをシンプルにするため設定をやりなおそう。とりあえずフォントセットの設定を消してみる。手元で describe-char を使ってどのフォントが使われてるか調べてみた。
+
+- アルファベット → Menlo
+- ひらがな → ヒラギノ
+- 漢字 → PingFang SC
+
+というフォント割当になってるっぽい。実際 describe-fontset で fontset-default の中を見るとそんな感じになっている。これを Ricty に上書きしてみた。まあ一応期待通り動いている。
+
+なんとなく init.el で flycheck を有効にしてみたら use-package マクロで警告がでてしまった。[[https://emacs.stackexchange.com/questions/17627/make-flychecks-reference-to-free-variable-work-with-macros][これ]]と同じ問題だ。 ~straight-use-package~ を使ってるせいで単に ~(require 'use-package)~ と書けばよいはずなのにどこにインストールされてるかわからんことになっていて微妙かも。
+
 * 2022/02/24 (木)
 
 - https://explainshell.com/ でわからないワンライナーとかを分析できるらしくて良いね
