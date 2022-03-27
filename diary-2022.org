@@ -1,4 +1,26 @@
+* 2022/03/27 (日)
 
+クリーンアーキテクチャ読む。やっと20章でようやく核心にきた感じ。
+
+* 2022/03/25 (金)
+
+gh で github 操作するの面白い
+
+```
+# プルリクを作る
+gh pr create --base release --draft
+
+# CI が通ってるか確認する
+gh pr checks <PULL_REQUEST_NUMBER>
+
+# プルリクレビューを依頼する
+gh pr <PULL_REQUEST_NUMBER> ready
+gh pr <PULL_REQUEST_NUMBER> edit --add-reviewers <REVIEWERS>
+```
+
+
+* 2022/03/24 (木)
+- snap shot test というのがあるらしい。いいね https://jestjs.io/docs/snapshot-testing
 * 2022/03/20 (日)
 
 クリーンアーキテクチャよむかあ。
