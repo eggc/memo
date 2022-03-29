@@ -1,12 +1,47 @@
+* 2022/03/29 (火)
+
+jest でテストするときに1個のテストケースだけを実行したいときは test() を test.only() に書き換えれば良い。
+ファイルを書き換えたくない場合は jest -t "キーワード" のように引数指定すればキーワードを含むテストだけが実行される。
+https://stackoverflow.com/questions/42827054/how-do-i-run-a-single-test-using-jest
+
+https://typescript-jp.gitbook.io/deep-dive/ これ読んでみようかなあ。
+
+typescript で相対パスで import していると長くなってしまうので良い方法はないのかと調べたら
+tsconfig.json で baseUrl と paths いうのを使えば良いらしい。
+https://stackoverflow.com/questions/34925992/how-to-avoid-imports-with-very-long-relative-paths-in-angular-2
+https://dev.to/ruppysuppy/how-pros-get-rid-of-relative-imports-in-js-ts-2i3f
+
+ts で書いたテストが Cannot find module でエラーを返す。
+明らかにモジュールは定義しているので、モジュールのコンパイルに失敗してるのが原因のようだ。
+jest が ts を受け取ったときどういう振る舞いをしているのか。
+今は ts-jest というパッケージを使ってるので暗黙的にコンパイルしているようだ。
+[[https://kulshekhar.github.io/ts-jest/docs/processing][これがフロー]]だけど、ちょっと細かすぎてよくわからない。
+
+jest.config.js というファイルにその設定がある。
+
+
+コンパイルエラーが出ないか確認するには
+
+#+begin_src
+yarn tsc --noEmit hogehoge.ts
+#+end_src
+
+みたいな感じで出力出さないフラグつけてコンパイルしたら良い。
+
+
+
 * 2022/03/27 (日)
 
-クリーンアーキテクチャ読む。やっと20章でようやく核心にきた感じ。
+- クリーンアーキテクチャ読む。やっと20章でようやく核心にきた感じ。
+- rails6.1 の新機能 delegated type
+- 楽天 rapid API ... 個人でAPI提供したり、提供されてるAPIを呼び出したりできる
+  - 漢字のよみがなで検索できるAPI https://api.rakuten.net/KanjiAlive/api/learn-to-read-and-write-japanese-kanji
 
 * 2022/03/25 (金)
 
 gh で github 操作するの面白い
 
-```
+#+begin_src bash
 # プルリクを作る
 gh pr create --base release --draft
 
@@ -16,7 +51,7 @@ gh pr checks <PULL_REQUEST_NUMBER>
 # プルリクレビューを依頼する
 gh pr <PULL_REQUEST_NUMBER> ready
 gh pr <PULL_REQUEST_NUMBER> edit --add-reviewers <REVIEWERS>
-```
+#+end_src
 
 
 * 2022/03/24 (木)
