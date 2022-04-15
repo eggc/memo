@@ -1,3 +1,43 @@
+* 2022/04/13 (水)
+
+- BFF という言葉があるらしい。基本的にはいらないはず。
+  https://qiita.com/souhei-etou/items/d5de99bb8cba1c59d393
+
+github で fork したブランチを clone したら fork 元のブランチを取得できない。
+
+#+begin_src
+git ls-remote upstrem             #=> Remote ref がいっぱいあるのが見える
+git remote show origin            #=> Remote branch がいっぱいある
+git remote show upstream          #=> Remote branch が1個しか見えない(release tracked のみ)
+
+git fetch upstream xxx            #=> xxx ブランチは fetch したが FETCH_HEAD にセットされるだけ
+git checkout -b xxx FETCH_HEAD    #=> xxx ブランチは checkout できたが追跡できない
+#+end_src
+
+なんか動きがおかしいと思って、調べたら config が原因らしい。
+
+#+begin_src
+git config remote.upstream.fetch  #=> +refs/heads/release:ref/remotes/upstream/release
+#+end_src
+
+この config が勝手に入ったせいで release しか追跡できなくなっていたらしい。
+まあ気持ちはわからなくもない。fork して origin で作業してるから普段 upstream を気にすることはない。
+でもたまに upstream 参照したいこともあるので、全部追跡するようにしたい。
+
+#+begin_src
+git config remote.upstream.fetch "+refs/heads/*:ref/remotes/upstream/*"
+git fetch upstrem
+#+end_src
+
+これで追跡できるようになった。
+
+* 2022/04/12 (火)
+
+- 生産性指標
+  - lean と devops の科学という本
+  - google では four keys
+    - https://cloud.google.com/blog/ja/products/gcp/using-the-four-keys-to-measure-your-devops-performance
+    - https://blog.recruit.co.jp/rls/2021-03-31-four-keys/
 
 * 2022/04/10 (日)
 

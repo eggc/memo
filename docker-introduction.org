@@ -1,0 +1,215 @@
+社内勉強会(?)の資料
+
+* 問題
+
+ひとつのアプリケーションを構成するとき、
+標準的な開発手法では、必要なパッケージやミドルウェアを、全部ビルドしてインストールする。
+たとえば私が参加してるプロジェクトの場合は複数のサーバーを設定しないとアプリケーションを正常に動かすことができない。
+
+- アプリケーションサーバ(rails)
+- アグリゲーションサーバー(baroque)
+- データベースサーバー(mysql)
+
+中でも Rails サーバを組み立てるときには、古い Image Magick や poppler が必要なのもあって、
+Mac OS のバージョンによってはなかなかビルドが成功しなかったりする。(dependency hell というらしい)
+
+* そこで Docker
+** Docker とは
+
+Docker とは、仮想環境を作成、配布、実行するためのプラットフォーム。
+Docker を使えば少ない操作で、どこでも（開発・本番問わず）、誰でも同じ環境が作れる。
+
+[[https://www.docker.com/why-docker][Dockerいわく]]下記の効率がアップするらしい
+
+- サービスを提供する速さが +300%
+- 開発者の生産性が +1300%
+- デプロイの速度が +60%
+- インフラのコストが -40%
+- 運用効率(?) +40%
+- 課題解決の速さが +72%
+
+** Docker の仮想化技術
+
+Docker では、開発/本番環境の構築を仮想環境でやる。
+なぜなら、仮想環境ならファイルに書き出してコピーすることも容易だし、OSの違いはすべて吸収できるため。
+
+Virtual Box などこれまでの仮想マシンでは、ストレージを大量に消費したり、性能上のボトルネックがあって、
+環境を作ったとしても開発できるくらいのスピードが出せなかった。
+
+しかし Docker が採用しているコンテナ型仮想化技術は、これまでの仮想マシンと比べるとストレージを削減できて
+性能面もそこそこ良い感じになった。図は [What is a container?](https://www.docker.com/resources/what-container) にあるものが参考になる。
+
+* Docker を使ってみましょう
+** Docker Engine
+Dockerを利用するための常駐プログラム。
+インストールしてない方はこれを機にインストールしましょう。
+
+- Mac 版インストール
+  - 正規の手順
+    - Docker hub のアカウント必須。
+    - [インストールページ](https://hub.docker.com/?overlay=onboarding)
+  - brew
+[caskのコード](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/docker.rb)
+- Windows 版や Linux 版もある
+
+** Docker Image
+
+コンテナは実行可能状態。そのまま配布することはできないので image というファイルに書き出す。
+image は読み取り専用。インストールディスクみたいなもの。
+
+[Docker Hub](https://hub.docker.com/) とは皆が作った Docker の image が配布されているサービス
+
+- docker pull でダウンロード可能。
+- docker load xxx で手元にあるイメージファイルを docker engine に読み込ませることもできる。
+
+#+begin_src sh
+docker pull ruby:2.6.5-alpine3.10 # 軽量 ruby イメージをダウンロードする
+docker images # イメージ一覧表示
+#+end_src
+
+** コンテナ作成
+
+さっきインストールしたイメージからコンテナを作成する
+
+#+begin_src sh
+docker create --name my-ruby ruby:2.6.5-alpine3.10 # コンテナを作成
+docker start my-ruby # コンテナを起動させる(がすぐに終了してしまう)
+docker container ls --all # コンテナ一覧
+#+end_src
+
+なにもせず終了してしまうのはなぜか。[image の元になっている Dockerfile](https://github.com/docker-library/ruby/blob/5c9e21cbf79b7f36d505555c9ecd62cf0f7e07f8/2.6/alpine3.10/Dockerfile) を見ると、一番下が irb コマンドで終わっている。
+
+irb コマンドは対話的なインターフェースなので input が必要なのだがそのインプットを定義しないまま起動したので終了した。コンテナの作り方を変えて STDIN とつなぐようにする。
+
+#+begin_src
+docker create --interactive --tty --name my-ruby ruby:2.6.5-alpine3.10 # コンテナを作成
+docker start my-ruby # コンテナを起動させる interactive により待ちになる
+docker container ls --all # コンテナ一覧
+docker attach my-ruby # irb に接続できる。終わるとコンテナも終了
+#+end_src
+
+コンテナはとても短命。再起動はできるが一個コマンド実行しただけで眠りにつく。
+なので基本的にコンテナの最後のコマンドはサービスを実行して待ち状態に入るものが多い。
+コンテナの start に介入せずにコマンドを実行するには exec を使う。
+
+#+begin_src
+docker exec -it my-ruby sh
+#+end_src
+
+これでコンテナ内部のシェルを起動して、ログファイルを覗いたりすることができる。
+exec によって実行したプロセスを停止してもコンテナには影響がない。
+
+** 自分のイメージを作る
+
+さっきインストールしたコンテナを改造して自分のイメージを作る。
+Dockerfile というのを作る。faker という gem をはじめから取り込んでいるイメージを作ってみよう。
+
+#+begin_src
+FROM ruby:2.6.5-alpine3.10
+RUN gem install faker
+CMD ["irb -r faker"]
+#+end_src
+
+そして Dockerfile を配置したのと同じディレクトリで下記のコマンドを実行する。
+
+#+begin_src
+docker build --tag my-faker-ruby .
+#+end_src
+
+うまくいけば docker images に my-faker-ruby が追加されている。
+これを配布してもよいが、まずは起動して操作できることを確認しよう。
+
+#+begin_src
+docker create --interactive --tty --name mfr my-faker-ruby
+docker start mfr
+docker attach mfr
+#+end_src
+
+これで Faker がロードされた irb が起動する。
+require なしに下記のメソッドが呼び出せるはず。
+
+#+begin_src
+Faker::Name.name
+Faker::Games::Pokemon.name
+#+end_src
+
+こうしてできたイメージを docker hub にアップロードすることもできる。
+
+#+begin_src
+docker push <REPO-NAME>:my-faker-ruby
+#+end_src
+
+ただし docker hub にサインインする必要がある。(docker のアイコンからサインインできる)
+
+* ボリューム
+
+コンテナは、ライフサイクルはが短いため、データベースのような永続化したいデータを持つことができない。
+その場合は別途ボリュームを用意してやる必要がある。
+
+* ネットワーク
+* コンテナを協調させる(docker compose)
+
+コンテナは、基本的に一個のコマンドを実行する以外のことはしない。
+アプリケーションを構成するにはいくつかのコンテナを組み合わせる必要がある。
+面倒だが、何か問題が起きたときに原因が切り分けやすくなる。
+またコンテナを単機能にすることで再利用性が高くなる。
+
+上の方で例に上げたクラウド経費の構成は三つのコンテナを作る。
+
+- アプリケーションサーバ(rails)
+- アグリゲーションサーバー(baroque)
+- データベースサーバー(mysql)
+
+* その他の話題
+
+- 試行錯誤しているとイメージやコンテナが大量に作られてしまう
+  - docker image prune で綺麗にする
+  - docker container prune もある
+- イメージの suffix
+  - -jessie ... debian8 で構成している
+  - -stretch ... debian9  で構成している
+  - -buster ... debian10 で構成している
+  - -slim ... 軽量化を施している
+  - -alpine ... Alpine Linux という組み込みソフトなどに使う超軽量な OS で構成している
+- docker-slim
+  - https://dockersl.im/
+  - 静的解析によって使ってないファイルのダウンロード/インストールとかをやめるらしい
+- Kubernates
+  - コンテナのクラスタを管理するオープンソースソフトウェア
+  - 自動デプロイ、スケーリング、アプリ・コンテナの運用自動化
+
+- Docker swarm
+  - コンテナのクラスタを作る(Kubernatesとほぼ同じ?)
+
+- Amazon Web Service(AWS) のサービス
+  - Amazon Elastic Container Service(ECS)
+    - Fargate
+      - Docker のホストの設定を省略する。Docker コンテナの設定だけすればアプリケーションを動かせる。
+    - Amazon Elastic Container Registry (ECR)
+      - Docker コンテナレジストリ
+      - Docker コンテナイメージを簡単に保存、管理、デプロイできる。
+
+* MEMO
+- docker
+  - Docker: The Modern Platform for High-Velocity Innovation
+    Only independent container platform that enables organizations to seamlessly build, share and run any application, anywhere—from hybrid cloud to the edge.
+- さくら https://knowledge.sakura.ad.jp/13265/
+  - docker とは
+    - 仮想環境を作成、配布、実行するためのプラットフォーム
+  - docker のメリット
+    - 少ない操作で、どこでも誰でも同じ環境が作れる。
+    - 作成した環境を配布しやすい。
+    - スクラップ＆ビルドが容易にできる。
+- AWS https://aws.amazon.com/jp/docker/
+  - docker とは
+    - アプリケーションをすばやく構築、テスト、デプロイできるソフトウェアプラットフォーム
+  - なぜ docker を使うか
+    - ソフトウェア出荷の数と速度を向上
+      Docker ユーザーは、平均すると非 Docker ユーザーの 7 倍以上の頻度でソフトウェアを出荷しています。
+      Docker は別れた複数のサービスを必要に応じて何度でも出荷できます。
+    - オペレーションの標準化
+      コンテナ化された小さなアプリケーションでは、デプロイ、問題の特定、および解決のためのロールバックが容易になります。
+    - シームレスに移動
+      Docker ベースのアプリケーションは、ローカル開発マシンから AWS の本番デプロイへとシームレスに移行させることが可能です。
+    - コスト削減
+      Docker コンテナは各サーバーでより多くのコードを実行することが容易になり、利用率を上げ、コストを節約します。
