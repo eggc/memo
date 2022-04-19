@@ -1,4 +1,5 @@
 const fs = require("fs")
+const ROOT = __dirname
 
 class Node {
   constructor(name, key, children) {
@@ -8,7 +9,7 @@ class Node {
   }
 
   read() {
-    const path = `./${this.key}`
+    const path = `${ROOT}/${this.key}`
     const data = fs.readFileSync(path)
 
     return data
@@ -20,9 +21,9 @@ class Memo {
     const nodeName = key == "" ? "*root" : key
     const nodeChildren = []
 
-    fs.readdirSync(`./${key}`).forEach((fileName) => {
+    fs.readdirSync(`${ROOT}/${key}`).forEach((fileName) => {
       const fileKey = `${key}/${fileName}`
-      const stat = fs.statSync(`./${fileKey}`)
+      const stat = fs.statSync(`${ROOT}/${fileKey}`)
 
       if (fileName.startsWith(".")) {
         // . で始まるファイルは無視する
