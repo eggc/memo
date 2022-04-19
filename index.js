@@ -28,7 +28,7 @@ class Memo {
       if (fileName.startsWith(".")) {
         // . で始まるファイルは無視する
       } else if (stat.isDirectory()) {
-        nodeChildren.push(new Node(fileName, fileKey, this.tree(fileKey)))
+        nodeChildren.push(this.tree(fileKey))
       } else {
         nodeChildren.push(new Node(fileName, fileKey))
       }
@@ -44,5 +44,6 @@ class Memo {
     console.dir(node.read().toString())
   }
 }
+
 
 module.exports = new Memo()

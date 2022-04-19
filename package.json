@@ -1,6 +1,6 @@
 {
   "name": "memo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "memo",
   "main": "index.js",
   "repository": "git@github.com:eggc/memo.git",
