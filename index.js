@@ -45,5 +45,4 @@ class Memo {
   }
 }
 
-
 module.exports = new Memo()
