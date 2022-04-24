@@ -25,7 +25,7 @@ class Memo {
       const fileKey = `${key}/${fileName}`
       const stat = fs.statSync(`${ROOT}/${fileKey}`)
 
-      if (fileName.startsWith(".")) {
+      if (fileName.startsWith(".") || fileName == 'index.js' || fileName == 'package.json') {
         // . で始まるファイルは無視する
       } else if (stat.isDirectory()) {
         nodeChildren.push(this.tree(fileKey))
