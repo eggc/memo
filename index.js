@@ -1,4 +1,6 @@
 const fs = require("fs")
+const path = require('path')
+
 const ROOT = __dirname
 
 class Node {
@@ -9,8 +11,8 @@ class Node {
   }
 
   read() {
-    const path = `${ROOT}/${this.key}`
-    const data = fs.readFileSync(path)
+    const filePath = path.join(ROOT, this.key)
+    const data = fs.readFileSync(filePath)
 
     return data
   }
@@ -21,11 +23,11 @@ class Memo {
     const nodeName = key == "" ? "*root" : key
     const nodeChildren = []
 
-    fs.readdirSync(`${ROOT}/${key}`).forEach((fileName) => {
+    fs.readdirSync(path.join(ROOT, key)).forEach((fileName) => {
       if (this.isNotMemo(fileName)) { return }
 
-      const fileKey = `${key}/${fileName}`
-      const stat = fs.statSync(`${ROOT}/${fileKey}`)
+      const fileKey = path.join(key, fileName)
+      const stat = fs.statSync(path.join(ROOT, fileKey))
 
       if (stat.isDirectory()) {
         nodeChildren.push(this.tree(fileKey))
@@ -44,7 +46,7 @@ class Memo {
 
   test() {
     const tree = this.tree()
-    const node = tree.children.find((node) => node.key == "/README.md")
+    const node = tree.children.find((node) => node.key == "README.md")
 
     console.dir(tree, { depth: 6 })
     console.dir(node.read().toString())
