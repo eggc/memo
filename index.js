@@ -22,18 +22,24 @@ class Memo {
     const nodeChildren = []
 
     fs.readdirSync(`${ROOT}/${key}`).forEach((fileName) => {
+      if (this.isNotMemo(fileName)) { return }
+
       const fileKey = `${key}/${fileName}`
       const stat = fs.statSync(`${ROOT}/${fileKey}`)
 
-      if (fileName.startsWith(".") || fileName == 'index.js' || fileName == 'package.json') {
-        // . で始まるファイルは無視する
-      } else if (stat.isDirectory()) {
+      if (stat.isDirectory()) {
         nodeChildren.push(this.tree(fileKey))
       } else {
         nodeChildren.push(new Node(fileName, fileKey))
       }
     })
     return new Node(nodeName, key, nodeChildren)
+  }
+
+  isNotMemo(fileName) {
+    return fileName.startsWith(".") ||
+      fileName == 'index.js' ||
+      fileName == 'package.json'
   }
 
   test() {
