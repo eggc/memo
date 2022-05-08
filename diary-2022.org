@@ -1,3 +1,63 @@
+* 2022/05/08 (日)
+
+達人プログラマー読む。
+
+* 2022/05/06 (金)
+
+- orga -> uniorg
+- mathjax -> katex
+- prism.js -> highlight.js
+
+の各種移行をどうにかやりきった。ただ、どれも少し振る舞いが違うらしくて一部レイアウトが崩れたり、変な番号が出てしまったりという不便がある。もちろんメリットもあって、セクションコメントとかがちゃんと動くようになったし、orga みたいな資料の少ないライブラリのドキュメントを探し回る必要がなくなった。uniorg の機能は orga よりもはるかに少ないのでできること、できないことははっきりしている。
+
+もっと改良したい気もするがとにかく疲れたのでこれで休もう。
+
+emacs で書体をボールドにする機能が効かなくなってる。これ直すのめんどくさそうだな・・・。と思ったらボールドフォントをインストールして再起動するだけでよかった。
+
+* 2022/05/05 (木)
+
+mathjax 効かなくなってたので復活させたい。いつ入ったのか知らないが orgajs の中でも [[https://github.com/orgapp/orgajs/pull/170][latex support]] があるらしい。これを使えば良いのだろうか。あれこれ調べたがドキュメントが薄いし、使い方がわからない。推測で入れてみたけど、期待した振る舞いもしてくれない・・・。unified プラグインとして使いたいだけなのに nextjs gatsby インテグレーションとかが多すぎて辛い。使うのやめようかな。代わりに [[https://github.com/rasendubi/uniorg][uniorg]] インストールしてみるか。インストールしてみたが下記の行でエラーになっている。
+
+#+begin_src js
+export {default} from './lib/index.js'
+#+end_src
+
+[[https://ja.javascript.info/import-export#ref-5462][再エクスポート]]と呼ばれる機能らしい。下のようなエラーメッセージが出る。
+
+#+begin_src
+Error [ERR_REQUIRE_ESM]:
+
+require() of ES Module eggc-note/node_modules/uniorg-parse/lib/index.js
+from eggc-note/.next/server/pages/memo/[[...slug]].js not supported.
+
+Instead change the require of index.js in eggc-note/.next/server/pages/memo/[[...slug]].js
+to a dynamic import() which is available in all CommonJS modules.
+#+end_src
+
+下記のようなことを言っているようだ。
+
+1. uniorg-parse は ES Module で書かれている
+2. ES Module は require() では読み込めないので代わりに import() を使え
+
+ソースコードには require など書いてないが nextjs でビルドした時に内部で require に置き換えられるのでこのような動きをするのだろう。こういう体験をすると javascript は環境が悪い言語だなと言うのを感じる。さてこれを解決するには ES Module ではなく CommonJS で書かれたバージョンまでダウングレードするか、typescript あるいは webpack をうまく設定して ESModule に対応させるかしないといけない。[[https://zenn.dev/zabuton2mai/articles/b50cb6f39fa435][同じ問題が出た人もいる]]。がこの方法はワークアラウンドな印象がある。もう少し良い方法はないのかと調べたが[[https://github.com/ajitid/fzf-for-js/issues/85#issuecomment-941882494][これ]]に書いてあるものをやってみよう。
+
+1. package.json に `"type": "module"` を追加。
+2. tsconfig.json で `"module": "ES2020"` となるように変更。
+3. 再起動
+
+ダメだった。nextjs の内部でエラーが出る。調べてみると、[[https://nextjs.org/blog/next-12#es-modules-support-and-url-imports][nextjs12 からは ESM に対応している]]らしいので、上記に加えて nextjs のパッケージをアップグレードしてみる。エラーが出なくなった。よかった。続いて jest を動かしてみるが、こちらも同じようなエラーを発生させている。nextjs12 からはjest もビルドインされるようになったらしい。[[https://nextjs.org/docs/testing#setting-up-jest-with-the-rust-compiler][この記事]]をみながら設定を作り直すことにした。jest では長々としたエラーが出る。その一部を切り取ると下のようなことを書いてある。
+
+1. jest でパースエラーが発生した
+2. 原因は JS 標準のシンタックスが使われていないことによる
+3. jest は babel の外にあるので、もしファイルの変形が必要なら babel の設定を入れる必要がある
+4. ES Module が使いたいなら https://jestjs.io/docs/ecmascript-modules
+5. Typescript が使いたいなら https://jestjs.io/docs/getting-started#using-typescript
+
+Typescript は使っていて ts-jest を入れている。5番目の選択肢はそれを適用した上で ES Module をロードしたい。しかし nextjs の機能を使って jest.config.js をセットしているので中身がわからない。[[https://zenn.dev/miruoon_892/articles/e42e64fbb55137][この記事]]によると nextjs の jest サポートは最近実装されたらしくてまだ動かないことがあるかもと書いてある。特に typescript と組み合わせる例はあまりない様子。[[https://github.com/vercel/next.js/tree/canary/examples/with-jest][nextjs + jest のサンプル]]をみたところ ts-jest は使ってないようだ。なので ts-jest をアンインストールしてみる。結果は変わらず・・・。試しに babel-jest の設定を自分で書いて実行してみたら下のようなエラーに変わった。
+
+> You appear to be using a native ECMAScript module configuration file, which is only supported when running Babel asynchronously.
+
+結局これは解決できなくて、そういうモジュールを使ったテストを諦めることにした。つまり ES module をインポートしなければテストは書けるのでそれで妥協すると言うことだ。当然良い方針ではないけど、かなり時間を使っても解決できなかったので、これ以上やる気がなくなってしまった。いつか ESModule が普及したら、対応が進んで、こんな風にどハマりしない時代がきてくれるんじゃないかと祈る。
 
 * 2022/05/04 (水)
 
