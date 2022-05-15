@@ -1,3 +1,26 @@
+* 2022/05/15 (日)
+
+達人プログラマー読まねば。
+
+warp というターミナル教えてもらった →日本語入力がうまく動いてなくて諦めたらしい。
+マシン移行してからターミナルの設定全部とんだからやり直した方がいいかもな・・・。
+
+* 2022/05/13 (金)
+
+ソフトウェアアーキテクチャの基礎
+https://zenn.dev/okunokentaro/articles/01g08xzr246r7p8336m57amkpn
+
+[[http://ikemenakkio.blog129.fc2.com/blog-entry-83.html][ここ]]で紹介されているタブをピン留めしたり、まとめて閉じるためのショートカットキーを追加するやついれてみた。
+https://chrome.google.com/webstore/detail/keyboard-shortcuts-to-clo/dkoadhojigekhckndaehenfbhcgfeepl/related
+
+editorconfig というのがあるらしい。
+https://qiita.com/naru0504/items/82f09881abaf3f4dc171
+
+conventional commits というのがあるらしい。
+https://speakerdeck.com/cocoeyes02/lets-use-conventional-commits
+
+https://static.chunichi.co.jp/chunichi/pages/feature/QR/galois_field_in_auto_factory.html
+
 * 2022/05/08 (日)
 
 達人プログラマー読む。
