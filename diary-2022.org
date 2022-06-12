@@ -1,3 +1,28 @@
+
+* 2022/06/12 (日)
+
+google app sheet というのがあって spread sheet に対してカスタム UI を作れるらしい。ノーコードツール。
+
+* 2022/06/05 (日)
+
+js が最適化されてるので web assembly はそんなに使い道はないと言われている。
+
+* 2022/05/17 (火)
+
+- [[https://moneyforward.com/engineers_blog/2022/05/17/face-to-combinational-testing/][テストにおける組み合わせ爆発の対策（妥協策）の話]]
+- [[https://www.youtube.com/watch?v=p-SO_We75t4&t=619][楽園実験の話]]、怖すぎる。
+
+* 2022/05/16 (月)
+
+LeetCode というコーディングテストのサービスがあるらしい。
+
+- Design UX
+  - You cannot design user experience (UXは人の身体や頭の中で起こることであり、人には個性があるので、デザイン不可能)
+  - You can design product (プロダクトをデザインすることでUXをうながす)
+    - Know our users (by questionnaire/interviews/ethnography)
+    - Think about our users (by persona/jobs to be done/journey map/stakeholder maps/service blueprint)
+    - Confirm with our users (by ideation/prototyping/user test)
+
 * 2022/05/15 (日)
 
 達人プログラマー読まねば。
