@@ -1,0 +1,88 @@
+zsh についてまとめたい
+
+* .zshenv と .zprofile と .zshrc
+
+[[https://qiita.com/muran001/items/7b104d33f5ea3f75353f][この記事]] がとてもわかりやすい。
+
+| シェルの種類           | 読み込まれる設定ファイル     |
+|------------------------+------------------------------|
+| ログインシェル         | .zshenv, .zshrc, .zshprofile |
+| インタラクティブシェル | .zshenv, .zshrc              |
+| シェルスクリプト       | .zshenv                      |
+
+とりあえず zshprofile に入れといて困ったら zshrc や zshenv に移していけば良さそう。
+
+* zsh のオプション
+
+*オプション* とは zsh の振る舞いを変化させる機能。 ~setopt~, ~unsetopt~ コマンドで切り替えることができる。オプション名は大文字小文字は無視して、アンダースコアも無いのと同じ扱いになる。[[https://qiita.com/mollifier/items/02eb36b5a58d119c2f1c][この記事]]が詳しい。
+
+* history 関連の設定
+
+入力内容とマッチするコマンドを検索する ~control + r~ はとてもよく使うけど連打していると目当ての検索結果を飛ばしてしまうことがある。デフォルトでは ~control + s~ で検索を戻ることができるはずだが、この操作をしても戻ることができない。 ~control + s~ が X-OFF というハードウェアフロー制御文字を送信してしまうのが原因らしい。この制御文字は、ハードウェアに対して、データ送信を一旦停止させることを指示するらしい。ターミナルで実際に使われているのはみたことがない。~control + s~ でフロー制御を行わないようにするには [[https://www.ibm.com/docs/ja/zos/2.3.0?topic=descriptions-stty-set-display-terminal-options][stty]] という UNIX コマンドを使うと良いらしい。
+
+#+begin_src zsh
+stty stop undef  # X-OFF を指示する制御文字(デフォルト control + s)を未定義にする
+stty start undef # X-ON を指示する制御文字(デフォルト control + q)を未定義にする
+#+end_src
+
+zsh のオプションを使うと、もう少し端的に書くことができる。
+
+#+begin_src zsh
+setopt no_flow_control
+#+end_src
+
+あとはタブごとに違う履歴を持ったりしないように share_history の設定も入れておくと便利。
+
+* プラグイン
+** zplug
+
+https://github.com/zplug/zplug
+
+zsh のプラグイン（パッケージ）マネージャ。インストールしてみる。
+
+#+begin_src zsh
+brew install zplug
+#+end_src
+
+インストール後のメッセージは下のような感じ。
+
+#+begin_src
+In order to use zplug, please add the following to your .zshrc:
+  export ZPLUG_HOME=/opt/homebrew/opt/zplug
+  source $ZPLUG_HOME/init.zsh
+#+end_src
+
+あとは適当にパッケージをインストールしてロードすれば良い。
+
+#+begin_src
+zplug "zsh-users/zsh-autosuggestions"
+zplug install
+zplug load
+#+end_src
+
+ローカルファイルの読み込みも管理できるらしくて、ごちゃごちゃした設定ファイルを整理するにはちょうど良さそうである。
+
+** zsh-autosuggestions
+
+https://github.com/zsh-users/zsh-autosuggestions
+
+コマンドを叩いている途中に、履歴を参照してサジェストしてくれる。 ~TAB~ や ~control + e~ でサジェストを受け入れる。細かい設定もできるらしいけど特に触らなくてもある程度便利になるのでそれで良いかなと思う。
+
+#+begin_src
+zplug "zsh-users/zsh-autosuggestions"
+#+end_src
+
+** zsh-peco-history
+
+https://github.com/jimeh/zsh-peco-history
+
+インクリメンタルサーチの UI を peco に取り替える。emacs の ivy とかに似ている。事前に brew install peco とかで peco をインストールする必要がある。これを設定するなら ~control + s~ を無効化しなくても良いかもしれない。
+
+#+begin_src
+zplug "jimeh/zsh-peco-history", defer:2
+#+end_src
+
+* その他
+
+- [[https://ohbarye.hatenablog.jp/entry/2019/04/27/speed-up-zsh-start-up-time][nvm を遅延ロードする]]
+- zcompile
