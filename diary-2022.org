@@ -1,3 +1,67 @@
+* 2022/09/19 (月)
+
+textlint で特定条件のとき lint をかけないでほしい。
+[[https://qiita.com/azu/items/0f8ca9f1fd531d6b2f4b][この記事]] を参考に設定を入れてみる。
+
+#+begin_src
+npm install textlint-filter-rule-allowlist
+#+end_src
+
+
+* 2022/09/18 (日)
+
+- クラスタ = 下記のものの集まり
+  - node = 1個のサーバー server
+  - pod ≒ 1個の container
+  - service = 複数の pod の窓口、ロードバランサのようにも働く
+- ローリングアップデート
+  - k8s はデフォルトでサポートしている機能
+  - ゼロダウンタイムを実現
+
+docker-compose は k8s に置き換わっていくのでは・・・。ほんとか。
+
+[[https://github.com/flycheck/flycheck/issues/482][これ]]見た感じ rubocop の auto-correct を flycheck に導入するのは実装上困難と書いてある。
+auto-correct したいなら [[https://github.com/rubocop/rubocop-emacs][rubocop-emacs]] とか [[https://github.com/jimeh/rubocopfmt.el][rubocopfmt]] を使うべきなようだ。
+rubocop-emacs なら入ってるからこれ使うか。
+ちなみに [[https://github.com/jyp/attrap][attrap]] というパッケージは flycheck に auto-correct 機能を追加するらしい。
+ただ今の所 haskel と emacs-lisp しか対応してないので厳しい。
+
+* 2022/08/29 (月)
+
+https://preview.colorlib.com/#calvin これ参考にしてデザイン作り直そうかな。
+
+* 2022/08/22 (月)
+
+覚えてる言葉で2分探索を説明してみる。ソートされた配列 A から値 x を探す方法を説明してみる。
+まず Aの中央値をとる。A[A.length/2] でだいたい中央値になる。
+これが x と一致するなら、探している値を発見したので終わり。
+x より小さいならA[0..A.length/2] を次の探索領域とする。
+そうでないなら A[A.length/2+1..] を次の探索領域とする。
+次の探索領域を A に置き換えて探索を続ければいつか見つかる。もしも A が長さ１の配列になってしまったら、値x は見つからないという答えをだして終了する。
+
+ruby における bsearch は常にブロックを取る。
+大きいか小さいかというのが大事なので普通の find よりも情報が必要。
+
+そして find-minimum モードと find-any モードがある。
+find-minimum モードでは条件判定を下記のように定める必要がある。
+このモードが推奨されている。
+
+- 探す値 x がブロックパラメータと一致するか、それより大きい値のとき true
+- そうでないとき false
+
+となっている。たとえば [1,3,5,7,9] から 7 を探す時は不等号を使って [1,3,5,7,9].bsearch {|x| x >= 7 } と呼び出す必要がある。
+添字が知りたいときは bsearch の代わりに bsearch_index を使えば良い。
+
+find-any モードは C 言語ライブラリの bsearch みたいな感じで動くらしい。
+find-any モードではブロックの結果は boolean ではなくて integer を返すようにする。
+
+- 探す値 x がブロックパラメータより小さい: 正の数
+- 探す値 x がブロックパラメータと一致: 0
+- 探す値 x がブロックパラメータより大きい: 負の数
+
+なので使用例としては [1,3,5,7,9].bsearch {|x| 7 - x } と呼び出す。
+こちらの使用法では探している値が見つからなかった時は nil を返す。
+たとえば [1,3,5,7,9].bsearch {|x| 6 - x } は nil となるが [1,3,5,7,9].bsearch {|x| x >= 6 } は 7 を返す。
 
 * 2022/07/10 (日)
 

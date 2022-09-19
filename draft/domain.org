@@ -1,0 +1,13 @@
+* ドメイン取得の料金
+
+https://www.onamae.com/service/d-price/?btn_id=do07_newdesign
+https://muumuu-domain.com/domain/price
+
+安いものでは、登録費用は1円、1年更新2000円くらい。
+なんかめんどくさいな・・・。
+
+* 設定のやり方
+
+ネームサーバー =名前解決を行うサーバーのこと(DNSサーバー)。
+DNS設定でドメインから特定の IP または他のドメインに飛ばせるはず。
+www.eggc.net の DNSレコード設定に IP アドレス突っ込めば良い感じになった。

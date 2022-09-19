@@ -1,0 +1,105 @@
+atcoder で勉強したことをメモしていく。知らんことを全部吸収するのはとてもむずかしい。
+すぐ迷子になってしまう。まずはその問題を解くために必要な最小限の知識を集めてみよう。
+
+* チェビシェフ距離（チェス盤距離）
+
+[[https://atcoder.jp/contests/abc264/tasks/abc264_b][Nice Grid]] の問題では 2 点間の距離 \( \sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2} \) は使えない。
+代わりに、下記の式で定義されるチェビシェフ距離 \( L \) を使う。
+
+\[ L = max(|x2 - x1|, |y2 - y1|) \]
+
+* bit 全探索
+
+[[https://atcoder.jp/contests/abc264/tasks/abc264_c][Matrix Reducing]] の問題では、順序を気にしなくて良いこと、操作すべき行・列を消さないの二択であることに注目して考える。
+
+\[ 2^{10 + 10} = 1048576 \]
+
+が最大の探索量だとわかる。これくらいの計算量ならギリギリ探索できるが効率よくやらないと実行時間が足りない。
+bit 全探索をするとループがすごく簡単になる。
+bit 全探索は数をカウントアップするだけで真偽値の組み合わせを探索する方法。
+配列を作ったりせず、ビット演算という効率よい演算で計算できるが、独特な表記になるので慣れが必要。
+Ruby では ~[]~ によって n 番目のビットにアクセスできるのでこれを使うとよい。
+
+たとえば 4 つのフラグを全部試したいなら ~0000, 0001, 0010, 0011, ... 1111~ を試す必要がある。
+N 個のフラグに対しては 0 から 2^N まで探索する。
+
+これを使わなくても ruby なら combination を使えるので bit 全探索のようなチューニングは不要らしい。
+
+* 幾何学
+
+あとで内積・外積を勉強する。
+
+http://www.deqnotes.net/acmicpc/2d_geometry/products
+
+* 数列の部分和
+
+[[https://atcoder.jp/contests/abc267/tasks/abc267_c][Index × A(Continuous ver.)]] は数列の和を使う問題。
+数列 \( A = A_0, A_1, ... A_{n-1} \) が与えられたとき、補助的な数列 \( S \) を下記のように構成する。
+
+  \begin{aligned}
+    S_0 &= 0 \\
+    S_1 &= A_0 \\
+    S_2 &= A_0 + A_1 \\
+    S_3 &= A_0 + A_1 + A_2 \\
+        &\vdots \\
+    S_n &=  A_0 + A_1 + A_2 + \cdots + A_{n-1} \\
+  \end{aligned}
+
+この数列の生成は \( O(n) \) の計算で実行可能である。すると、任意の部分和は \( O(1) \) で計算できる。
+なぜならば下記が成り立つからである。
+
+  \begin{aligned}
+    S &= S_{y+1} - S_{x} \\
+      &= (A_0 + \cdots + A_{y}) - (A_0 + \cdots + A_{x-1}) \\
+      &= A_x + \cdots + A_{y}
+  \end{aligned}
+
+Ruby の実装例は下記の通り。
+
+#+begin_src ruby
+class PartialSum
+  def initialize(array)
+    @array = array
+    @memo = [0]
+
+    @array.each_with_index do |value, i|
+      @memo[i + 1] = @memo[i] + value
+    end
+  end
+
+  def get(start_index, end_index)
+    @memo[end_index + 1] - @memo[start_index]
+  end
+end
+
+ps = PartialSum.new([1,2,3,4,5,6])
+ps.get(0, 0) #=> 1
+ps.get(1, 3) #=> 2 + 3 + 4 = 9
+#+end_src
+
+~get(x, y)~ は ~array[x..y].sum~ よりも高速に動作する。
+ただし ~PartialSum~ は初期化コストが \( O(n) \) かかるのに対してビルトインメソッド ~sum~ は初期化不要であることに注意。
+
+* DFS(depth-first search) 深さ優先探索
+
+グラフのすべてのノードを効率よく訪問する方法の 1 つ。
+
+#+begin_src ruby
+def dfs(node, visited = {})
+  visited[node] = true
+
+  node.children.each do |child|
+    unless visited[child]
+      dfs(child, visited)
+    end
+  end
+end
+#+end_src
+
+深さ優先探索は、ノードの子要素を優先的に探索することに由来する。
+木構造ではないグラフ（ループを持つグラフ）でも正常に機能する。
+
+* グリッドの連結部分の数
+
+[[https://atcoder.jp/contests/abc269/tasks/abc269_d][Do use hexagon grid]] は、グリッドの色を塗られた連結を観察する問題。
+これはグリッドの 1 つのマスをノードとするグラフとして考えるとうまくいく。

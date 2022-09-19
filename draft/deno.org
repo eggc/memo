@@ -1,0 +1,34 @@
+typescript でプログラミングしたいなーと思ったけど tsconfig とか書いてビルドするの嫌いだなと思った。
+そういう時こそ [[https://deno.land/][deno]] (ディノ)使ってみるべきだと思ってインストールした。
+brew で入れれると書いてあったのでその通りのコマンドを叩く。
+
+#+begin_src sh
+brew install deno
+
+deno --version
+deno 1.24.3 (release, aarch64-apple-darwin)
+v8 10.4.132.20
+typescript 4.7.4
+#+end_src
+
+インストールできた。
+下のようにインターネット上の ts ファイルを試せる。
+
+#+begin_src sh
+deno run https://deno.land/std@0.152.0/examples/welcome.ts
+Download https://deno.land/std@0.152.0/examples/welcome.ts
+Welcome to Deno!
+#+end_src
+
+これはどうやら deno の標準ライブラリの実行らしい。あとは即席のウェブサーバーを作ったりもできるようだ。
+deno は REPL モードで起動するので下のような感じで http://localhost:8000/ で待ち受けることができる。良い。
+
+#+begin_src sh
+deno
+import { serve } from "https://deno.land/std@0.152.0/http/server.ts";
+serve(req => new Response("Hello World\n"));
+#+end_src
+
+より詳しいイントロダクションをみてみよう。
+https://deno.land/manual@v1.24.3/introduction
+と思ったけど萎えちゃったのでいったんやめやめ。
