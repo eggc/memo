@@ -1,3 +1,8 @@
+* 2022/09/20 (火)
+
+D 問題、模範解答見ながら解いても60分くらいかかってるのでかなり厳しい。
+[[https://kona0001.hatenablog.com/entry/2021/02/23/025619][この記事]] も参考にして勉強していく。
+
 * 2022/09/19 (月)
 
 textlint で特定条件のとき lint をかけないでほしい。
@@ -6,7 +11,6 @@ textlint で特定条件のとき lint をかけないでほしい。
 #+begin_src
 npm install textlint-filter-rule-allowlist
 #+end_src
-
 
 * 2022/09/18 (日)
 

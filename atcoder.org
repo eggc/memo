@@ -1,29 +1,108 @@
-atcoder で勉強したことをメモしていく。知らんことを全部吸収するのはとてもむずかしい。
-すぐ迷子になってしまう。まずはその問題を解くために必要な最小限の知識を集めてみよう。
+AtCoder のコンテストには制限時間がある。
+その場でゼロから解き方を考えて、コードに反映させていたら間に合わない。
+与えられた問題を観察し、よく知られた解法を利用すれば素早く答えが出る。
+たとえば全探索を知っているか、二分探索を知っているか。
+知っている道具の数が多いほど、問題を観察する目は鋭くなるはず。
 
-* チェビシェフ距離（チェス盤距離）
+だから勉強したときに道具が増えたことをはっきりさせるためにメモしていく。
+
+AtCoder では、すべての問題に解説と模範解答がある。
+そこから知らないことを全部吸収するのはとても難しい。
+数学やコンピュータサイエンスを勉強すると沼にはまる。すぐ迷子になってしまう。
+だからまずは問題を解くのに必要な最小限の知識だけで満足するようにしよう。
+そういう意味では[[https://qiita.com/drken/items/e77685614f3c6bf86f44][Qiita で NTT データの人が書いた記事]]がちょうどよいのではないだろうか。
+
+* 2 点間の距離・チェビシェフ距離（チェス盤距離）
+
+[[https://atcoder.jp/contests/arc004/tasks/arc004_1][2点間距離の最大値 (The longest distance)]] は 2 点間の距離を求める問題。Ruby では Vector クラスを使って計算できる。例は下記の通り。
+
+#+begin_src ruby
+v1 = Vector[1, 1]
+v2 = Vector[2, 2]
+distance = (v1 - v2).norm
+=> 1.4142135623730951
+#+end_src
+
+[[https://rurema.clear-code.com/2.7.0/method/Vector/i/magnitude.html][magnitude]] または norm はベクトルの大きさ（ノルム）を計算するメソッド。理屈としては 2 次元ベクトルを引き算してからベクトルの大きさを計算すればそれが距離になっているということらしい。標準添付ライブラリではあるけど事前に ~require 'matrix'~ が必要。
 
 [[https://atcoder.jp/contests/abc264/tasks/abc264_b][Nice Grid]] の問題では 2 点間の距離 \( \sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2} \) は使えない。
 代わりに、下記の式で定義されるチェビシェフ距離 \( L \) を使う。
 
 \[ L = max(|x2 - x1|, |y2 - y1|) \]
 
-* bit 全探索
+* Binary Search 二分探索
 
-[[https://atcoder.jp/contests/abc264/tasks/abc264_c][Matrix Reducing]] の問題では、順序を気にしなくて良いこと、操作すべき行・列を消さないの二択であることに注目して考える。
+[[https://atcoder.jp/contests/joi2008ho/tasks/joi2008ho_c][ダーツ]] や [[https://atcoder.jp/contests/abc265/tasks/abc265_d][Iroha and Haiku (New ABC Edition)]] は二分探索を使う問題。
+二分探索はソートされた配列に対して条件を満たす値を \( O(log n) \) で検索するアルゴリズム。
+Ruby ではビルトインメソッド bsearch 及び bsearch_index により実装されている。
 
-\[ 2^{10 + 10} = 1048576 \]
+bsearch は２つのモードが有る。
+第 1 のモード find-minimum は下記のブロックを引数に取る。
 
-が最大の探索量だとわかる。これくらいの計算量ならギリギリ探索できるが効率よくやらないと実行時間が足りない。
-bit 全探索をするとループがすごく簡単になる。
-bit 全探索は数をカウントアップするだけで真偽値の組み合わせを探索する方法。
-配列を作ったりせず、ビット演算という効率よい演算で計算できるが、独特な表記になるので慣れが必要。
-Ruby では ~[]~ によって n 番目のビットにアクセスできるのでこれを使うとよい。
+- 探す値 x がブロックパラメータと一致するか、それより大きい値のとき true
+- そうでないとき false
 
-たとえば 4 つのフラグを全部試したいなら ~0000, 0001, 0010, 0011, ... 1111~ を試す必要がある。
-N 個のフラグに対しては 0 から 2^N まで探索する。
+例は下記の通り。
 
-これを使わなくても ruby なら combination を使えるので bit 全探索のようなチューニングは不要らしい。
+#+begin_src ruby
+[1,3,5,7,9].bsearch {|x| x >= 7 } #=> 7
+[1,3,5,8,9].bsearch {|x| x >= 7 } #=> 7以上の領域での最小値 = 8 が答えとなる
+#+end_src
+
+添字が知りたいときは bsearch の代わりに bsearch_index を使えば良い。
+探している値が見つからなかったときは nil がほしい場合は find-any モードを使う。
+find-any モードでは C 言語ライブラリの bsearch と似せているらしい。
+find-any モードではブロックの結果は boolean ではなくて integer を返す。
+
+- 探す値 x がブロックパラメータより小さい: 正の数
+- 探す値 x がブロックパラメータと一致: 0
+- 探す値 x がブロックパラメータより大きい: 負の数
+
+例は下記の通り。
+
+#+begin_src ruby
+[1,3,5,7,9].bsearch {|x| 7 - x } #=> 7
+[1,3,5,8,9].bsearch {|x| 7 - x } #=> nil
+#+end_src
+
+* Exhaustive Search 全探索
+
+[[https://atcoder.jp/contests/arc061/tasks/arc061_a][C - たくさんの数式 / Many Formulas]] は全探索を要求する問題。長さ最大 10 の文字列に対して、隙間に + を詰める or 詰めないのパターンをすべて網羅する必要がある。このような問題で bit 全探索が役に立つ。
+
+bit 全探索では、整数 B をカウントアップしていき、B をバイナリでみたときの桁をフラグとみなす。たとえば 4 つのフラグを全部試したいなら ~0000, 0001, 0010, 0011, ... 1111~ を試す。
+
+Ruby で n 桁目の bit を参照するには[[https://docs.ruby-lang.org/ja/latest/method/Integer/i/=5b=5d.html][[]​]]メソッドを利用すればいい。これを踏まえたプログラムの例は下記の通り。
+
+#+begin_src ruby
+FLAG_SIZE = 4
+(2**FLAG_SIZE).times do |flags|
+  FLAG_SIZE.times do |i|
+    if flags[i] == 1
+      # フラグが立っているときの処理
+    else
+      # フラグが落ちているときの処理
+    end
+  end
+end
+#+end_src
+
+~repeated_parmutation~ を使う方法もある。
+
+#+begin_src ruby
+[true, false].repeated_permutation(FLAG_SIZE).each do |flags|
+  flags.each do |flag|
+    if flag
+      # フラグが立っているときの処理
+    else
+      # フラグが落ちているときの処理
+    end
+  end
+end
+#+end_src
+
+こちらは bit を意識させないので書き味が良い。ただし、性能を求められる場面では配列を介さない bit 全探索のほうが優秀である。
+
+[[https://atcoder.jp/contests/abc264/tasks/abc264_c][Matrix Reducing]] にも bit 全探索を使う解法がある。
 
 * 幾何学
 
