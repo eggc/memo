@@ -1,77 +1,31 @@
 AtCoder のコンテストには制限時間がある。
 その場でゼロから解き方を考えて、コードに反映させていたら間に合わない。
-与えられた問題を観察し、よく知られた解法を利用すれば素早く答えが出る。
-たとえば全探索を知っているか、二分探索を知っているか。
-知っている道具の数が多いほど、問題を観察する目は鋭くなるはず。
+だから、高得点を出すには予め糸口を知っておく必要がある。
+それは、二分探索であったり、動的計画法であったりする。
+知っている道具の数が多いほど、道具に習熟しているほど、問題に立ち向かう時間は節約できる。
 
-だから勉強したときに道具が増えたことをはっきりさせるためにメモしていく。
+道具を正確に使うのは難しい。
+たとえば、配列インデックスが間違っている。再帰計算の終了条件が間違っている。
+再利用すべきでないオブジェクトを再利用している。…このような色々なミスが起きる。
+事前にプログラムを書き、参考にできるコードを手元に持っておくのが良い。
 
-AtCoder では、すべての問題に解説と模範解答がある。
-そこから知らないことを全部吸収するのはとても難しい。
-数学やコンピュータサイエンスを勉強すると沼にはまる。すぐ迷子になってしまう。
-だからまずは問題を解くのに必要な最小限の知識だけで満足するようにしよう。
-そういう意味では[[https://qiita.com/drken/items/e77685614f3c6bf86f44][Qiita で NTT データの人が書いた記事]]がちょうどよいのではないだろうか。
-
-* 2 点間の距離・チェビシェフ距離（チェス盤距離）
-
-[[https://atcoder.jp/contests/arc004/tasks/arc004_1][2点間距離の最大値 (The longest distance)]] は 2 点間の距離を求める問題。Ruby では Vector クラスを使って計算できる。例は下記の通り。
-
-#+begin_src ruby
-v1 = Vector[1, 1]
-v2 = Vector[2, 2]
-distance = (v1 - v2).norm
-=> 1.4142135623730951
-#+end_src
-
-[[https://rurema.clear-code.com/2.7.0/method/Vector/i/magnitude.html][magnitude]] または norm はベクトルの大きさ（ノルム）を計算するメソッド。理屈としては 2 次元ベクトルを引き算してからベクトルの大きさを計算すればそれが距離になっているということらしい。標準添付ライブラリではあるけど事前に ~require 'matrix'~ が必要。
-
-[[https://atcoder.jp/contests/abc264/tasks/abc264_b][Nice Grid]] の問題では 2 点間の距離 \( \sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2} \) は使えない。
-代わりに、下記の式で定義されるチェビシェフ距離 \( L \) を使う。
-
-\[ L = max(|x2 - x1|, |y2 - y1|) \]
-
-* Binary Search 二分探索
-
-[[https://atcoder.jp/contests/joi2008ho/tasks/joi2008ho_c][ダーツ]] や [[https://atcoder.jp/contests/abc265/tasks/abc265_d][Iroha and Haiku (New ABC Edition)]] は二分探索を使う問題。
-二分探索はソートされた配列に対して条件を満たす値を \( O(log n) \) で検索するアルゴリズム。
-Ruby ではビルトインメソッド bsearch 及び bsearch_index により実装されている。
-
-bsearch は２つのモードが有る。
-第 1 のモード find-minimum は下記のブロックを引数に取る。
-
-- 探す値 x がブロックパラメータと一致するか、それより大きい値のとき true
-- そうでないとき false
-
-例は下記の通り。
-
-#+begin_src ruby
-[1,3,5,7,9].bsearch {|x| x >= 7 } #=> 7
-[1,3,5,8,9].bsearch {|x| x >= 7 } #=> 7以上の領域での最小値 = 8 が答えとなる
-#+end_src
-
-添字が知りたいときは bsearch の代わりに bsearch_index を使えば良い。
-探している値が見つからなかったときは nil がほしい場合は find-any モードを使う。
-find-any モードでは C 言語ライブラリの bsearch と似せているらしい。
-find-any モードではブロックの結果は boolean ではなくて integer を返す。
-
-- 探す値 x がブロックパラメータより小さい: 正の数
-- 探す値 x がブロックパラメータと一致: 0
-- 探す値 x がブロックパラメータより大きい: 負の数
-
-例は下記の通り。
-
-#+begin_src ruby
-[1,3,5,7,9].bsearch {|x| 7 - x } #=> 7
-[1,3,5,8,9].bsearch {|x| 7 - x } #=> nil
-#+end_src
+道具を学ぶにあたって AtCoder の模範解答が役立つ。
+ただし、そこから知らないことを全部吸収するのはとても難しい。
+背景にある数学やコンピュータサイエンスを知るのに、時間がかかりすぎる。
+だからまずは問題を解くのに必要な知識だけ抑えていくのがいいだろう。
+[[https://qiita.com/drken/items/e77685614f3c6bf86f44][Qiita で NTT データの人が書いた記事]]で学んでいくのが良さそうだ。
 
 * Exhaustive Search 全探索
+すべての可能性を検討して要求された解を求めることを全探索という。
 
-[[https://atcoder.jp/contests/arc061/tasks/arc061_a][C - たくさんの数式 / Many Formulas]] は全探索を要求する問題。長さ最大 10 の文字列に対して、隙間に + を詰める or 詰めないのパターンをすべて網羅する必要がある。このような問題で bit 全探索が役に立つ。
+** bit 全探索
+[[https://atcoder.jp/contests/arc061/tasks/arc061_a][C - たくさんの数式 / Many Formulas]] は全探索を要求する問題。
+長さ最大 10 の文字列に対して、隙間に + を詰める or 詰めないのパターンをすべて網羅する必要がある。
+全探索を素朴なループで表現することが難しい。このような場合には bit 全探索が役に立つ。
+bit 全探索では、整数 B をカウントアップしていき、B をバイナリでみたときの桁をフラグとみなす。
+たとえば 4 つのフラグを全部試したいなら ~0000, 0001, 0010, 0011, ... 1111~ を試す。
 
-bit 全探索では、整数 B をカウントアップしていき、B をバイナリでみたときの桁をフラグとみなす。たとえば 4 つのフラグを全部試したいなら ~0000, 0001, 0010, 0011, ... 1111~ を試す。
-
-Ruby で n 桁目の bit を参照するには[[https://docs.ruby-lang.org/ja/latest/method/Integer/i/=5b=5d.html][[]​]]メソッドを利用すればいい。これを踏まえたプログラムの例は下記の通り。
+Ruby で n 桁目の bit を参照するには ~[]~ メソッドを利用すればいい。これを踏まえたプログラムの例は下記の通り。
 
 #+begin_src ruby
 FLAG_SIZE = 4
@@ -100,9 +54,112 @@ end
 end
 #+end_src
 
-こちらは bit を意識させないので書き味が良い。ただし、性能を求められる場面では配列を介さない bit 全探索のほうが優秀である。
-
+こちらは bit を意識させないので書き味が良い。
+ただし、性能を求められる場面では配列を介さない bit 全探索のほうが優秀である。
+[[https://atcoder.jp/contests/abc104/tasks/abc104_c][C - All Green]] はアレンジが必要でかなり難しい。
 [[https://atcoder.jp/contests/abc264/tasks/abc264_c][Matrix Reducing]] にも bit 全探索を使う解法がある。
+
+** DFS(depth-first search) 深さ優先探索
+
+これも全探索手法の 1 つ。
+グラフの探索は配列の探索と違って、単純なループ文で書くことができない。
+DFS はグラフのすべてのノードを効率よく訪問するためのアルゴリズム。
+このアルゴリズムは大まかな方針しか示していないので具体的な実装はデータ構造によって変わる。
+
+#+begin_src ruby
+def search(node, visited = {})
+  visited[node] = true
+
+  node.children.each do |child|
+    unless visited[child]
+      search(child, visited)
+    end
+  end
+end
+#+end_src
+
+深さ優先探索は、ノードの子要素を優先的に探索することに由来する。
+木構造ではないグラフ（ループを持つグラフ）でも正常に機能する。
+実際の課題では ~node.children~ のような構造的なメソッドは定義されてない事が多い。
+たとえば [[https://atcoder.jp/contests/atc001/tasks/dfs_a][AtCoder の典型的例題]] では、グリッド迷路を表現する 2 次元配列データ構造が与えられる。
+
+#+begin_src
+s####
+....#
+##.##
+#...g
+#+end_src
+
+1 つのマスが 1 つのノードであり、隣接するマス同士が接続されたエッジだと考えれば DFS が利用できる。
+
+#+begin_src ruby
+ROWS = H.times.map { gets.chomp.chars }
+VISITED = H.times.map { Array.new(W) }
+
+def search(i, j)
+  return if i.negative? || i >= H ||
+            j.negative? || j >= W ||
+            ROWS[i][j] == '#' ||
+            VISITED[i][j]
+
+  VISITED[i][j] = true
+
+  ROWS[i][j] == 'g' ||
+    search(i + 1, j) ||
+    search(i - 1, j) ||
+    search(i, j + 1) ||
+    search(i, j - 1)
+end
+#+end_src
+
+[[https://atcoder.jp/contests/abc269/tasks/abc269_d][Do use hexagon grid]] は、グリッドの色を塗られた連結を観察する問題。
+これはグリッドの 1 つのマスをノードとするグラフとして考えるとうまくいく。
+
+** BFS(breadth-first search) 幅優先探索
+
+これも全探索手法の 1 つ。
+BFS は DFS と違って、解の空間から最小値を探すことができる。
+そのため最小値を求めるような問題を効率よく実行できる。
+先入れ先出し FIFO(First-In-First-Out) のキューを使って実現できる。
+
+* 2 点間の距離・チェビシェフ距離（チェス盤距離）
+
+[[https://atcoder.jp/contests/arc004/tasks/arc004_1][2点間距離の最大値 (The longest distance)]] は 2 点間の距離を求める問題。Ruby では Vector クラスを使って計算できる。例は下記の通り。
+
+#+begin_src ruby
+v1 = Vector[1, 1]
+v2 = Vector[2, 2]
+distance = (v1 - v2).norm
+=> 1.4142135623730951
+#+end_src
+
+[[https://rurema.clear-code.com/2.7.0/method/Vector/i/magnitude.html][magnitude]] または norm はベクトルの大きさ（ノルム）を計算するメソッド。理屈としては 2 次元ベクトルを引き算してからベクトルの大きさを計算すればそれが距離になっているということらしい。標準添付ライブラリではあるけど事前に ~require 'matrix'~ が必要。
+
+[[https://atcoder.jp/contests/abc264/tasks/abc264_b][Nice Grid]] の問題では 2 点間の距離 \( \sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2} \) は使えない。
+代わりに、下記の式で定義されるチェビシェフ距離 \( L \) を使う。
+
+\[ L = max(|x2 - x1|, |y2 - y1|) \]
+
+* Binary Search 二分探索
+
+[[https://atcoder.jp/contests/joi2008ho/tasks/joi2008ho_c][ダーツ]] や [[https://atcoder.jp/contests/abc265/tasks/abc265_d][Iroha and Haiku (New ABC Edition)]] は二分探索を使う問題。
+二分探索はソートされた配列に対して条件を満たす値を \( O(log n) \) で検索するアルゴリズム。
+Ruby ではビルトインメソッド ~bsearch~ 及び ~bsearch_index~ により実装されている。
+
+~bsearch~ は２つのモードが有る。find-minimum は下記のブロックを引数に取る。
+
+- 探す値 x がブロックパラメータと一致するか、それより大きい値のとき true
+- そうでないとき false
+
+例は下記の通り。
+
+#+begin_src ruby
+[1,3,5,7,9].bsearch {|x| x >= 7 } #=> 7
+[1,3,5,8,9].bsearch {|x| x >= 7 } #=> 7以上の領域での最小値 = 8 が答えとなる
+#+end_src
+
+添字が知りたいときは ~bsearch~ の代わりに ~bsearch_index~ を使えば良い。
+find-any モードについては省略。
 
 * 幾何学
 
@@ -158,27 +215,3 @@ ps.get(1, 3) #=> 2 + 3 + 4 = 9
 
 ~get(x, y)~ は ~array[x..y].sum~ よりも高速に動作する。
 ただし ~PartialSum~ は初期化コストが \( O(n) \) かかるのに対してビルトインメソッド ~sum~ は初期化不要であることに注意。
-
-* DFS(depth-first search) 深さ優先探索
-
-グラフのすべてのノードを効率よく訪問する方法の 1 つ。
-
-#+begin_src ruby
-def dfs(node, visited = {})
-  visited[node] = true
-
-  node.children.each do |child|
-    unless visited[child]
-      dfs(child, visited)
-    end
-  end
-end
-#+end_src
-
-深さ優先探索は、ノードの子要素を優先的に探索することに由来する。
-木構造ではないグラフ（ループを持つグラフ）でも正常に機能する。
-
-* グリッドの連結部分の数
-
-[[https://atcoder.jp/contests/abc269/tasks/abc269_d][Do use hexagon grid]] は、グリッドの色を塗られた連結を観察する問題。
-これはグリッドの 1 つのマスをノードとするグラフとして考えるとうまくいく。
