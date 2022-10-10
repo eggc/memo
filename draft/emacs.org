@@ -81,6 +81,70 @@ C-x RET f で sjis で外部エンコーディングと内部エンコーディ�
 #+end_src
 
 * emacs-packages
+** flymake
+
+Emacs には flymake というビルトインパッケージが含まれています。
+このパッケージは lint ツールやコンパイラなど外部プログラムを呼び出し、シンタックスエラーなどを見やすく表示します。
+flymake は LSP のクライアントとして動作するので language server を持っている言語ではさらに強力になります。
+しかしながら flymake は低レイヤの機能しか提供していないため、ツールの呼び出しやツールの出力結果の解析を自前で書く必要があります。
+[[https://www.emacswiki.org/emacs/FlymakeRuby][flymake で ruby -c による lint を動かす例]] からも設定の難しさが伝わると思います。
+基本的には LSP のクライアントから利用するパッケージだと考えるのが良いと思います。
+** flycheck
+
+flymake よりも少し使いやすいパッケージとして [[https://www.flycheck.org/en/latest/][flycheck]] があります。
+flycheck は flymake と同様に他の lint ツールと Emacs を接続するアダプタとして働きます。
+flycheck はほとんどの実装を隠蔽しているので flymake よりもかなり少ない設定で動作します。
+しかしながら外部プログラムを呼び出して lint を行う都合上、複雑化している部分があります。
+
+Javascript なら eslint、Ruby なら rubocop といったようにそれぞれ言語に応じた lint ツールが必要です。
+それらのインストールした上で Emacs からツールを呼び出せるように準備しておく必要があります。
+しかし一部の lint ツールはグローバルインストールせずに、プロジェクトごとの隔離されたパッケージ空間にインストールすることがあります。
+そのような背景の下でも正しく flycheck を働かせることが、この文書の目的です。
+
+まず、[[https://www.flycheck.org/en/latest/user/installation.html][ドキュメント]]に書いてある通り、パッケージマネージャを使って flycheck をインストールします。
+ドキュメントでは global-flycheck-mode が紹介されていますが、私はおすすめしません。
+なぜなら、標準で emacs-lisp の lint が動作し init.el に lint の警告が出てしまうからです。
+emacs-lisp の lint は emacs にビルトインされているためすぐに動作します。
+しかしこの lint は初心者にとってはかなり厳しいルールを持ちます。
+そのつもりがなくとも init.el に対してはかなりエラーや警告を出してしまうでしょう。
+これらのメッセージはライブラリを開発するような lisp プログラマにとっては有益かもしれませんが、
+lisp を普段使いしていない Emacs ユーザにとっては関心が低い問題でしょう。
+また、他の言語ではインストールされていないツールを実行しようとして
+内部エラーを出してしまったりすることがあります。
+
+上記の理由から flycheck-mode を初めて利用するときは lint したい言語だけを設定するのが良いと思います。
+** flycheck ruby-rubocop
+
+次に flycheck で Rubocop を有効にする方法を紹介します。
+
+flycheck は checker chains と呼ばれる仕組みを持ちます。
+これはプログラミング言語ごとに lint ツールの優先度が決まっており
+インストールされているものが見つかり次第をそれを採用するという仕組みです。
+[[https://www.flycheck.org/en/latest/languages.html#ruby][flycheck の対応言語リスト Ruby]] によると、ruby-mode では
+
+1. ruby-rubocop
+2. ruby-reek
+3. ruby-rubylint
+4. ruby
+5. ruby-jruby
+
+の順にツールが利用できるかチェックした上で存在するものを利用すると書かれています。
+たとえば ~rubocop~ コマンドがグローバルインストールされている場合には、
+特に細かい設定なしで rubocop が利用されることが期待できます。
+
+しかし、多くの場合 rubocop は特定のプロジェクトで bundler によりインストールされ、
+プロジェクトルート配下に設定ファイル rubocop.yml や rubocop_todo.yml が配置されます。
+このようにプロジェクトに依存する状況下では、flycheck のデフォルト設定はうまく機能しません。
+その場合 ~flycheck-verify-setup~ により設定がどのように解釈され有効になっているかを確認できます。
+
+#+begin_src
+  ruby-rubocop
+    - may enable:         yes
+    - executable:         Found at /Users/eggc/.rbenv/shims/rubocop
+    - configuration file: Found at "/Users/eggc/work/my_project/.rubocop.yml"
+    - next checkers:      ruby-reek, ruby-rubylint
+#+end_src
+
 ** magit
 
 最近 instant fixup という機能が増えたらしくて使ってみる。

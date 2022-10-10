@@ -17,6 +17,10 @@ AtCoder のコンテストには制限時間がある。
 
 * Exhaustive Search 全探索
 すべての可能性を検討して要求された解を求めることを全探索という。
+データサイズが十分小さい場合はシンプルなループで実現できる。
+組み合わせを問う問題は ~each~ で計算できるが ~permutation~, ~combination~ を利用すればより簡単。
+[[https://atcoder.jp/contests/abc054/tasks/abc054_c][C - One-stroke Path]] はグラフの経路探索だがノード数が少ないので ~permutation~ で検査できる。
+[[https://atcoder.jp/contests/joi2010yo/tasks/joi2010yo_d][D - カード並べ]] は ~combination~ が役に立つ問題。
 
 ** bit 全探索
 [[https://atcoder.jp/contests/arc061/tasks/arc061_a][C - たくさんの数式 / Many Formulas]] は全探索を要求する問題。
@@ -59,9 +63,12 @@ end
 [[https://atcoder.jp/contests/abc104/tasks/abc104_c][C - All Green]] はアレンジが必要でかなり難しい。
 [[https://atcoder.jp/contests/abc264/tasks/abc264_c][Matrix Reducing]] にも bit 全探索を使う解法がある。
 
+* グラフの探索
+問題がグラフ構造を持っているとき、ほとんどの場合は単純なループ文で探索を実現できない。
+下記の探索アルゴリズムを手に馴染ませておかないと太刀打ちできない。
+
 ** DFS(depth-first search) 深さ優先探索
 
-これも全探索手法の 1 つ。
 グラフの探索は配列の探索と違って、単純なループ文で書くことができない。
 DFS はグラフのすべてのノードを効率よく訪問するためのアルゴリズム。
 このアルゴリズムは大まかな方針しか示していないので具体的な実装はデータ構造によって変わる。
@@ -121,21 +128,75 @@ end
 BFS は DFS と違って、解の空間から最小値を探すことができる。
 そのため最小値を求めるような問題を効率よく実行できる。
 先入れ先出し FIFO(First-In-First-Out) のキューを使って実現できる。
+代表的な問題として [[https://atcoder.jp/contests/abc007/tasks/abc007_3][C - 幅優先探索]] のように、迷路の最短経路を求めるときに役立つ。
+キューを実現するには Array の shift, pop を使うと良い。
+[[https://qiita.com/Nabetani/items/079e95a78e9fd2dab9df][Ruby の shift は高速に動く]] ので linked list を実装する必要はない。実装例は下の通り。
+
+#+begin_src ruby
+def bf_search(map, start_i, start_j, goal_i, goal_j)
+  queue = [[start_i, start_j]]
+  steps = H.times.map { Array.new(W, -1) }
+  diffs = [[0, 1], [0, -1],[1, 0], [-1, 0]]
+
+  until queue.empty?
+    i, j, step = queue.shift
+
+    return step if (i == goal_i) && (j == goal_j)
+
+    diffs.each do |k, l|
+      i2 = i + k
+      j2 = j + l
+
+      next if i2 < 0 || i2 >= H ||
+              j2 < 0 || j2 >= W ||
+              steps[i2][j2] > -1 ||
+              map[i2][j2] == '#'
+
+      steps[i2][j2] = step[i][j] + 1
+      queue << [i2, j2]
+    end
+  end
+
+  false
+end
+#+end_src
+
+上のコードでは探索キューに入れる前に探索すべきかどうかの条件判定をしている。
+これをやめ、キューから取り出したときに条件判定すると、計算コストが増加する。
+これは避けたほうがよい。なぜなら、概算でセル数が4倍になったのと同程度の計算が必要になるため。
+たとえばセル数 500x500 の迷路が課題として与えられたとする。
+これを上記の非効率な探索をすると 500x500x4 の探索になり AtCoder では時間切れになる。
+
+* Greedy algorithm 貪欲法
+問題領域が広く、全探索で解決できない場合は問題領域を狭めて探索する必要がある。
+最小値や最大値の求める問題では、貪欲法が最適解を求めるのに役立つことがある。
+貪欲法はまず、問題を分解して、小さな問題に対して部分解を求める。
+そして、評価値の高い順に部分解を結合したものを、解とする。
+
+[[https://atcoder.jp/contests/joi2008yo/tasks/joi2008yo_a][A - おつり]] は貪欲法が最適解となる問題。
+この問題ではお釣りを作ることができる硬貨の組み合わせは有限なので、全探索して、枚数が最小となるものを選択してもいい。
+貪欲法を知らずとも、問題に合わせて素直に解を求めるアルゴリズムを作ると貪欲法になっている事が多い。
+
+** Interval Scheduling Problem 区間スケジューリング問題
+
+[[https://atcoder.jp/contests/keyence2020/tasks/keyence2020_b][B - Robot Arms]] が代表的な問題。おそらく、解放を知っていないと解けない。
+区間の終端でソートし順次採用判定をする貪欲法を利用する。
 
 * 2 点間の距離・チェビシェフ距離（チェス盤距離）
 
-[[https://atcoder.jp/contests/arc004/tasks/arc004_1][2点間距離の最大値 (The longest distance)]] は 2 点間の距離を求める問題。Ruby では Vector クラスを使って計算できる。例は下記の通り。
+[[https://atcoder.jp/contests/arc004/tasks/arc004_1][2点間距離の最大値 (The longest distance)]] は 2 点間の距離を求める問題。
+ \( \sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2} \) の計算は、Ruby では [[https://docs.ruby-lang.org/ja/latest/method/Math/m/hypot.html][Math.hypot]] を使うとよい。
 
 #+begin_src ruby
-v1 = Vector[1, 1]
-v2 = Vector[2, 2]
-distance = (v1 - v2).norm
-=> 1.4142135623730951
+p1 = { x: 1, y: 1 }
+p2 = { x: 2, y: 2 }
+Math.hypot(p2[x] - p1[x], p2[y] - p1[y]) #=> 1.4142135623730951
+Math.hypot(p1[x] - p2[x], p1[y] - p2[y]) #=> 1.4142135623730951 逆でも同じになる
 #+end_src
 
-[[https://rurema.clear-code.com/2.7.0/method/Vector/i/magnitude.html][magnitude]] または norm はベクトルの大きさ（ノルム）を計算するメソッド。理屈としては 2 次元ベクトルを引き算してからベクトルの大きさを計算すればそれが距離になっているということらしい。標準添付ライブラリではあるけど事前に ~require 'matrix'~ が必要。
+直角三角形の斜辺（hypotenuse）の長さに由来するとのこと。
 
-[[https://atcoder.jp/contests/abc264/tasks/abc264_b][Nice Grid]] の問題では 2 点間の距離 \( \sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2} \) は使えない。
+[[https://atcoder.jp/contests/abc264/tasks/abc264_b][Nice Grid]] の問題では 2 点間の距離は使えない。
 代わりに、下記の式で定義されるチェビシェフ距離 \( L \) を使う。
 
 \[ L = max(|x2 - x1|, |y2 - y1|) \]
