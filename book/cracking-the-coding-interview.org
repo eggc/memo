@@ -87,7 +87,6 @@ https://book.mynavi.jp/supportsite/detail/9784839960100.html
 - 転職市場を眺め、面接対策はしておく
 
 ** IX 問題
-
 *** 1 配列と文字列
 
 おそらく Java 前提になっている
@@ -117,7 +116,7 @@ ArrayList は、通常の配列と違って必要に応じて自身のサイズ�
 下記の関数の計算量を考えてみる。
 
 #+begin_src java
-String JoinWrods(String[] words) {
+String JoinWords(String[] words) {
   String sentence = "";
   for (String w : words) {
     sentence = sentence + w;
@@ -133,3 +132,548 @@ x + 2x + 3x + 4x + 5x ... + nx ステップの計算が発生する。
 これはまとめると O(xn^2) という計算量になり非効率である。
 
 StringBuilder では文字列のコピーが各ループ毎に x となり O(xn) で実行可能である。
+
+*** 2 連結リスト
+
+連結リストは K 番目の要素のアクセスに K ステップかかる
+その代わりに、要素の追加、要素の削除が定数時間で実行できる
+
+*** 3 スタックとキュー
+
+**** スタック
+
+LIFO（last in first out）の構造を持つ。
+操作は pop, push, peek, isEmpty の4つ。
+配列と違って、末尾要素にしかアクセスできない。
+追加と削除は定数時間で実行できる。
+連結リストでも実装可能。
+
+**** キュー
+
+FIFO (first in first out) の構造を持つ。
+操作は add, remove, peek, inEmpty の4つ。
+連結リストで作る事が多い。
+
+*** 4 木とグラフ
+
+木構造は、探索の最悪実行時間と平均実行時間が大きく異なる。
+
+**** 木
+
+閉路(ループ)なしの連結グラフ(すべてのノードが親子関係で結ばれている)
+
+- N分木…子の数が常にN個以下のノードで構成された木
+- 二分探索木…左の子孫≦右の子孫となっている二分木
+- 平衡木…要素の追加や検索が O(log n) で実行できる極端にアンバランスでない木（→赤黒木、AVL木）
+- Complete Binary Tree…深いノード以外の全てのノードが満たされている木。左から順にノードが埋まっている。
+- Full Binary Tree…子ノードが0個または2個で構成された二分木。
+- Perfect Binary Tree…Complete Binary Tree, Full Binary Tree の両方の性質を満たす木。
+
+※日本語では Complete binary tree と Perfect binary tree はどちらも完全二分木と訳され、区別しないことがある。
+
+**** 二分木の走査
+
+- in-order traversal…左の子ノード、自身、右の子ノードの順番で訪問する
+- pre-order traversal…自身、左の子ノード、右の子ノードの順番で訪問する
+- post-order traversal…左の子ノード、右の子ノード、自身の順番で訪問する
+
+**** ヒープ
+
+最小ヒープ…すべてのノードが子ノードよりも小さい Complete Binary Tree(根が最小値)
+最大ヒープ…最小ヒープの逆で、すべてのノードが子ノードよりも大きい Complete Binary Tree(根が最大値)
+
+最小ヒープの要素の挿入は次の手順で行う。挿入の実行時間は O(log n) である。
+
+1. Complete Binary Tree の性質を維持するように、空いているノードに挿入する
+2. 挿入したノード＜親ノードであるならば、値を交換する
+3. これを繰り返す
+
+最小ヒープでは最小要素の削除をする方法は次の通り。これも O(log n) で実行できる。
+
+1. Complete Binary Tree の最も左下端にあるノードと、根ノードの値を交換する
+2. 左下端のノードを削除する
+3. 根ノード＜子ノードならば、値を交換する
+4. これを繰り返す
+
+**** トライ木(プレフィックス木)
+
+各ノードに文字が保存されるn分木。木を下る経路が単語を表す。
+経路が単語として完成している場合はノードの終端に * という特別な値を持つノードを挿入することがある。
+トライ木が用いられるのは接頭辞検索。
+長さKの文字列の接頭辞を探索するときにトライ木なら O(K) で実行できる。
+
+**** グラフ
+
+頂点と辺からなるデータ構造。
+最も一般的な表現方法は隣接リストによる実装。
+隣り合う頂点の組を配列で保持する。
+
+他の実装方法としては隣接行列というものがある。
+boolean 型の行列を用意して、要素 i, j が真のときは辺があるものと考える。
+
+グラフの探索手法としては DFS, BFS がある。
+DFS, BFS は勉強したことがあるので斜め読みする。
+
+別な手法として双方向探索という手法がある。
+こうすることで探索範囲を小さくできることがある。
+
+たとえば各ノードがk個の隣接ノードを持ったグラフがあるとする。
+ノードsからノードtへの経路dを探すのにかかる時間を考えよう。
+普通のBFS では O(k^d) が計算量となる。
+双方向探索では O(k^(d/2)) が計算量となる。
+指数を小さくできているので双方向探索には大きな効果がある。
+
+*** 5 ビット操作
+
+ビットの演算は手計算でもできたほうが良い。
+
+- ちょっとしたテクニック。
+  - 2倍、4倍、8倍…するときはビットシフト
+  - x & (not 0 << N) の操作で x の下位の N ビットをクリア
+
+補数
+
+- コンピュータにおける整数は補数表現を使っている
+  - 正の数はそのまま
+  - 負の数は正の数の補数
+  - 補数: 正の数のビットを反転して 1 を加算する
+- ruby で動作確認
+  - ~format("%08b", 3)~ は  ~"00000011"~
+  - ~format("%08b", -3)~ は ~"..111101"~
+- 3 + (-3) を計算するときにビットの加算で計算できるという性質がある
+
+シフト
+
+- 算術シフトは 2 で割る・かける操作のこと
+  - ~4 >> 1~ は ~2~
+  - ~-4 >> 1~ は ~-2~
+- 論理シフトは本当にビット列をずらす操作のこと
+  - 符号があるときに算術シフトと違う結果になる
+  - ruby には存在しない演算
+
+- i 番目のビットを取得 ~(x & (1 << i)) != 0~ これは ruby だと ~x[i]~ でいい。
+- i 番目のビットを1で更新 ~x = (x | (1 << i))~
+  - 例: 5 | (1 << 1) = 7
+- i 番目のビットを0で更新 ~x = (x & ~~(1 << i))~
+  - 例: 7 & ~(1 << 1) = 5
+
+*** 6 数学と論理パズル
+**** x\y
+
+「x が y 割り切れる」ことを x\y と書く。
+
+x\y のとき x の素因数は y の素因数に含まれる。
+
+x = 2^j0 * 3^j1 * 5^j2 * ...
+y = 2^k0 * 3^k1 * 5^k2 * ...
+
+と書いたときに x\y なら全ての i について ji >= ki である
+例： x = 12, y = 6
+
+x = 2^2 * 3^1
+y = 2^1 * 3^1
+
+よって ji >= ki を満たしている。
+
+x と y の最大公約数は下記のように計算できる。
+
+~gcd(x, y) = 2^min(j0, k0) * 3^min(j1, k1) * ...~
+
+実際 gcd(12, 6) = 2^min(2,1) * 3^min(1,1) = 2 * 3 = 6
+
+x と y の最小公倍数は下記のように計算できる。
+
+~lcm(x, y) = 2^max(j0, k0) * 3^max(j1, k1) * ...~
+
+実際 lcm(12, 10) = 2^max(2,1) * 3^max(1,0) * 5^max(0,1) = 2 * 2 * 3 * 5 = 60
+
+~gcd(x,y) * lcm(x,y) = xy~
+
+という性質がある。
+
+**** N の素数判定
+
+N 以下の数で試し割りする。
+試し割りは n の平方根まででよい。
+
+#+begin_src ruby
+def prime?(n)
+  max = Math.sqrt(n).to_i
+
+  (2..max).all? do |i|
+    n % i != 0
+  end
+end
+#+end_src
+
+ruby だとライブラリがある。
+
+#+begin_src ruby
+require 'prime'
+
+11.prime? #=> true
+4.prime? #=> false
+#+end_src
+
+**** N = [n1, n2 ... ] で N が有限のときの素数判定
+
+エラトステネスの篩を使うのが良い
+
+#+begin_src ruby
+def eratosthenes(max)
+  flags = Array.new(max + 1, true)
+  last = Math.sqrt(max)
+  i = 2
+
+  while i <= last
+    cross_off(flags, i)
+    i = get_next_prime(flags, i)
+  end
+
+  flags
+end
+
+# flags を prime でふるいにかける
+def cross_off(flags, prime)
+  i = prime * prime
+
+  while i < flags.length do
+    flags[i] = false
+    i += prime
+  end
+end
+
+# 次の素数を得る
+def get_next_prime(flags, prime)
+  i = prime + 1
+  i += 1 until flags[i]
+  i
+end
+
+eratosthenes(100).filter_map.with_index {|is_prime, i| i if is_prime }
+# => [0, 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+#+end_src
+
+偶数は素数でないことが自明なので flags から取り除いておくと効率化できる。
+
+**** A かつ B の確率
+
+A の確率を P(A) と書く。
+A かつ B の確率を P(A∩B) と書く。
+
+~P(A∩B) = P(A) * P(A→B)~
+~P(A∩B) = P(B) * P(B→A)~
+
+ここで P(A→B) は A が起きた条件のもとで B が起きる確率を表す。
+B→A でも A→B でも良いのがポイント。
+
+1,2,3,4,5,6,7,8,9,10 から数を選ぶゲームを考える。
+1〜5の範囲かつ、偶数を選ぶ確率を計算してみよう。
+
+P(1〜5) = 5/10
+P(1〜5→偶数) = 2/5
+P(1〜5∩偶数) = 5/10 * 2/5 = 1/5
+
+逆の考え方だと
+
+P(偶数) = 5/10
+P(偶数→1〜5の範囲) = 2/5
+P(偶数∩1〜5) = 5/10 * 2/5 = 1/5
+
+P(A∩B) の式を変形すると下記の等式（ベイズの定理）が成り立つ。
+
+~P(B→A) = P(A→B) * P(A) / P(B)~
+
+**** A または B の確率
+
+A または B の確率を P(A∪B) と書く。
+
+~P(A∪B) = P(A) + P(B) - P(A∩B)~
+
+1,2,3,4,5,6,7,8,9,10 から数を選ぶゲームを考える。
+1〜5の範囲または、偶数を選ぶ確率を計算してみよう。
+
+P(1〜5) = 5/10
+P(偶数) = 5/10
+P(1〜5∩偶数) = 1/5 # 上の節で計算した
+P(1〜5∪偶数) = 5/10 + 5/10 - 1/5 = 4/5
+
+これが本当かどうか確認してみる。
+10種類の数のうち 1,2,3,4,5,6,8,10 が 1〜5∪偶数 を満たす。
+P(1〜5∪偶数) = 8/10 となり上記で計算とした結果と一致する。
+
+**** より簡単なケース
+
+A と B が独立な事象の場合は P(A→B) = P(B) となるから
+
+~P(A∩B) = P(A) * P(B)~
+
+A と B が排反事象の場合は P(A∩B) = 0 となるから
+
+~P(A∪B) = P(A) + P(B)~
+
+**** パズルの例
+
+- 先端に火を付けたら1時間で燃え尽きるロープが2本あります。15分を測定する方法を見つけてください。
+- 9個のボールがあります。8個は同じ重さで、1個は他より重くなっています。天秤2回だけ使って重いボールを見つけてください。
+
+他にもいっぱいある。まぁやらなくていいか。
+
+*** 7 オブジェクト指向設計
+**** 考え方
+1. 曖昧な部分を質問する。5W1H を気にする。
+2. 中心になるオブジェクトを定義する（登場人物を考える）
+3. 関係性を分析する（一対多なのか一対一なのか考える）
+4. 振る舞いを考える（オブジェクトの機能に何をもたせるか考える）
+
+を行ったり来たりして設計する。
+
+**** 典型的なデザインパターン
+
+- シングルトンクラス
+  インスタンスが一つしかないように強制する
+  ユニットテストをしづらいので嫌っている人もいる
+- ファクトリメソッド
+  インスタンスを生成する方法を提供する
+
+*** 8 再帰と動的計画法
+
+- ボトムアップ法…小さな問題から、次の問題に拡大していく
+- トップダウン法…大きな問題を小さくしていく
+- 半々法…マージソートのように二分割していく
+
+再帰的なアルゴリズムよりも反復処理のほうがメモリの消費は少ない。
+なぜなら再帰呼び出しが n 回行われると確実に O(n) のメモリを消費するため。
+反復処理はそうなるとは限らない。ただし反復処理で書くと複雑になることも多い。
+
+動的計画法のポイント、再帰的な計算・重複する部分問題の発見。
+あとはキャッシュするだけで OK。
+最もシンプルな問題はフィボナッチ数の計算。
+
+#+begin_src ruby
+def fibonacci(i)
+  return i if i == 0 || i == 1
+
+  fibonacci(i-1) + fibonacci(i-2)
+end
+#+end_src
+
+このメソッドの呼び出し回数を考えてみよう。
+1回メソッドを呼ぶたびに2回の呼び出しが発生しているので O(2^n) になっている。
+これをトップダウンな動的計画法により効率化してみよう。
+
+#+begin_src ruby
+def fibonacci(i, memo = Array.new(i+1))
+  return i if i == 0 || i == 1
+
+  if memo[i].nil?
+    memo[i] = fibonacci(i-1, memo) + fibonacci(i-2, memo)
+  end
+
+  memo[i]
+end
+#+end_src
+
+呼び出しを観察すると O(n) で実行できる。
+ボトムアップな動的計画法もみてみよう。
+
+#+begin_src ruby
+def fibonacci(i)
+  return i if i == 0 || i == 1
+
+  memo = [0,1]
+
+  2.upto(i) do |j|
+    memo[j] = memo[j-1] + memo[j-2]
+  end
+
+  memo[i]
+end
+#+end_src
+
+小さな数を確定させてから編み上げていくイメージ。
+実は配列は不要で、もっと簡単にできる。
+
+
+#+begin_src ruby
+def fibonacci(i)
+  return i if i == 0 || i == 1
+
+  result = nil
+  prev1 = 0
+  prev2 = 1
+
+  2.upto(i) do |j|
+    result = prev1 + prev2
+    prev1 = prev2
+    prev2 = result
+  end
+
+  result
+end
+#+end_src
+
+*** 9 スケーラビリティとシステムデザイン
+
+ちょっとしたサービスを設計するときにやることはなんだろう。
+読むだけでよさそうなのでメモはやめておく。
+*** 10 ソートと探索
+**** バケツソート
+
+あらかじめバケツを用意して要素をバケツに入れていく。
+一回配列を走査するだけで計算できるので O(n) でソートできる。
+これはたとえば大勢の人を年齢順に並べる時には最も高速な手法。
+
+**** マージソート
+
+安定して O(nlogn) のソート方法。
+ただしメモリを O(n) 消費する。
+性能は落ちるがメモリを節約する手法(inplace-margesort)もあるらしい。
+
+#+begin_src ruby
+def mergesort(array)
+  helper = Array.new(array.size)
+  mergesort_part(array, helper, 0, array.size - 1)
+  array
+end
+
+def mergesort_part(array, helper, low, high)
+  if (low < high)
+    middle = (low + high) / 2
+    mergesort_part(array, helper, low, middle)
+    mergesort_part(array, helper, middle + 1, high)
+    merge(array, helper, low, middle, high)
+  end
+end
+
+def merge(array, helper, low, middle, high)
+  low.upto(high) do |i|
+    helper[i] = array[i]
+  end
+
+  current = low
+  left = low
+  right = middle + 1
+
+  # step A: 左か右が尽きるまでループする
+  while left <= middle && right <= high
+    if helper[left] <= helper[right]
+      array[current] = helper[left]
+      left += 1
+    else
+      array[current] = helper[right]
+      right += 1
+    end
+
+    current += 1
+  end
+
+  # step B: 右半分はコピーしなくてももとの array のままでいいので左半分だけコピーする
+  while left <= middle
+    array[current] = helper[left]
+    left += 1
+    current += 1
+  end
+end
+#+end_src
+
+例 [10,11,12] [1,2,3] のマージ
+step A: array = [1,2,3,1,2,3]
+step B: array = [1,2,3,10,11,12]
+
+例 [1,3,4] [2,11,12] のマージ
+step A: array = [1,2,3,4,11,12]
+step B: skip.
+
+**** クイックソート
+
+平均で O(nlogn) のソート手法。メモリも O(logn) で済む。
+ただしピボットが運悪く不均衡に選択されてしまうと最悪 O(n^2) の実行時間となる。
+
+#+begin_src ruby
+def quicksort(array, left = 0, right = array.size - 1)
+  index = partition(array, left, right)
+  quicksort(array, left, index - 1) if left < index - 1
+  quicksort(array, index, right) if index < right
+  array
+end
+
+def partition(array, left, right)
+  pivot = array[(left + right) / 2]
+
+  while  left <= right
+    left += 1 while array[left] < pivot
+    right -= 1 while array[right] > pivot
+
+    if left <= right
+      array[left], array[right] = array[right], array[left]
+      left += 1
+      right -= 1
+    end
+  end
+
+  left
+end
+#+end_src
+
+**** 基数ソート
+
+数値や属性を桁ごとにソートする手法
+計算時間は O(kn) となる。k は桁数。
+
+**** 二分探索
+
+#+begin_src ruby
+def binary_search(a, x)
+  low = 0
+  high = a.size - 1
+  mid = nil
+
+  while low <= high
+    mid = (low + high) / 2
+    if a[mid] < x
+      low = mid + 1
+    elsif a[mid] > x
+      high = mid - 1
+    else
+      return mid
+    end
+  end
+
+  return -1
+end
+#+end_src
+
+*** 11 テスト
+
+とくに物珍しいことは書いてないので省略
+
+*** 12 C と C++
+
+C++ の機能に浅く触れるだけなので省略
+
+*** 13 Java
+
+Java の機能に浅く触れるだけなので省略
+
+*** 14 データベース
+
+読み飛ばした
+
+*** 15 スレッドとロック
+
+java の場合関数を定義するとき synchronized キーワードが使える。
+このキーワード付きで宣言された関数は並列実行できなくなる。
+実質ロックを取っている。並列実行しようとした場合は、一方が待ち状態になる。
+明示的に機能を提供する Lock クラスもある。
+
+ロックが解放されない状態のことをデッドロックと呼ぶ。
+
+*** 16 練習問題 中級編
+*** 17 練習問題 上級編
+** X 解法
+
+1. 文字列 S があるとき、S に含まれる文字が重複しているかどうか判定せよ
+2. 二つの文字列 S, T があるとき、S の文字 を並び替えて T が作れるかどうか判定せよ
+
+** XI より高度な話題
