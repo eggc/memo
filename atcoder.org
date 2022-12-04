@@ -304,6 +304,46 @@ ps.get(1, 3) #=> 2 + 3 + 4 = 9
 ~get(x, y)~ は ~array[x..y].sum~ よりも高速に動作する。
 ただし ~PartialSum~ は初期化コストが \( O(n) \) かかるのに対してビルトインメソッド ~sum~ は初期化不要であることに注意。
 
+* 階乗
+
+階乗の計算は range と inject を使えば簡単に計算できる。
+
+#+begin_src ruby
+(1..100).inject(:*)
+#+end_src
+
+ruby では桁溢れは存在しないのでいくらでも計算できる。
+ただし、桁数が凄まじい大きさになるため1回の積を計算するだけでも長時間かかってしまう。
+
+#+begin_src ruby
+Benchmark.realtime { (1..10000).inject(:*) }  # => 0.06469999998807907
+Benchmark.realtime { (1..20000).inject(:*) }  # => 0.17741299999761395
+Benchmark.realtime { (1..40000).inject(:*) }  # => 0.6692159999802243
+Benchmark.realtime { (1..60000).inject(:*) }  # => 1.4472580000001471
+Benchmark.realtime { (1..80000).inject(:*) }  # => 2.6068079999822658
+Benchmark.realtime { (1..100000).inject(:*) } # => 4.0979240000015125
+#+end_src
+
+よって N > 10000 程度になってくると N! は計算できないと考えた方がよい。
+大きな整数 K に対して K! が階乗を計算せずに割り切れるか？
+という問題をを考えるには素因数分解とルジャンドルの定理を使う。
+
+#+begin_src ruby
+def legendre(num, prime)
+  if num < 2
+    0
+  else
+    (num / prime) + legendre(num / prime, prime)
+  end
+end
+
+K.prime_division.all? do |prime, count|
+  legendre(n, prime) >= count
+end
+#+end_src
+
+[[https://atcoder.jp/contests/abc280/tasks/abc280_d][D - Factorial and Multiple]]
+
 * 高精度計算
 
 Ruby では整数の桁数は無限なので整数の世界で計算していれば桁溢れや誤差は生じない。
