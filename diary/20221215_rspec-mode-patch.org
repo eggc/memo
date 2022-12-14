@@ -1,0 +1,165 @@
+この記事は [[https://qiita.com/advent-calendar/2022/emacs][Emacs Advent Calendar 2022]] の 18 日目の記事です。
+
+* はじめに
+
+本記事では Ruby に関連するパッケージである rspec-mode を紹介します。
+そして、その不便なところをカスタマイズしたことをレポートします。
+想定読者は Emacs と Ruby を使っている人です。
+ただし、そうでない人も読み物としては楽しめると思います。
+結論だけ知りたい方は、背景と解決策のセクションだけ読んでください。
+
+* 背景
+
+[[https://github.com/pezra/rspec-mode][rspec-mode]] は Ruby の rspec を Emacs 上で実行する機能を提供するパッケージです。
+rspec-mode にはその他にも便利な機能が備わっています。それが下記のコマンドです。
+
+| キー    | 関数                         |
+|---------+------------------------------|
+| C-c , t | rspec-toggle-spec-and-target |
+
+これは、プロダクトファイルと、テストファイルを行き来することを可能にします。
+たとえば下記のファイルを開いている時に ~C-c , t~ を入力すると交互にファイルを移動します。
+
+- root/models/hoge.rb
+- root/spec/models/hoge_spec.rb
+
+しかしながら、プロダクトファイルとテストファイルはパスが一致しないこともあります。
+たとえば、私はディレクトリ ~controller/~ のプロダクトコードに対して ~requests/~ ディレクトリにテストを書いています。
+
+- root/controllers/hoges_controller.rb
+- root/spec/requests/hoges_spec.rb
+
+ファイル名も ~hoges_controller~ と ~hoges_spec~ であり ~_controller~ を省略しているため対応が取れていません。
+このようなケースでは ~rspec-toggle-spec-and-target~ は期待通りに動作しません。
+
+* 調査
+
+関数 ~rspec-toggle-spec-and-target~ に期待する振る舞いをさせるため、カスタマイズします。
+まず下記のコマンドを実行して、関数のヘルプを呼び出します。
+
+#+begin_src
+M-x describe-function rspec-toggle-spec-and-target
+#+end_src
+
+ヘルプページから関数定義のリンクへジャンプすると、下記のコードが見つかりました。
+
+#+begin_src lisp
+(defun rspec-toggle-spec-and-target ()
+  "Switch to the spec or the target file for the current buffer.
+If the current buffer is visiting a spec file, switches to the
+target, otherwise the spec."
+  (interactive)
+  (find-file (rspec-spec-or-target)))
+#+end_src
+
+これは実質 ~rspec-spec-or-target~ の結果得られるファイルパスを開いているだけです。
+ここで呼び出している ~rspec-spec-or-target~ にカーソルをあてて ~M-.~ の定義ジャンプで探索します。
+
+#+begin_src lisp
+(defun rspec-spec-or-target ()
+  (if (rspec-buffer-is-spec-p)
+      (rspec-target-file-for (buffer-file-name))
+    (rspec-spec-file-for (buffer-file-name))))
+#+end_src
+
+これを繰り返し、2 つの関数がパス変換のコア部分であることを突き止めました。
+
+- ~rspec-targetize-file-name (a-file-name extension)~
+- ~rspec-specize-file-name (a-file-name)~
+
+みたところ、文字列を受け取り、文字列を返すだけのシンプルなインターフェースです。
+これならパッチを当てるのも難しくなさそうです。
+
+* 実装
+
+Emacs Lisp の言語仕様にはオーバーライドや ~super~ はありません。
+しかし[[https://ayatakesi.github.io/emacs/24.5/elisp_html/Advice-combinators.html][アドバイス]]という機能で代替できます。
+今回は引数を加工したあとに、元の関数に処理を任せるため ~:filter-args~ を使います。
+引数をリスト化して受け渡しすることに注意して実装します。
+適当な lisp ファイルを作り、下記のコードを書きました。
+
+#+begin_src lisp
+(defun rspec-specize-file-name-advice (args)
+  "controller からテストファイルを探索する時に request spec に移動するパッチ"
+  (let ((file-name (nth 0 args)))
+    (setq file-name (string-replace "/controllers/" "/requests/" file-name))
+    (setq file-name (string-replace "_controller.rb" ".rb" file-name))
+    (list file-name)
+  ))
+
+(advice-add 'rspec-specize-file-name :filter-args 'rspec-specize-file-name-advice)
+
+; 動作確認1 結果が ("app/requests/hoge.rb") になっていれば OK
+(rspec-specize-file-name-advice '("app/controllers/hoge_controller.rb"))
+
+; 動作確認2 結果が "app/requests/hoge_spec.rb" になっていれば OK
+(rspec-specize-file-name "app/controllers/hoge_controller.rb")
+#+end_src
+
+期待通り動作することが確認できました。
+これでプロダクトファイル→テストファイルへの移動は完成です。
+逆向きの移動も可能にするため、追加でアドバイスを作成します。
+
+#+begin_src lisp
+(defun rspec-targetize-file-name-advice (args)
+  "request spec からプロダクトコードを探索する時に controller に移動するパッチ"
+  (let ((file-name (nth 0 args)) (extension (nth 1 args)))
+    (setq file-name (string-replace "/requests/" "/controllers/" file-name))
+    (setq file-name (string-replace "_spec" "_controller" file-name))
+    (list file-name extension)
+  ))
+
+(advice-add 'rspec-targetize-file-name :filter-args 'rspec-targetize-file-name-advice)
+
+; 動作確認1 結果が ("app/controllers/hoge_controller" "rb") になっていれば OK
+(rspec-targetize-file-name-advice '("app/requests/hoge_spec" "rb"))
+
+; 動作確認2 結果が "app/controllers/hoge_controller.rb" になっていれば OK
+(rspec-targetize-file-name "app/requests/hoge_spec" "rb")
+#+end_src
+
+これでひとまず完成です。
+現在のアドバイス関数はパスに _spec, request, controllers, いずれかが混ざっていると壊れてしまいます。
+この点を改善すればさらに安全に利用できます。とはいえ個人利用ではこの程度のパッチで十分と考えました。
+
+* 解決策
+
+動作確認まで終わったら init.el に書き込みます。
+私は use-package を利用しているので下記のようにしました。
+
+#+begin_src lisp
+(defun rspec-specize-file-name-advice (args)
+  "controller からテストファイルを探索する時に request spec に移動するパッチ"
+  (let ((file-name (nth 0 args)))
+    (setq file-name (string-replace "/controllers/" "/requests/" file-name))
+    (setq file-name (string-replace "_controller.rb" ".rb" file-name))
+    (list file-name)
+    ))
+
+(defun rspec-targetize-file-name-advice (args)
+  "request spec からプロダクトコードを探索する時に controller に移動するパッチ"
+  (let ((file-name (nth 0 args)) (extension (nth 1 args)))
+    (setq file-name (string-replace "/requests/" "/controllers/" file-name))
+    (setq file-name (string-replace "_spec" "_controller" file-name))
+    (list file-name extension)
+    ))
+
+(use-package rspec-mode
+  :config
+  (advice-add 'rspec-specize-file-name :filter-args 'rspec-specize-file-name-advice)
+  (advice-add 'rspec-targetize-file-name :filter-args 'rspec-targetize-file-name-advice))
+#+end_src
+
+他の設定も含めた最終的なコードは [[https://github.com/eggc/dotemacs2/blob/d8febaea74d7dc987278874dedd76bcb77d4ba2d/lib/eg-ruby.el#L27-L55][GitHub]] に置いてあります。
+
+* おわりに
+
+今回は私がカスタマイズする時のコードの探し方から実装までを紹介してみました。
+実のところ、これを実現して得られる成果はそこまで大きくありません。
+このパッチを使って節約できる時間は 1 回あたり 5 秒程度です。
+概算で 150 日くらい使い続ければ元が取れる目算ですが、その程度の改善でしかありません。
+それでもこうして時間を割いているのは、道具を手入れし、研ぎ澄ませることが楽しいからです。
+
+今回レポートした内容は私個人がなんとなくそうしているという手順にすぎません。
+もっと良い進め方があるはずです。
+何か気づいたことがありましたらコメントいただければ幸いです。
