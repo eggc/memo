@@ -88,7 +88,7 @@ cask "hiddenbar"
 
 - google の oauth 認証で sign up するだけ
 
-** gh
+** git & gh
 
 #+begin_src sh
 # eggc の秘密鍵を受け取る
@@ -97,6 +97,27 @@ mv xxxxxxx ~/.ssh/id_rsa
 chmod go-r ~/.ssh/id_rsa
 
 gh auth login
+
+echo "
+# 🐛 fix:
+# ✨ feat:
+# ♻️ refactor:
+# ✅ test:
+# 📝 docs:
+# 📦 package:
+# ⚡️ perf:
+# 💚 ci:
+# ⚠️ warn:
+# 👮 lint:
+" > ~/.git_commit_template
+
+echo "
+[user]
+  name = eggc
+  email = xxx@gmail.com
+[commit]
+  template = ~/.git_commit_template
+" > ~/.gitconfig
 #+end_src
 
 ** emacs
