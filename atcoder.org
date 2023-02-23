@@ -17,6 +17,7 @@ AtCoder のコンテストには制限時間がある。
 上の記事は典型的な問題を分類して紹介している。
 これは正しいを知識提供しているわけではないので注意。
 問題に取り組んで30分くらい解けなかったら解説記事や動画を見たほうがいい。
+[[https://algo-logic.info/competitive-programming-must/][競技プログラミングでの典型アルゴリズムとデータ構造]]この記事も使えるテクニックを増やすのにはちょうどいい。
 
 * Exhaustive Search 全探索
 すべての可能性を検討して要求された解を求めることを全探索という。
@@ -69,6 +70,47 @@ end
 * グラフの探索
 問題がグラフ構造を持っているとき、ほとんどの場合は単純なループ文で探索を実現できない。
 下記の探索アルゴリズムを手に馴染ませておかないと太刀打ちできない。
+
+** グラフ
+
+グラフを表現するのには配列を使うことが多い。
+無向グラフなら下記のようにするのが一例。
+
+#+begin_src ruby
+class UndirectedGraph
+  attr_reader :size
+
+  def initialize(size)
+    @size = size
+    @edges = []
+  end
+
+  def add_edge(a, b)
+    @edges[a] ||= []
+    @edges[a] << b
+
+    @edges[b] ||= []
+    @edges[b] << a
+  end
+
+  def remove_edge(a, b)
+    @edges[a].delete(b)
+    @edges[b].delete(a)
+  end
+
+  def children(a)
+    @edges[a]
+  end
+
+  def each_node(&block)
+    (1..size).each(&block)
+  end
+end
+
+N, M = gets.split.map(&:to_i)
+G = UndirectedGraph.new(N)
+M.times.map { G.add_edge(*gets.split.map(&:to_i)) }
+#+end_src
 
 ** DFS(depth-first search) 深さ優先探索
 
@@ -125,6 +167,36 @@ end
 [[https://atcoder.jp/contests/abc269/tasks/abc269_d][Do use hexagon grid]] は、グリッドの色を塗られた連結を観察する問題。
 これはグリッドの 1 つのマスをノードとするグラフとして考えるとうまくいく。
 
+*** グラフの連結性を調べる
+
+グラフの連結性を調べるには DFS が使える。Union-Find でも同じことができる。
+
+#+begin_src ruby
+class DepthFirstSearch
+  def initialize(graph)
+    @graph = graph
+    @results = []
+  end
+
+  def paint_all
+    @graph.each_node { |i| paint(i, i) }
+    @results[1..]
+  end
+
+  def paint(node, color)
+    return if @results[node]
+
+    @results[node] = color
+
+    @graph.children(node).each do |child|
+      paint(child, color)
+    end
+  end
+end
+
+result = DepthFirstSearch.new(graph).paint_all
+#+end_src
+
 ** BFS(breadth-first search) 幅優先探索
 
 これも全探索手法の 1 つ。
@@ -170,6 +242,104 @@ end
 たとえばセル数 1000x1000 の迷路が課題として与えられたとする。
 これを上記の非効率な探索をすると 1000x1000x4 の探索になり AtCoder では時間切れになる。
 
+** Union-Find と disjoint set 素集合
+
+素集合とは互いに共通の元を持たない集合のこと。
+たとえば {1,2,3,4,5,6} を分割した3つの集合 {1}, {2,3}, {4,5,6} は素集合である。
+
+Union-Find 木という特殊なグラフを作ることで高速にグループ分けできる。
+Union-Find データ構造とも言う。
+
+https://atcoder.jp/contests/atc001/tasks/unionfind_a
+
+union by rank をさぼっても経路圧縮ができていればほぼ O(logN) にできるらしい。
+union by rank を使うと O(α(N)) というとてつもない効率良い関数になるらしい。
+さらに応用的な話題は下記のサイトに書いてあるようだ。
+
+https://noshi91.hatenablog.com/entry/2018/05/30/191943
+
+*** サンプルコード
+
+#+begin_src ruby
+class UnionFind
+  def initialize(size)
+    @size = size
+    @parents = []
+  end
+
+  def root(a)
+    if @parents[a]
+      @parents[a] = root(@parents[a])
+    else
+      a
+    end
+  end
+
+  def union(a, b)
+    root_a = root(a)
+    root_b = root(b)
+
+    return if root_a == root_b
+
+    @parents[root_a] = root_b
+  end
+
+  def same_group?(a, b)
+    root(a) == root(b)
+  end
+
+  def groups
+    (1..@size).group_by { |i| root(i) }
+  end
+end
+
+@union_find = UnionFind.new(10)
+@union_find.union(1, 2)
+@union_find.union(2, 3)
+@union_find.union(3, 4)
+@union_find.union(5, 6)
+@union_find.union(5, 7)
+
+p @union_find.same_group?(1, 4)
+p @union_find.groups
+#+end_src
+
+*** 解説
+
+https://algo-method.com/descriptions/132
+
+まず下記の操作を考える。
+
+- issame(x, y) ... ノード x から出発して y に到達可能か調べる
+- unite(x, y) ... ノード root(x) からノード root(y) に有向辺を追加する
+
+上記の操作を効率よく行うには union by rank と言う方法がある。
+
+issame のコストはグラフの探索で木の高さ h とすると O(h) のコストがかかる。
+
+issame の計算には root(x) → root(y) の辺と root(y) → root(x) の辺どちらでも探索可能なので
+unite するときに根が短い木 → 根が長い木となるように接続する。この union by rank の方法で木の高さが増えにくくなる。
+
+証明
+- 高さ 0 の木は少なくとも 1 つの頂点をもつ
+- 高さ h の木を作るには、高さ h-1 の木が2つ必要
+- 帰納法により
+  - 高さ 0 の頂点数 1
+  - 高さ 1 の頂点数 2
+  - 高さ 2 の頂点数 2^2
+  - 高さ 3 の頂点数 2^3
+  - 高さ h の頂点数 2^h
+  - 高さ log(h) の頂点数 h
+- よって頂点数 h の木の高さは多くとも log(h) となる
+
+union by rank の他に経路圧縮というテクニックもある。
+
+root(x) を探索するときに、親を辿って O(h) のコストがかかる。
+親が直ちに根となるようにグラフを加工できれば、検索コストは 1 になる。
+よって、根を探索した後は有向辺を付け替えて親と繋ぐようにする。
+これは根をたどる途中の先祖全てに適用可能である。
+この操作を経路圧縮と呼ぶことにする。
+
 * Greedy algorithm 貪欲法
 問題領域が広く、全探索で解決できない場合は問題領域を狭めて探索する必要がある。
 最小値や最大値の求める問題では、貪欲法が最適解を求めるのに役立つことがある。
@@ -209,25 +379,6 @@ end
 puts answer
 #+end_src
 
-* 2 点間の距離・チェビシェフ距離（チェス盤距離）
-
-[[https://atcoder.jp/contests/arc004/tasks/arc004_1][2点間距離の最大値 (The longest distance)]] は 2 点間の距離を求める問題。
- \( \sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2} \) の計算は、Ruby では [[https://docs.ruby-lang.org/ja/latest/method/Math/m/hypot.html][Math.hypot]] を使うとよい。
-
-#+begin_src ruby
-p1 = { x: 1, y: 1 }
-p2 = { x: 2, y: 2 }
-Math.hypot(p2[x] - p1[x], p2[y] - p1[y]) #=> 1.4142135623730951
-Math.hypot(p1[x] - p2[x], p1[y] - p2[y]) #=> 1.4142135623730951 逆でも同じになる
-#+end_src
-
-直角三角形の斜辺（hypotenuse）の長さに由来するとのこと。
-
-[[https://atcoder.jp/contests/abc264/tasks/abc264_b][Nice Grid]] の問題では 2 点間の距離は使えない。
-代わりに、下記の式で定義されるチェビシェフ距離 \( L \) を使う。
-
-\[ L = max(|x2 - x1|, |y2 - y1|) \]
-
 * Binary Search 二分探索
 
 [[https://atcoder.jp/contests/joi2008ho/tasks/joi2008ho_c][ダーツ]] や [[https://atcoder.jp/contests/abc265/tasks/abc265_d][Iroha and Haiku (New ABC Edition)]] は二分探索を使う問題。
@@ -249,13 +400,14 @@ Ruby ではビルトインメソッド ~bsearch~ 及び ~bsearch_index~ によ�
 添字が知りたいときは ~bsearch~ の代わりに ~bsearch_index~ を使えば良い。
 find-any モードについては省略。
 
-* 幾何学
+* Dynamic Programming 動的計画法
 
-あとで内積・外積を勉強する。
+部分解を再利用し効率よく計算する手法。
+ボトムアップとトップダウンの2つの方向がある。
+ボトムアップの場合、小さな問題に対する解を見つけながら、探索範囲を少しずつ広げていく。「配るDP」と言われているらしい。
 
-http://www.deqnotes.net/acmicpc/2d_geometry/products
-
-* 数列の部分和
+* 数学
+** 数列の部分和
 
 [[https://atcoder.jp/contests/abc267/tasks/abc267_c][Index × A(Continuous ver.)]] は数列の和を使う問題。
 数列 \( A = A_0, A_1, ... A_{n-1} \) が与えられたとき、補助的な数列 \( S \) を下記のように構成する。
@@ -304,7 +456,7 @@ ps.get(1, 3) #=> 2 + 3 + 4 = 9
 ~get(x, y)~ は ~array[x..y].sum~ よりも高速に動作する。
 ただし ~PartialSum~ は初期化コストが \( O(n) \) かかるのに対してビルトインメソッド ~sum~ は初期化不要であることに注意。
 
-* 階乗
+** 階乗
 
 階乗の計算は range と inject を使えば簡単に計算できる。
 
@@ -344,7 +496,38 @@ end
 
 [[https://atcoder.jp/contests/abc280/tasks/abc280_d][D - Factorial and Multiple]]
 
-* 高精度計算
+** 2 点間の距離・チェビシェフ距離（チェス盤距離）
+
+[[https://atcoder.jp/contests/arc004/tasks/arc004_1][2点間距離の最大値 (The longest distance)]] は 2 点間の距離を求める問題。
+ \( \sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2} \) の計算は、Ruby では [[https://docs.ruby-lang.org/ja/latest/method/Math/m/hypot.html][Math.hypot]] を使うとよい。
+
+#+begin_src ruby
+p1 = { x: 1, y: 1 }
+p2 = { x: 2, y: 2 }
+Math.hypot(p2[x] - p1[x], p2[y] - p1[y]) #=> 1.4142135623730951
+Math.hypot(p1[x] - p2[x], p1[y] - p2[y]) #=> 1.4142135623730951 逆でも同じになる
+#+end_src
+
+直角三角形の斜辺（hypotenuse）の長さに由来するとのこと。
+
+[[https://atcoder.jp/contests/abc264/tasks/abc264_b][Nice Grid]] の問題では 2 点間の距離は使えない。
+代わりに、下記の式で定義されるチェビシェフ距離 \( L \) を使う。
+
+\[ L = max(|x2 - x1|, |y2 - y1|) \]
+
+* その他のトピック
+** imos 法
+
+領域の足し合わせ技法
+
+- 導入 https://note.com/kirimin_chan/n/n7663e3bb8a05
+- 詳細 https://imoz.jp/algorithms/imos_method.html
+
+** 幾何学
+
+http://www.deqnotes.net/acmicpc/2d_geometry/products
+
+** 高精度計算
 
 Ruby では整数の桁数は無限なので整数の世界で計算していれば桁溢れや誤差は生じない。
 
@@ -392,4 +575,10 @@ BigDecimal(2) ** 0.5         #=> 0.141421356e1
 BigDecimal(2).power(0.5)     #=> 0.141421356e1
 BigDecimal(2).power(0.5, 32) #=> 0.14142135623730950488016887242097e1
 BigDecimal(2).sqrt(32)       #=> 0.1414213562373095048801688724209698078569671875e1
+#+end_src
+
+三乗根を計算するには ~Math.cbrt~ を使う。
+
+#+begin_src ruby
+Math.cbrt(8) #=> 2.0
 #+end_src

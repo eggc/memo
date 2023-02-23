@@ -1,0 +1,440 @@
+https://www.typescriptlang.org/
+https://www.typescriptlang.org/docs/handbook/intro.html
+https://js.studio-kingdom.com/typescript/
+https://runebook.dev/ja/docs/typescript/intro
+
+* Get Started(TypeScript for Javascript Programmers)
+
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+
+JavaScript にも string や number といった型はあるが、変数の代入時にその一貫性が保たれているかはチェックしない。
+TypeScript は一貫性を保つ。
+
+TypeScript は明示的な型宣言がなくても、型推論を行う。
+
+#+begin_src typescript
+// 変数 hello が string 型と推定している。
+let hello = "Hello World"
+
+// オブジェクト user のプロパティに対しても型推論が動作する。
+const user = { name: "hoge", id: 0 }
+
+// interface を宣言した後にそれを使えば型を明示できる。
+interface User = {
+  name: string
+  id: number
+}
+const user: User = { name: "hoge", id: 0 }
+
+// 下記の文はエラーとなる。username は User のプロパティにふさわしくない。
+const user: User = { username: "hoge", id: 0 }
+
+// User と同じプロパティを持つ クラス UserAccount を定義する
+// それは User 型で宣言された変数へと代入可能になる
+class UserAccount {
+  name: string;
+  id: number;
+
+  constructor(name: string, id: number) {
+    this.name = name;
+    this.id = id;
+  }
+}
+const user: User = new UserAccount("eggc", 1)
+
+// 関数定義する時、引数や戻り値に対してもタイプアノテーションを使うことができる。
+function getUser(): User {...}
+function setUser(user: User) {...}
+#+end_src
+
+インターフェースでは、JavaScript のプリミティブ型として下記のものが利用できる。
+
+boolean, bigint, null, number, string, symbol, and undefined
+
+TypeScript の型としては上記に加えて下記の型がある。
+
+any, unknown, never, void
+
+型を宣言するには interface と type の2つのキーワードがある。
+interface で足りる時は interface を使う方が良いらしい。
+type でなければならないときだけ type を使う。type については後述。
+
+typeScript では二つ以上の型を組み合わせて型を宣言できる。
+
+#+begin_src typescript
+type MyBool = 1 | 0
+type WindowStates = "open" | "closed" | "minimized";
+
+function getLength(obj: string | string[]) { return obj.length }
+
+// TypeScript は typeof で分岐させているときは正しく分岐を判断する
+function wrap(obj: string | string[]): string[] {
+  if(typeof obj === 'string') {
+    return [obj]
+  } else {
+    return obj
+  }
+}
+#+end_src
+
+変化できる型を与えるのがジェネリクス。
+
+#+begin_src typescript
+type StringArray = Array<string>
+type NumberArray = Array<number>;
+type ObjectWithNameArray = Array<{ name: string }>;
+
+interface Backpack<Type> {
+  add: (obj: Type) => void
+  get: () => Type
+}
+
+// 下記では backpack の値が初期化されてないが
+// declare で修飾すると、エラーを発生させない
+declare const backpack: Backpack<string>;
+
+const object = backpack.get();
+backpack.add('banana');
+#+end_src
+
+typescript はダックタイピングを行う。完全な型一致はしない。
+
+#+begin_src typescript
+interface Point {
+  x: number;
+  y: number;
+}
+
+function logPoint(p: Point) {
+  console.log(`${p.x}, ${p.y}`);
+}
+
+// 下記の変数 point は Point 型ではないがエラーは発生しない
+const point = { x: 12, y: 26 };
+logPoint(point);
+#+end_src
+
+* The TypeScript Handbook
+** The Basics
+
+JavaScript には動的型付け言語なので、ある変数に何が入っているのかは想像するしかない。
+そして実行してみないとエラーになるかどうかわからない。そのことが間違いを起こしやすい。
+typeof で調べることもできるけどそれは function にはできない。
+fn(x) => { x.flip() } という関数をみて、人は x は flip というプロパティを持っていないといけないと観察できる。
+だけど JavaScript はそういう配慮をして実行する前にエラーを出したりはしない。
+
+実行してみればエラーになるのはすぐわかるかもしれない。でもそれとわからないこともある。
+テストが十分でなかったらエラーは出ない可能性がある。
+それに、エラーが見つかってもコードの差分が多ければ原因を探すのは難しい。
+だからバグを見つけるためのツールが必要で、静的型付けのチェックならそれができる。
+
+#+begin_src typescript
+const message = 'hello'
+message() // => This expression is not callable. Type 'String' has no call signatures.
+#+end_src
+
+実行時エラーが起きるとき、そのプログラムは ECMAScript 仕様として動作した時に何かが間違っている。
+たとえば存在しないプロパティにアクセスした時は undefined を返す仕様がある。
+
+#+begin_src js
+const user = { name: 'hoge' }
+user.location // => undefined
+#+end_src
+
+上のコードは文法的には正しい JavaScript だけど、意図したものではないかもしれない。
+静的型付けシステムは、こういうものをエラーにするかしないかのフラグが必要。
+TypeScript では上記のコードはエラーになる。これは多くの場面で役立つ。
+
+#+begin_src typescript
+const announcement = "Hello World!";
+
+// typo の発見
+announcement.toLocaleLowercase(); // Property 'toLocaleLowercase' does not exist on type '"Hello World!"'. Did you mean 'toLocaleLowerCase'?(2551)
+announcement.toLocalLowerCase(); // Property 'toLocalLowercase' does not exist on type '"Hello World!"'. Did you mean 'toLocaleLowerCase'?(2551)
+announcement.toLocaleLowerCase(); // OK!
+
+// 関数呼び出し忘れ
+Math.random < 0.5 // Operator '<' cannot be applied to types '() => number' and 'number'.
+Math.random() < 0.5 // OK!
+
+// 到達不能の if 文を発見する
+const value = Math.random() < 0.5 ? "a" : "b";
+if (value !== "a") {
+  ...
+} else if (value === "b") {
+  // This condition will always return 'false' since the types '"a"' and '"b"' have no overlap.
+  ...
+}
+#+end_src
+
+型システムは変数のアクセス可能なプロパティを知っている。なので補完ツールを使うことができる。
+これを使えば、そもそもエラーが出ないコードを書くことができる。
+TypeScript はそれ以上の道具一式がある。自動的にエラーを修正したり、リファクタリングしたりするツールがある。
+定義ジャンプや参照の検索もある。ほとんどのエディタでそれらのツールは提供されている。
+
+npm で typescript パッケージをインストールすると tsc というコマンドが使えるようになる。
+これは typescript compile の略。tsc は引数で与えられたファイルの型チェックをする。
+特に設定がない場合 tsc はコンパイル結果の js を ts と同じディレクトリに書き出す。
+この js はコメントやインデントを維持して、なるべく可読性のあるように出力する。
+
+エラーのある例に書き換えてみよう。tsc でコンパイルするとエラーになった。
+実は tsc はエラーのときでも js を書き出す。
+この振る舞いは、JavaScript から TypeScript へ移行しようと考えているときに役立つ。
+もしそれを望まないなら noEmitOnError コンパイルオプションによりそれを抑止することはできる。
+
+次に明示的に型を与えるサンプルをみてみよう。
+
+#+begin_src typescript
+function greet(person: string, date: Date) {
+  console.log(`Hello ${person}, today is ${date.toDateString()}!`);
+}
+#+end_src
+
+上の person, date にはタイプアノテーションがある。
+typescript には型推論の機能があるので、タイプアノテーションは必須ではないことに注意。
+たとえば ~let message = "hello there"~ は message が string だということをは推定可能。
+
+- コンパイルしたときにはタイプアノテーションは消える。
+- テンプレート文字列は、ただの文字列の concat に書き換えられる。
+
+テンプレート文字列は ECMAScript2015 以降で利用可能な機能。
+より古い ECMAScript でも動くように変換することをダウンレベリングという。
+TypeScript のデフォルト target は ES3 で非常に古いバージョンとなっている。
+~--target es2015~ オプションをつければダウンレベリングせずに出力できる。
+
+※ ただしそれには es2015 へコンパイルをするための npm パッケージが必要なもよう。
+
+デフォルトでは、型推論は null や undefined の可能性を検討しない。
+しかし厳しくすることもできる。新しいコードを書く時にはこの厳格なチェックをするほうが良い。
+コンパイルを通すための苦労はあるが、それは将来のためになる。
+~--strict true~ オプションをつければ厳格なチェックを行う。tsconfig.json にこの設定を書いてもよい。
+strict の検査は、さらに個別に設定することができる。 noImplicitAny や stricctNullChecks がそうだ。
+
+- noImplicitAny: デフォルトでは、型推論ができない場合に ~any~ という型にフォールバックする。any は型検査されないのでバグを起こしやすい。noImplicitAny は暗黙的な any に対してコンパイルエラーを発生させる。
+- strictNullCheck: デフォルトでは null や undefined は他の型に代入可能である。世界中でバグを起こしている。strictNullCheck は null や undefined を明示的に扱わないとコンパイルエラーを発生させる。
+** Everyday Types
+*** 型の種類
+Javascript にはプリミティブ型として3つの型がある。
+
+- string
+- number
+- boolean
+
+これらは TypeScript でも利用できる。
+型宣言するときは常にプリミティブ型を使う。
+ちなみに String, Number, Boolean も存在するが、型宣言には利用しない。
+
+配列型は ~number[]~ のように書く。 ~Array<number>~ と書いても良い。
+
+any 型はどのようなプロパティにもアクセスできるし、関数として呼び出しても良い。
+
+object 型は ~{ x: number, y: number, z?: number}~ のようにプロパティを列挙して書く。
+プロパティ名の末尾に ? があるとそれは省略可能なプロパティ(optional property) となる。
+
+*** 型宣言
+
+変数に対する型宣言は ~let hoge: string = "hello"~ のように書く。
+多くの場合、これは必要ではない。型推論が働く。
+
+関数に対する型宣言は ~function greet(name: string): string~ のように書く。
+引数の型宣言をしない場合は引数の数だけ検査される。
+戻値に対する型宣言も、省略可能で型推論できる。
+個人の好みで決めて良いが、ドキュメンテーション、予期しない変更の回避には役立つ。
+
+無名関数の型宣言は多くの場合は不要で、型推論が働く。
+下記の例では forEach の引数に無名関数を渡している。
+この無名関数には引数の型宣言がないにもかかわらずエラーを検出する。
+この種類の型推論を contextual typing と呼ぶ。
+
+#+begin_src typescript
+const names = ["Alice", "Bob", "Eve"];
+names.forEach((s) => {
+  console.log(s.toUppercase()); // -> Property 'toUppercase' does not exist on type 'string'. Did you mean 'toUpperCase'?
+});
+#+end_src
+
+*** 型のバリエーション
+
+~id: number | string~ のように記号 | を使って、和集合型(union type)を宣言することができる。
+union type で宣言された変数は、そのどちらの型でも有効なプロパティにだけアクセスできる。
+
+片方の型で有効なプロパティにだけアクセスしたいときは、typeof や Array.isArray() によって明示的に分岐させる。
+この narrowing によって明示的なプロパティアクセスが可能になる。
+このときも型推論が働くので、再代入や型宣言は不要。
+
+#+begin_src typescript
+function printId(id: number | string) {
+  console.log(id.toUpperCase()); // -> Property 'toUpperCase' does not exist on type 'string | number'.
+
+  if (typeof id === "string") {
+    console.log(id.toUpperCase());
+  } else {
+    console.log(id);
+  }
+}
+#+end_src
+
+*** 型の再利用
+
+タイプエイリアス(type alias)は下記のように定義する。
+タイプエイリアスは単なる別名であり、もとの型と区別できないということに注意。
+
+#+begin_src typescript
+type Point = {
+  x: number;
+  y: number;
+};
+#+end_src
+
+#+begin_src typescript
+type ID = number;
+
+function double(x: ID) { return x * 2 }
+
+const id:number = 100;
+double(id) // これは ID を期待しているが number でもあるためエラーにはならない。
+#+end_src
+
+インターフェース(interface)は object に対してプロパティの宣言をする方法でほとんど同じように使える。
+
+#+begin_src typescript
+interface Point {
+  x: number;
+  y: number;
+};
+#+end_src
+
+interface で可能なことはすべて type alias でも可能。type alias と interface の違いは type は、リオープンしてプロパティを追加することができないのに対して、インターフェースはいつでも拡張可能だということ。ただ type を継承して別の type を定義することもできるので、そのことが問題になることは少ない。
+
+基本的に好きなほうを使ってよい。もう一方でないと実現できないことは TS が教えてくれる。ヒューリスティックにやりたいなら interface をつかうといい。機能が欲しいなら type を使うといい。
+
+型の断定(type assertion)は、型宣言と似ている。下記のように使う。
+
+#+begin_src typescript
+const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
+const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas"); // tsx では利用不可
+
+const x = "hello" as number; // 持ってない機能に断定するとエラーになる
+const y = "hello" as any; // どうしても型を誤魔化したい時はこのようにする
+#+end_src
+
+*** リテラル型
+リテラル型(literal type) は string, number の固定値に対して利用できる。
+一応 true, false というリテラル型もある。boolean は true | false のエイリアス。
+
+#+begin_src typescript
+let fluit: 'orange' | 'apple';
+
+fluit = 'tomato' // エラー
+
+// 戻り値は３種類しかないことを明示できる
+function compare(a: string, b: string): -1 | 0 | 1 {
+  return a === b ? 0 : a > b ? 1 : -1;
+}
+
+// Option クラスのインスタンスか、または auto をセットできる
+function configure(x: Options | "auto") {
+  ...
+}
+#+end_src
+
+typescript では、プロパティは再代入可能なものと推測する。
+このことが時には、奇妙な振る舞いをすることがある。
+
+#+begin_src typescript
+const req = { url: 'https://example.com', method: 'GET' }
+
+// req.method は string とみなされる。よって GET リテラル型とは不一致になる。
+handleRequest(req.url, req.method); // Argument of type 'string' is not assignable to parameter of type '"GET" | "POST"'.
+
+// 不恰好だがいくつかの回避策がある
+const req = { url: 'https://example.com', method: 'GET' as 'GET' }
+const req = { url: 'https://example.com', method: 'GET' } as const
+handleRequest(req.url, req.method as 'GET');
+#+end_src
+
+*** null と undefined
+
+typescript での null と undefined は振る舞いが似ている。
+
+strictNullChecks がオフの時は null や undefined はどのオブジェクトにも代入可能となる。
+この振る舞いは Java や C# と同じ。ただしこれはバグを起こしやすい。
+
+strictNullChecks がオンの場合は
+値が null や unfefined になるとき、その値を使う前にテストしないといけない。
+おそらく、省略可能なプロパティの undefined をチェックするのと似て、narrowing でチェックすることになる。
+
+null や undefined になっても良い時には ! という演算子(Non-null Assertion operator)が使える。
+ただしその場合多くは実行時エラーになる。
+
+*** enum
+
+enum は typescript の型システムというよりは typescript を通じて javascript になんやかんやを追加する機能になっている。
+理解が浅いうちはあまり使わないほうがいいかもしれない。
+*** その他のプリミティブ型
+
+- bigint  ES2020 から使える
+- symbol ユニークな参照を生成する javascript の機能
+
+*** その他メモ
+
+#+begin_src typescript
+function printName(obj: { first: string; last?: string }) {
+  console.log(obj.last.toUpperCase()); // -> 'obj.last' is possibly 'undefined'.(18048)
+
+  // Javascript の A safe alternative という機能を使えばエラーにならない。(ruby の &. と同じ)
+  console.log(obj.last?.toUpperCase());
+}
+#+end_src
+
+** narrowing
+
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html#truthiness-narrowing
+
+ユニオン型を使っているとき、特定の型に対して処理を実行したい場合がある。
+そのような場合に、ナローイングを使う。
+ナローイングは if 文や switch 文の条件に、typeof などの型判定を使って分岐を作ること。
+これはただの javascript と見かけ上同じだが、typescript が型推論によって細やかなエラーを見つけてくれる。
+
+#+begin_src typescript
+// number のときだけナローイングしている。この書き方をタイプガードという。
+function padLeft(padding: number | string, input: string) {
+  if (typeof padding === "number") {
+    return " ".repeat(padding) + input;
+  }
+  return padding + input;
+}
+#+end_src
+
+typeof null は 'object' を返すので typeof だけでナローイングするのは心もとない。
+truthiness でナローイングするのもときには使っていくと良い。
+truthiness とは if 文に値をそのままパスすることで内部的には下記の値以外はすべて true になる。
+
+#+begin_src typescript
+0, NaN, "", 0n, null, undefined
+#+end_src
+
+このふるまいは javascript により定まっている。
+空文字列が false になることがときにはバグの原因になるので注意しよう。
+
+typescript は typeof や truthiness 以外のパターンによるナローイングもカバーしている。
+内部的にシミュレーションしているのと似ている。
+
+#+begin_src typescript
+function example(x: string | number | null, y: string | boolean) {
+  if (x !== null) {
+    return
+  } else if (x === y) {
+    return x.toUpperCase() // ここでの x は string 以外ありえないということを typescript が検知するのでエラーにならない
+  } else {
+    return
+  }
+}
+#+end_src
+
+javascript の ~==~ は looser equality 演算子とよばれている。
+~x == null~ は x が ~null~ のときだけでなく ~undefined~ のときも真となるので注意しよう。
+null と undefined を区別したい時は ~===~ を使うようにすればいい。
+
+in 演算子も同じようにナローイングに使える。
+その他マニアックもいろいろ。元ドキュメントがかなり良いのでそれをみた方が良い。

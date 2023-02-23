@@ -1,0 +1,115 @@
+* mac を買ったらやること
+
+- [[https://support.apple.com/ja-jp/guide/mac-help/mh35859/mac][dock の設定]]
+  - いらんアプリを隠す（消す）
+  - 自動的に非表示をオンにする
+  - 拡大機能をオンにする
+- [[https://support.apple.com/ja-jp/guide/mac-help/mchlp2920/mac][ポインタをでかくする]]
+- [[https://support.apple.com/ja-jp/guide/mac-help/mchl0311bdb4/mac][キーリピートを速くする]]
+- [[https://support.apple.com/ja-jp/guide/mac-help/mchlp1226/mac][トラックパッド設定を変える]]
+  - ポイントとクリック
+    - タップでクリック
+    - 副ボタンクリックもタップでできるようにする
+  - その他のジェスチャ
+    - 通知センターオフ
+    - Mission Control 4本指スワイプ
+    - フルスクリーンアプリケーション間をスワイプ 4本指スワイプ
+- [[https://support.apple.com/ja-jp/HT204609][3本指ドラッグを有効にする]]
+- raycast のショートカットキーと重複するので [[https://support.apple.com/ja-jp/guide/mac-help/mh26783/mac][spotlight のショートカットを切る]]
+- emacs のキーバインドと重複するので 入力ソース切り替えも切る
+
+** brew
+
+- terminal を開き [[https://brew.sh/index_ja][brew を入れる]]
+- Brewfile を作り ~brew bundle~ を実行
+
+#+begin_src ruby
+brew "asdf"
+brew "gh"
+
+cask "google-chrome"
+cask "slack"
+cask "karabiner-elements"
+cask "raycast"
+cask "warp"
+cask "hiddenbar"
+#+end_src
+
+** google chrome
+
+- 起動して規定のブラウザにする
+- ログインしてアカウント同期を有効にする
+
+** slack
+
+- 起動して google chrome からサインインする
+
+** raycast
+
+- Advanced を開いて Export で書き出し ~*.rayconfig~ ファイルができる
+- slack の DM で自分宛にファイル送信
+- 受信側で ~*.rayconfig~ をダブルクリックして開くとインポートできる
+- snipet のアクセシビリティを許可
+
+*** raycast の設定失った場合のやり直し方法メモ
+
+- snippet
+  - 住所
+  - why/what/how/完了条件テンプレート
+- window manager
+  - ウィンドウのローテーションとか、拡大、半分化のショートカット
+- extension
+  - search browser bookmark
+  - deepcast
+
+** karabiner-elements
+
+- 起動時の権限要求があるので下記の入力監視を許可
+  - karabiner_grabber
+  - karabiner_observer
+- もう一個 human device なんとかの権限要求もあるので許可
+- [[https://karabiner-elements.pqrs.org/docs/manual/operation/export/][Export & Import]] を参考に json ファイルを転送して取り込み
+
+*** 失った場合のやり直し方法メモ
+
+- Simple Modifications
+  - かなキー -> right_alt (eqial to right_option)
+- Complex Modifications
+  - Add rule -> Import more rules from the internet (open a web browser) 押す
+  - Emacs key bindings を検索して import
+  - ~Emacs key bindings [control+keys]~ を有効にする
+  - For Japanese を import
+  - ~コマンドキー（左右どちらでも）を単体で押した時に、英数・かなをトグルで切り替える~ を有効にする
+
+** warp
+
+- google の oauth 認証で sign up するだけ
+
+** gh
+
+#+begin_src sh
+# eggc の秘密鍵を受け取る
+mkdir ~/.ssh
+mv xxxxxxx ~/.ssh/id_rsa
+chmod go-r ~/.ssh/id_rsa
+
+gh auth login
+#+end_src
+
+** emacs
+
+#+begin_src sh
+mkdir ~/private/
+mkdir ~/work/
+mkdir ~/.emacs.d/
+
+gh repo clone eggc/dotemacs2
+ln -s ~/work/dotemacs2 ~/private/dotemacs2
+ln -s ~/private/dotemacs2/init.el ~/.emacs.d/init.el
+#+end_src
+
+- M-x list-package から use-package をインストール
+- プライバシーとセキュリティ→フルディスクアクセス→ Emacs を許可
+- 再起動
+
+** mplus nerd-font
