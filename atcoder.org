@@ -242,7 +242,7 @@ end
 たとえばセル数 1000x1000 の迷路が課題として与えられたとする。
 これを上記の非効率な探索をすると 1000x1000x4 の探索になり AtCoder では時間切れになる。
 
-** Union-Find と disjoint set 素集合
+** Union-Find と disjoint set union 素集合
 
 素集合とは互いに共通の元を持たない集合のこと。
 たとえば {1,2,3,4,5,6} を分割した3つの集合 {1}, {2,3}, {4,5,6} は素集合である。
@@ -340,6 +340,10 @@ root(x) を探索するときに、親を辿って O(h) のコストがかかる
 これは根をたどる途中の先祖全てに適用可能である。
 この操作を経路圧縮と呼ぶことにする。
 
+*** ライブラリ
+
+https://github.com/universato/ac-library-rb/blob/main/lib/dsu.rb
+
 * Greedy algorithm 貪欲法
 問題領域が広く、全探索で解決できない場合は問題領域を狭めて探索する必要がある。
 最小値や最大値の求める問題では、貪欲法が最適解を求めるのに役立つことがある。
@@ -403,8 +407,105 @@ find-any モードについては省略。
 * Dynamic Programming 動的計画法
 
 部分解を再利用し効率よく計算する手法。
+
+ポイントはテーブルを作り、解の空間を狭くするということ。
+たとえばナップザック問題では、素直な総当たりをすると組み合わせ爆発が起こる。
+そのときの解の空間は N 個のアイテムに対して 2^N 通りとなる。
+しかし1個のアイテムが持っている価値がたかだか W だとすると
+全てのアイテムを持っていくとしても NW しかない。
+これはほとんどの場合 2^N よりも小さい。
+このように、DPは解の空間を狭くすることで全探索を容易にする。
+
+そしてテーブルの構成が決まったらテーブルの中に何を記憶するかというのが課題になる。
+ナップザック問題ではテーブルの中に、その価値を実現可能かどうかの bool 値を入れる。
+これもものによっては bool ではなく組み合わせの評価値を入れるようなパターンもある。
+
+狭くなった解の空間を埋めるときには小さな問題から計算していくことで、
+より難しい解を計算するコストを下げる。
 ボトムアップとトップダウンの2つの方向がある。
-ボトムアップの場合、小さな問題に対する解を見つけながら、探索範囲を少しずつ広げていく。「配るDP」と言われているらしい。
+テーブルの注目しているセル以前のテーブルセルから値をもらうのが「もらうDP」
+テーブルの注目しているセル以降のテーブルセルに値をセットするのが「配るDP」というらしい。
+
+
+** サンプル1
+
+https://atcoder.jp/contests/tdpc/tasks/tdpc_contest
+
+#+begin_src ruby
+class TableInspector
+  COLUMN_WIDTH = 5
+
+  class << self
+    def inspect(table)
+      str = header(table)
+      table.size.times { |i| str << row(table[i], i) }
+      str
+    end
+
+    private
+
+    def row(table_row, i)
+      str = cell(i)
+      str << ' | '
+      table_row.each { |value| str << cell(value) }
+      str << "\n"
+    end
+
+    def header(table)
+      width = table[0].size
+      str = row(0..width, 'i\j')
+      str << '-' * COLUMN_WIDTH << '-+-' << '-' * (COLUMN_WIDTH * 10)
+      str << "\n"
+    end
+
+    def cell(value)
+      format("%#{COLUMN_WIDTH}s", value)
+    end
+  end
+end
+
+class DynamicProgramming
+  def initialize(height, width)
+    @width = width
+    @height = height
+    @table = Array.new(@height) { Array.new(@width) }
+  end
+
+  def fill
+    @height.times do |i|
+      @width.times do |j|
+        @table[i][j] = create_value(i, j)
+      end
+    end
+  end
+
+  def inspect
+    TableInspector.inspect(@table)
+  end
+
+  def [](i, j = nil)
+    if j.nil?
+      @table[i]
+    else
+      @table[i][j]
+    end
+  end
+
+  private
+
+  def create_value(i, j)
+    ...
+  end
+end
+
+N = gets.to_i
+P = gets.split.map(&:to_i)
+P.unshift(0)
+
+@dp = DynamicProgramming.new(N + 1, P.sum + 1)
+@dp.fill
+puts @dp.table.last.count(&:itself)
+#+end_src
 
 * 数学
 ** 数列の部分和
