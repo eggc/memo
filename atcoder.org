@@ -188,7 +188,7 @@ class DepthFirstSearch
 
     @results[node] = color
 
-    @graph.children(node).each do |child|
+    @graph.children(node)&.each do |child|
       paint(child, color)
     end
   end
@@ -344,6 +344,115 @@ root(x) を探索するときに、親を辿って O(h) のコストがかかる
 
 https://github.com/universato/ac-library-rb/blob/main/lib/dsu.rb
 
+** トポロジカルソート
+
+閉路を持たない有向グラフを directed acyclic graph を省略して DAG という。
+トポロジカルソートとは全ての辺 (vi, vj) に対して i < j が成立するようにラベル vi, vj を決定すること。
+
+unix コマンドに tsort というのがある。
+ruby にも Tarjan のアルゴリズムが添付ライブラリに含まれている。
+
+https://docs.ruby-lang.org/ja/latest/library/tsort.html
+
+これは閉路検出も出してくれる。
+トポロジカルソートがそのまま出題されることはあまりないのでライブラリが使えるとは限らない。
+
+*** サンプルコード
+
+#+begin_src ruby
+class DirectedGraph
+  include TSort
+
+  attr_reader :size
+
+  def initialize(size)
+    @size = size
+    @edges = []
+  end
+
+  def add_edge(a, b)
+    @edges[a] ||= []
+    @edges[a] << b
+  end
+
+  def each_node(&block)
+    (1..size).each(&block)
+  end
+
+  def children(node)
+    @edges[node]
+  end
+
+  def input_ranks
+    Array.new(size + 1, 0).tap do |ranks|
+      ranks[0] = nil
+
+      each_node do |i|
+        children(i)&.each { |j| ranks[j] += 1 }
+      end
+    end
+  end
+
+  def tsort
+    stack = []
+    answer = []
+    ranks = input_ranks
+
+    ranks.each_with_index do |rank, i|
+      stack << i if rank == 0
+    end
+
+    while stack.size > 0
+      i = stack.pop
+      answer << i
+      children(i)&.each do |j|
+        ranks[j] -= 1
+
+        stack << j if ranks[j] == 0
+      end
+    end
+
+    answer
+  end
+end
+
+#+end_src
+
+*** 幅優先探索 Kahn (1962) のアルゴリズム
+
+性質
+
+- G のうち入力辺を持たない頂点 v が存在する
+- G から v を取り除いたグラフもまた DAG である
+
+トポロジカルソートのアルゴリズム
+
+1. G の各頂点に対して入次数を計算する。
+2. 入次数 = 0 の頂点集合を S とする
+3. S が空になるまで次を繰り返す
+   1. S から v を削除する
+   2. v をトポロジカル順序列 Ans に入れる
+   3. v と接続する辺 e=(v,v+) を削除する。このとき、接続先の頂点 v+ の入次数を -1 する
+   4. 接続先の頂点 v+ の入次数が 0 になったら S に v+ を加える
+
+こうしてできる列 Ans がトポロジカルソートされた頂点列 v となっている
+
+step1 で全ての辺を調べるので計算量 O(E)
+step3 で全ての頂点を調べるので計算量 O(V)
+足し合わせた O(E+V) が合計計算量
+*** 深さ優先探索 Tarjan (1976) のアルゴリズム
+
+元は強連結成分を見つけるのに使うアルゴリズムらしい。
+強連結成分とは、有向グラフにおいて、行き来可能な辺の集合のこと。
+
+1. G のすべての頂点 v に対して下記を実行する
+   visit(v)
+
+2. visit(v)
+   1. v が探索済みでないなら下記を行う
+   2. v と接続する辺 e = (v, v+) があるなら v+ に対して visit(v)
+   3. v を Ans の先頭に挿入
+
 * Greedy algorithm 貪欲法
 問題領域が広く、全探索で解決できない場合は問題領域を狭めて探索する必要がある。
 最小値や最大値の求める問題では、貪欲法が最適解を求めるのに役立つことがある。
@@ -426,7 +535,6 @@ find-any モードについては省略。
 テーブルの注目しているセル以前のテーブルセルから値をもらうのが「もらうDP」
 テーブルの注目しているセル以降のテーブルセルに値をセットするのが「配るDP」というらしい。
 
-
 ** サンプル1
 
 https://atcoder.jp/contests/tdpc/tasks/tdpc_contest
@@ -453,7 +561,7 @@ class TableInspector
 
     def header(table)
       width = table[0].size
-      str = row(0..width, 'i\j')
+      str = row(0...width, 'i\j')
       str << '-' * COLUMN_WIDTH << '-+-' << '-' * (COLUMN_WIDTH * 10)
       str << "\n"
     end
