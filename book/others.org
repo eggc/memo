@@ -1,4 +1,16 @@
 * その他のメモ
+** TODO 地図 API 関連
+
+[[https://wasabitaro.com/other/mapbox][mapboxを使って特定の町村を塗りつぶした地図をマッピング]]
+google マップよりも安く、多機能らしい。
+ただし店舗情報とかは google マップに負ける。
+こちらの記事も → [[https://blog.tagbangers.co.jp/ja/2020/08/26/getting-started-geojson-with-mapbox][Mapboxで始めるGeoJSON]]
+mapbox に依存しない方法 → [[https://qiita.com/Shogo_Hirasawa/items/2c219a13304580eb70b4][MapLibreとは]]
+国土地理院がgithubにいる → https://github.com/gsi-cyberjapan
+
+** TODO [[https://zenn.dev/stafes_blog/articles/7f08ad8c783371][最新の音声認識モデル『Whisper』を使ってみたよ]]
+
+学習モデルが large かつ騒音なしなら、かなり高精度で文字認識ができるらしい。
 
 ** TODO orval というコードジェネレータ
 

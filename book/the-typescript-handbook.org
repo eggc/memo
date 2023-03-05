@@ -438,3 +438,105 @@ null と undefined を区別したい時は ~===~ を使うようにすればい
 
 in 演算子も同じようにナローイングに使える。
 その他マニアックもいろいろ。元ドキュメントがかなり良いのでそれをみた方が良い。
+
+** More on Functions
+*** Function Type Expressions
+
+関数を受け取る時には関数にも型指定できる。このとき仮引数には名前が必要なので注意。
+#+begin_src typescript
+function greeter(fn: (a: string) => void) {
+  fn("Hello, World");
+}
+#+end_src
+
+*** Call Signatures
+
+関数がプロパティを持っている時には、call signatures を使う。
+#+begin_src typescript
+type DescribableFunction = {
+  description: string;
+  (someArg: number): boolean;
+};
+function doSomething(fn: DescribableFunction) {
+  console.log(fn.description + " returned " + fn(6));
+}
+#+end_src
+
+*** Construct Signatures
+
+コンストラクタの型を表現するには construct signatures を使う。
+#+begin_src typescript
+type SomeConstructor = {
+  new (s: string): SomeObject;
+};
+function fn(ctor: SomeConstructor) {
+  return new ctor("hello");
+}
+#+end_src
+
+*** Generic Functions
+
+引数の型によって、戻り値の型が変わるケースでは generics を使う。
+#+begin_src typescript
+function firstElement<Type>(arr: Type[]): Type | undefined {
+  return arr[0];
+}
+#+end_src
+関数のシグネチャにある <Type> が引数と戻り値に使われている Type を関連付けしている。
+firstElement を呼び出す時は <Type> がそのつど具体化される。
+
+**** Inference
+
+複数の generics を持つ事例
+#+begin_src typescript
+function map<Input, Output>(arr: Input[], func: (arg: Input) => Output): Output[] {
+  return arr.map(func);
+}
+#+end_src
+これは <Input> や <Output> の型が何かを明示しなくても map を呼び出すときには
+具体的なオブジェクトから <Input> や <Output> を型推論で決定し便利に使える。
+
+**** Constraints
+
+generics に制限を加える例。この例では戻り値は推論に任せている。
+#+begin_src typescript
+function longest<Type extends { length: number }>(a: Type, b: Type) {
+  return (a.length >= b.length) ? a : b
+}
+#+end_src
+
+**** Working with Constrained Values
+
+constraints が正しく動かない例
+#+begin_src typescript
+function minimumLength<Type extends { length: number }>(obj: Type, minimum: number): Type {
+  if (obj.length >= minimum) {
+    return obj;
+  } else {
+    return { length: minimum }; // ここでエラー
+  }
+}
+#+end_src
+obj と同じ型を返さないといけないので、else のケースは不適切。
+
+**** Specifying Type Arguments
+
+generic を使った関数呼び出しは、多くの場合は型推論によって動作する。
+しかしうまく動かない場合もある。そのような場合は明示的に generics type を指定する。
+#+begin_src typescript
+function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
+  return arr1.concat(arr2);
+}
+// generics type を型推で決定するとエラーとなる
+const arr = combine([1, 2, 3], ["hello"]);
+
+// 正常動作
+const arr = combine<string | number>([1, 2, 3], ["hello"]);
+#+end_src
+
+**** Guidelines for Writing Good Generic Functions
+
+generics を多用するとわかりにくくなるし、推論も失敗しやすくなるので注意。
+いくつかの指針を紹介する。
+
+Push Type Parameters Down:
