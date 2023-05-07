@@ -82,7 +82,7 @@ class UndirectedGraph
 
   def initialize(size)
     @size = size
-    @edges = []
+    @edges = Array.new(size + 1)
   end
 
   def add_edge(a, b)
@@ -104,6 +104,14 @@ class UndirectedGraph
 
   def each_node(&block)
     (1..size).each(&block)
+  end
+
+  def inspect
+    @edges.map.with_index do |nodes, i|
+      str = format('%2d', i)
+      str << ' => '
+      str << (nodes&.join(', ') || '')
+    end.join("\n")
   end
 end
 
@@ -791,3 +799,7 @@ BigDecimal(2).sqrt(32)       #=> 0.141421356237309504880168872420969807856967187
 #+begin_src ruby
 Math.cbrt(8) #=> 2.0
 #+end_src
+
+それ以上の累乗根は分数を使って計算する。5乗根なら下記。
+
+x ** (1.0/5.0)

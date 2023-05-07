@@ -28,7 +28,8 @@ brew "asdf"
 brew "gh"
 
 tap "homebrew/cask-fonts"
-cask "font-hack-nerd-font"
+# cask "font-hack-nerd-font"
+cask "font-hackgen-nerd"
 
 cask "google-chrome"
 cask "slack"
@@ -148,3 +149,21 @@ ln -s ~/private/dotemacs2/init.el ~/.emacs.d/init.el
 - M-x list-package から use-package をインストール
 - プライバシーとセキュリティ→フルディスクアクセス→ Emacs を許可
 - 再起動
+
+** rubocop
+
+~/.rubocop.yml に下記のファイルを作成
+
+#+begin_src yaml
+AllCops:
+  NewCops: disable
+
+Style/Documentation:
+  Enabled: false
+Style/NumericPredicate:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 15
+Naming/MethodParameterName:
+  Enabled: false
+#+end_src
