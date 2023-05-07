@@ -455,7 +455,7 @@ function greeter(fn: (a: string) => void) {
 #+begin_src typescript
 type DescribableFunction = {
   description: string;
-  (someArg: number): boolean;
+  (someArg: number) => boolean;
 };
 function doSomething(fn: DescribableFunction) {
   console.log(fn.description + " returned " + fn(6));
@@ -539,4 +539,42 @@ const arr = combine<string | number>([1, 2, 3], ["hello"]);
 generics を多用するとわかりにくくなるし、推論も失敗しやすくなるので注意。
 いくつかの指針を紹介する。
 
-Push Type Parameters Down:
+- Push Type Parameters Down: 配列だとわかっているなら generic をつけて配列にしよう。型情報を制限した方が、多くの情報がとれる。
+- Use Fewer Type Parameters: よみにくいのと型推論もしにくくなるから不要に generic を増やさないようにしよう。
+- Type Parameters Should Appear Twice: 2つのパラメータを結びつけるのに generic を使います。2回出現しないなら、generic を使う必要はないです。
+*** Optional Parameters
+
+function hoge(x?: string) {
+  ...
+}
+
+*** Function Overloads
+
+function makeDate(timestamp: number): Date;
+function makeDate(m: number, d: number, y: number): Date;
+function makeDate(mOrTimestamp: number, d?: number, y?: number): Date {
+  if (d !== undefined && y !== undefined) {
+    return new Date(y, mOrTimestamp, d);
+  } else {
+    return new Date(mOrTimestamp);
+  }
+}
+const d1 = makeDate(12345678);
+const d2 = makeDate(5, 5, 5);
+const d3 = makeDate(1, 3);
+
+普段使いはしなくてよさそう。
+
+*** Other Types to Know About
+
+- void: 何も返してないことを表す。何か返してもコンパイルエラーになるか、無視される。
+- object: Object の代わりに使うやつ
+- unknown: any の代わりに使うやつ、何かするとエラーになる
+- never: ありえない else とかで発生する
+- Function: 型を書くべきなので基本使わない
+
+*** Rest Parameters and Arguments
+
+*** Parameter Destructuring
+
+*** Assignability of Functions
