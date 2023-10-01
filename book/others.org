@@ -1,4 +1,40 @@
-* その他のメモ
+* おすすめされた本
+** TODO [[https://www.oreilly.co.jp/books/9784873118703/][O'Reilly Japan - データ指向アプリケーションデザイン]]
+** TODO [[https://www.alc.co.jp/entry/7022057][チームを動かすIT英語実践マニュアル - 株式会社アルク]]
+** TODO [[https://www.infoq.com/jp/minibooks/domain-driven-design-quickly/][Domain Driven Design（ドメイン駆動設計） Quickly 日本語版]]
+** TODO [[https://www.amazon.co.jp/dp/4862463878?ref_=cm_sw_r_cp_ud_dp_18S26WR28ACD1473RCAQ][インクルーシブHTML+CSS & JavaScript 多様なユーザーニーズに応えるフロントエンドデザインパターン | Heydon Pickering, 太田良典, 伊原力也, 株式会社Bスプラウト |本 | 通販 | Amazon]]
+** TODO [[https://www.amazon.co.jp/dp/B01N3CGZ7W?ref_=cm_sw_r_cp_ud_dp_KPPZ9HG0ZNWVEKEDHXRY][Amazon.co.jp: デザイニングWebアクセシビリティ: アクセシブルな設計やコンテンツ制作のアプローチ eBook : 太田良典, 伊原力也: Kindleストア]]
+** TODO [[https://www.amazon.co.jp/dp/B09LQNQ7CW?ref_=cm_sw_r_cp_ud_dp_6JRABK36NWBKKZSP2K8J][Amazon.co.jp: Every Layout eBook : ヘイドン・ピカリング, アンディ・ベル, 安田祐平, 横内宏樹: Kindleストア]]
+** TODO [[https://msakamaki.github.io/clean-code-typescript/][clean-code-typescript | TypeScriptの為のクリーンコード]]
+** TODO [[https://www.oreilly.co.jp/books/9784873119656/][O'Reilly Japan - Googleのソフトウェアエンジニアリング]]
+** TODO [[https://www.amazon.co.jp/dp/B0893RK6WC?ref_=cm_sw_r_cp_ud_dp_VF6VNCRWEEXF8ZHMBQMM][Amazon.co.jp: オブジェクト指向UIデザイン──使いやすいソフトウェアの原理 WEB+DB PRESS plus eBook : ソシオメディア株式会社, 上野 学, 藤井 幸多, 上野 学: Kindleストア]]
+** TODO [[https://www.oreilly.co.jp/books/9784873119038/][O'Reilly Japan - Real World HTTP 第2版]]
+** TODO [[https://www.amazon.co.jp/dp/B073GSDBGT?ref_=cm_sw_r_cp_ud_dp_FY3Q9ZCJRBNH0GY7195Q][現場で役立つシステム設計の原則 〜変更を楽で安全にするオブジェクト指向の実践技法 | 増田 亨 | コンピュータサイエンス | Kindleストア | Amazon]]
+** TODO [[https://www.amazon.co.jp/dp/B07HHT54YR?ref_=cm_sw_r_cp_ud_dp_X42B7AT46R16Z2R874K5][Amazon.co.jp: 体系的に学ぶ 安全なWebアプリケーションの作り方 第2版［リフロー版］　脆弱性が生まれる原理と対策の実践 eBook : 徳丸 浩: Kindleストア]]
+** TODO [[https://www.amazon.co.jp/gp/product/4297114623][パーフェクト Ruby on Rails 【増補改訂版】 (Perfect series) | すがわらまさのり, 前島真一, 橋立友宏, 五十嵐邦明, 後藤優一 |本 | 通販 | Amazon]]
+* 知識として知っといてもいいかなと思うやつ
+** DONE [[https://speakerdeck.com/lmi/productivity-con-link-and-motivation][なぜ Four Keys を改善するのか？/productivity-con-link-and-motivation - Speaker Deck]]
+
+内容としては、Four Keys は使い方によっては形骸化してしまうので
+なぜ Four Keys を使うのか考えてから SRE とかやっていくべきというもの。
+具体的でわかりやすかった。同様の罠に陥らないようにはしていきたい。
+** TODO [[https://speakerdeck.com/i35_267/the-metrics-key-connecting-product-system-team][The Metrics Key_ Connecting Product, System, Team - Speaker Deck]]
+** TODO [[https://speakerdeck.com/tanakayuki/huitiyatimuhua-henoqu-rizu-mito-sorewozhi-eruzu-zhi-manesimentoti-zhi][フィーチャーチーム化への取り組みと、それを支える組織マネジメント体制 - Speaker Deck]]
+** TODO [[https://speakerdeck.com/zigorou/zu-zhi-wosukerusaserutameno-four-keys-totimutoporozi][組織をスケールさせるための Four Keys とチームトポロジー - Speaker Deck]]
+** TODO [[https://dora.dev/][DORA | DevOps Research and Assessment]]
+** TODO [[https://github.blog/2021-05-25-octoverse-spotlight-good-day-project/][Octoverse Spotlight 2021: The Good Day Project—Personal analytics to make your work days better | The GitHub Blog]]
+** TODO [[https://qiita.com/hirokidaichi/items/53f0865398829bdebef1][開発生産性について議論する前に知っておきたいこと - Qiita]]
+** TODO [[https://site.developerproductivity.dev/productivity-consensus/][経営層に開発生産性向上へのコミットについて理解してもらうためには]]
+** TODO [[https://kuranuki.sonicgarden.jp/archives/33671][直感を超えたソフトウェア開発８つの常識と注意点 | Social Change!]]
+** TODO [[https://www.ryuzee.com/contents/blog/14581][【資料公開】目標設定の基本 | Ryuzee.com]]
+** TODO https://knowledge.sakura.ad.jp/3669/
+** TODO [[https://zenn.dev/apgun/articles/798661f7eb7c86][Sentryで始めるエラー監視]]
+** TODO [[https://styleguide.progeigo.org/][IT英語スタイルガイド | IT英語スタイルガイド]]
+これは役立ちそう
+** TODO [[https://zenn.dev/zenkigen/articles/2023-01-shimizu][30分で完全理解するTransformerの世界]]
+** TODO https://github.com/surrealdb/surrealdb
+** TODO https://github.com/JetBrains/JetBrainsMono
+** TODO [[https://engineering.linecorp.com/ja/blog/web-replace-demaecan][出前館Webリプレイスで直面した技術的課題と解決]]
 ** TODO 地図 API 関連
 
 [[https://wasabitaro.com/other/mapbox][mapboxを使って特定の町村を塗りつぶした地図をマッピング]]
@@ -7,26 +43,72 @@ google マップよりも安く、多機能らしい。
 こちらの記事も → [[https://blog.tagbangers.co.jp/ja/2020/08/26/getting-started-geojson-with-mapbox][Mapboxで始めるGeoJSON]]
 mapbox に依存しない方法 → [[https://qiita.com/Shogo_Hirasawa/items/2c219a13304580eb70b4][MapLibreとは]]
 国土地理院がgithubにいる → https://github.com/gsi-cyberjapan
-
 ** TODO [[https://zenn.dev/stafes_blog/articles/7f08ad8c783371][最新の音声認識モデル『Whisper』を使ってみたよ]]
 
 学習モデルが large かつ騒音なしなら、かなり高精度で文字認識ができるらしい。
-
 ** TODO orval というコードジェネレータ
 
 Open API の仕様を満たした YAML ファイルがあるとそれを使って、
 その API を利用するための型定義と、呼び出しのための関数を定義してくれる orval というのがある。
-
 ** TODO 最新の nextjs で turbopack + tRPC でアプリ作ってみたい
 ** TODO [[https://github.blog/jp/2023-02-15-copilot-for-business-is-now-available/][Copilot for Business の一般提供（GA）を開始]]
 
 > さらに、私たちの調査によると、GitHub Copilotを使用している開発者の90％がタスクをより早く完了し、73％が開発中のフロー状態の維持に役立ったと回答、精神的なエネルギーを節約できたことを報告しています。加えて、GitHub Copilotを利用する開発者の最大75％が、より満足度の高い仕事に集中できていると感じていることも明らかになっています。
 
 ここまで言われたらまぁ使ってみた方がいいかもなぁとは思う。
+** TODO [[https://scrapbox.io/inteltank/258%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC][258レビュー]]
+** DONE https://github.com/facebookarchive/codemod
 
+js を置換するためのツールらしい。AST を使うので、高度な置換ができる。
+リファクタリングに使えるけど置換のためのコードは使い捨てになる。
+そのためドキュメントとかもいまいちで使いにくいとのこと。
+今はアーカイブされてしまってるらしい。
+
+NextJS のアップデートするときに codemod を使ったコードが提供されてて
+自分で手作業せずに移行できるようになっているっぽい。
+
+* エッセイ的なもの
+** TODO https://shinyorke.hatenablog.com/entry/retro-spective-career-2023
+** TODO https://www.youtube.com/watch?v=nu15ZbCp_GA
+** TODO [[https://rogermartin.medium.com/what-makes-for-a-great-strategist-abf89e1408f2][What Makes for a Great Strategist?]]
 ** TODO [[https://arclamp.hatenablog.com/entry/2023/02/07/141927][アジャイルで「偉い人」はどう振る舞うべきか - arclamp]]
 ** TODO [[https://www.gartner.co.jp/ja/newsroom/press-releases/pr-20221101-techtrends][Gartner、2023年の戦略的テクノロジのトップ・トレンドを発表]]
 ** TODO [[https://qiita.com/tkyowa/items/ae9fa550237cb6f48318][[翻訳] Shopifyにおけるモジュラモノリスへの移行]]
+
+** TODO [[https://comemo.nikkei.com/n/nf3132b57539c][LLMがなぜ大事なのか?経営者の視点で考える波の待ち受け方｜福島良典 | LayerX]]
+
+** TODO [[https://xn--97-273ae6a4irb6e2hsoiozc2g4b8082p.com/%E3%82%A8%E3%83%83%E3%82%BB%E3%82%A4/%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%88%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%AE%E8%AA%98%E6%83%91%E3%81%AB%E8%B2%A0%E3%81%91%E3%81%AA%E3%81%84/][シングルトンパターンの誘惑に負けない | プログラマが知るべき97のこと]]
+** TODO [[https://workhappiness.co.jp/blog/trend/5_tuckmanmodel/][タックマンモデルとは？5つの段階と活用方法を紹介【ワークハピネス Style】人材育成・社員研修など組織開発コンサルティングの株式会社ワークハピネス]]
+
+** DONE [[https://mtx2s.hatenablog.com/entry/2023/04/26/230917][コード品質はやはりビジネスに影響を与える]]
+** DONE [[https://note.com/nnlifelog/n/n954e67d7fcad][「技術的問題」と「適応課題」をわけて考えないと組織を整えられないと感じている／Day-444｜野村尚史｜人事責任者の備忘録｜note]]
+
+これは最近感じている閉塞感につながっているのかも。
+解決困難な問題が目の前にあるけど打ち手が弱いという印象。
+
+** DONE [[https://onk.hatenablog.jp/entry/2023/03/10/045349][デュアルトラックアジャイルとの向き合い方。あるいはエンジニアとビジネスの距離感 - id:onk のはてなブログ]]
+エンジニアがビジネスのことももっと詳しくなって利益に貢献していこうって話のカウンター記事かな。
+まずはデリバリー、生産性を高くすることが本業で、どっちを向いてるかなんてそこまで気にしてる余裕はないよという感じ。
+デリバリーできないんじゃはなしにならんし、向いてる方向が間違っててもフィードバックはとれるからまずは作っていこうぜという感じかな。
+
+** DONE [[https://note.com/vaaaaanquish/n/n22d5e8b067d9][エンジニアとビジネスの距離感の難しさ]]
+
+エンジニアもビジネスのことに関心持っていこうねという話ではある。
+自分たちのケースも振り返ると、全然うまくできてないなぁという感じ。
+経営がうまく行ってないのにそれを隠されてしまったりとか。
+逆に、経営がうまく行っているけど、なぜうまく行っているのかさっぱりわからないとか。
+
+情報収集とか意見交換とかからやっていくしかないんだろうなぁという気がする。
+
+** DONE [[https://www.mhatta.org/wp/2023/01/03/edit-gmail-and-other-text-areas-with-emacs/][GmailなどのtextareaをEmacsで編集する]]
+
+- https://ghosttext.fregante.com/
+
+** DONE [[https://circleci.com/ja/blog/monorepo-dev-practices/][Monorepo開発のメリット vs デメリット | CircleCI]]
+
+リポジトリを分割することが必須ではないというのは理解できた。
+モジュールごとにビルドや単体テストを分けることができ、差分検出すれば不要なビルドを避けれる。
+ただオープンソース化することを考え出したらどうしても分けざるを得ない気はする。
 
 ** DONE [[http://chasen.org/~daiti-m/text/worse-is-better-ja.html][デザインの「悪い方がよい」原則 / The Rise of "Worse is Better"]]
 
