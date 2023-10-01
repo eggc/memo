@@ -1,0 +1,4019 @@
+* 基本
+
+- 形容詞は名詞を修飾する
+- 副詞は名詞以外を修飾する
+
+- 動名詞は動詞を変形させて名詞として働かせる
+- 分詞構文は動詞を変形させて副詞として働かせる
+
+- 感情系の動詞は日本語と考え方が全く逆
+- 物が主語になり目的語に人をとる
+- 人を主語にとる時は受動態になる
+
+* 音の話
+** be 動詞は聞こえない
+
+https://www.youtube.com/watch?v=2hSp8_y9Eyc
+https://www.youtube.com/watch?v=7uvWMgoeFLQ
+
+| 表記      | 読み方       |
+|-----------+--------------|
+| we're     | wer 短い     |
+| were      | wer ちょい長 |
+| you're    | yer(your)    |
+| ther're   | zer          |
+| there are | zer          |
+
+** will は本当にびっくりするくらい弱いし聞こえない
+
+https://www.youtube.com/watch?v=nA8XMtQvNUA
+
+ | I'll    | あぉ   |
+ | you'll  | ゆぉ   |
+ | we'll   | うぃぅ |
+ | he'll   | へぉ   |
+ | she'll  | しぉ   |
+ | they'll | でぉ   |
+
+後ろ半分消えてる感じ
+* 単語・熟語
+
+| 英語                         | 日本語                                                     |
+|------------------------------+------------------------------------------------------------|
+| care for A                   | A を気に入る。Aを気にする。                                |
+| the 比較級 SV, the 比較級 SV | 〜すればするほど〜だ                                       |
+| the sooner, the better       | 早ければ早いほどいい                                       |
+| the 比較級 of the two        | ２つのうち〜な方                                           |
+| the taller of the two        | 背の高い方                                                 |
+| the tallest of the three     | 一番背の高い人                                             |
+| no later than 〜             | 〜までに                                                   |
+| attribute 結果 to 原因       | 原因があって結果になった（attribute 自体の意味はほぼない） |
+
+* 不可算名詞
+
+1. 切り分けても使えるもの
+   water, coffee, bread, cake, chalk, land
+2. 見えないもの
+   work, news, advice, information, research, translation, traffic, humor, music, time
+3. ひとまとめ
+   buggage, luggage, furniture, equipment, fluit, food
+
+不可算名詞であえて量と表現したいときは下記のような表現を使う
+
+- some advice
+- much time
+- a cup of coffee
+- two cups of coffee
+- a piece of cake
+- two pieces of cake
+
+不可算名詞は単数扱いなので、動詞を伴うときは三単現のsがつくことがある
+
+The increased traffic causes a lot of delays around the city.
+
+time は可算名詞になることもある。
+
+- Do you remember the time when we went to an amusement park?
+- I’ve been to London three times.
+
+* 前置詞
+
+by A 近くを表すが「差」を表すこともある
+
+under A は A に覆われていて、支配を受けているイメージ。
+
+| under construction               | 工事中         |
+| under way.                       | 進行中         |
+| under repair.                    | 修理中         |
+| under stress.                    | ストレスの下で |
+| undert the influence (of alchol) | （酒に）酔って |
+
+despite A は A にも関わらず。
+
+* 副詞
+
+I live (here) は here を省略できる。こういった文法的に余分な単語を副詞という。
+副詞は名詞以外を修飾する。
+
+他動詞 ... 「何を？」を聴きたくなる動詞
+自動詞 ... それ以外の動詞
+
+しかし単純に分けられない。たとえば grow は他動詞/自動詞どちらにも使う。
+
+名詞に ly がつくと形容詞になる: friend -> friendly
+形容詞に ly がつくと副詞になる: happy -> happily
+
+* 細かいこと
+
+- 数を表す形容詞
+  - all は後ろに複数形がくる。
+  - each, every, either (3つのe)とは後ろに単数形がくる。これらは可算名詞と使う。
+- 冠詞は日本語では区別がつかないので下のように考えるとよい
+  - the ... 共通で認識できるもの
+  - a ... たくさんあるもののどれか
+- other 系の話
+  - other ... それ以外で、たくさんあるもの複数（形容詞として使う）
+  - others ... それ以外で、たくさんあるもの複数（代名詞として使う）
+  - another ... それ以外で、たくさんあるもののどれか
+  - the other ... それ以外で、1個に限定できるもの
+- 繰り返しを避けるとき
+  - it ... 同じものを指す
+  - one ... 同じ種類の違うものを指す
+    - He was tired of his job and decided to apply for ~one~ at another company.
+    - ここでは his job に応募したのではなくて、別の job に応募しているので one を使っている
+- 代動詞 ... 前に出てきた動詞を置き換える do のこと
+- 比較するときは同じもので比較する
+  - The subway system of London is older than that of New York.
+  - The climate of Tokyo is milder than that of Hokkaido.
+  - 省略はできない → the climate of Tokyo is milder than Hokkaido.
+  - The office has more plants than it did last year.
+- 代名詞になることのできる形容詞
+  - many(可算), most(不可算), all, none, both などは代名詞になれる
+  - almost, every, no は代名詞になれない
+  - many of the cats
+  - The grocery imports much of its seafood from Canada and Greenland.
+  - Most of the products are not only cheap but also handmade and durable.
+  - None of the attendees asked any questions.
+  - Both of the products are sold for the same price and have similar functions.(the products は2種類)
+  - Neither of the managers accepted the proposal. (the managers は2人)
+  - Some of the guests were willing to answer the customer satisfaction survey.
+- 名詞によくある語尾
+  - nation
+  - happyness
+  - acceptance
+  - policy
+  - improvement
+  - growth
+  - reality
+  - teacher
+- 形容詞によくある語尾
+  - 語尾 able は「可能」「受動」の意味を持っている
+  - A is respectable ... A は尊敬に値する
+  - A is respectful ... A は（誰かを）尊敬している
+  - A is enviable ... A は嫉妬されるほど優れている
+  - A is envious ... A は（誰かを）嫉妬している
+  - 形容詞でよく見られる語尾 tive, ful, ic, cial, ous
+
+* 基礎英文法講座
+** 例文で覚えていこう
+
+- We walk to the park.
+- We walk to the gim.
+- We walk to the station.
+- He walks to the gim.
+- We go to the musium.
+- I went to the bank.
+- I went to the station.
+- I visited the museum.
+- I visited the zoo.
+- He visits John.
+- Look at me.
+- I look at John.
+- I listened to John.
+- We discussed the matter. # matter ≒ problem
+- We discussed the schedule.
+- We discussed the plan.
+- We discussed John.
+- We discussed the matter with John.
+- We talked about John.
+- We talked about the matter.
+- We talked to John.
+- We talked to John about the matter.
+- We talked with John.
+- I approach John.
+- We approached the dog.
+- I reach the station.
+- She reaches the station.
+- I enter the room.
+- She enters the room.
+- I contact John.
+- She contacts the company.
+- I married Yoko.
+- John got married to Susan.
+- John is married to Susan.
+
+** 第3講
+
+- John talked to a doctor.
+- John talked with a doctor.
+- John talked about a doctor.
+- John went to a doctor.
+- John looked at a doctor.
+- John looked like a doctor. # like は前置詞
+- John became a doctor.
+- John became happy.
+- John is a doctor.
+- John is a tall boy.
+- John is tall.
+- We live in Tokyo.
+- We went to Tokyo.
+- We bought a car.
+- I love you
+
+** 第4講
+
+- John is smart.
+- John looks smart.
+- John looks happy.
+- John looks sad.
+- John looks crazy.
+- John looks like smart. # like は前置詞なので形容詞は文法的に誤り
+- John looks like a student.
+- John looks like a professor.
+- John looks like a nice guy.
+- John sounds smart.
+- John sounds happy.
+- John sounds sad.
+- John sounds like my father.
+- That sounds like a good idea. # よく使う表現
+- John appears smart. # looks と同じだけど固い表現
+- John appears sad.
+- John appears to be a manager. # looks like と同じだけど固い表現
+- John appears to be a nice guy
+- John appeared. # 出てきた
+- John show up. # 出てきた
+- His physical appearance. # 身体的な見た目
+- His sudden appearance.   # 突然の出現
+
+** 第5講
+
+- John stayed silent.                 # 静かなままだった
+- John and Ken remained silent.       # SVC 静かなままだった
+- John and Ken remained good friends. # SVO よき友人のままだった
+- John and Ken looked like good friends.
+- John and Ken sounded like good friends.
+- John and Ken became good friends.
+- The milk smells strange.
+- The milk tastes sour.
+- The milk tastes good.
+- Silk feels soft.
+- John got angry.
+- John got sad.
+- The leaves turned yellow.
+- Ken grew tall.
+- My dream came true.
+- The milk went sour.
+- Somthing go wrong.
+- John fell asleep.
+- John grow flowsers.
+- John grow vegetables.
+- John grow fulit.
+- John grow children. # は不可
+- John raise children.
+- John bring up children.
+- John grew up in Japan.
+
+** 第6講
+
+授与動詞が4文型になる
+give, offer, provide, lend, send, tell, teach
+
+- I can offer you everything.
+- I can give you everything.
+- I can say to you that I tried everything. # 長い目的語を後ろに持ってくるパターン
+- I saied everyting to you.
+- I can explain everything to you.
+- I'll give you everything.
+- I'll rend you my pen.
+- I'll send you a letter.
+- I'll tell you everything.
+- I'll teach you everything.
+- I'll get you some water.
+- I'll buy you everything.
+- I'll cook you something.
+- I'll find you a new house.
+
+** 第7講
+
+- I can lend everything to you.
+- I can tell everything to you.
+- I can send everything to you.
+- I can get everything for you.
+- I'll lend you my pen.
+- I'll lend my pen to you.
+- I'll tell you everything.
+- I'll tell everything to you.
+
+give, offer, lend, send, tell, teach # 1step で実行できることは to
+get, buy, cook, make, find # 2step 以上で実行できることは for
+
+
+- We rented a car. # お金を払って借りる
+- We rent out a room to Ken # お金を受け取って貸す
+- We borrowed the car.
+- We lease a car.
+- We lease out a room to Ken.
+
+** 第8講 第４文型 talk/speak/say/tell
+
+いったん訳のニュアンスは分けなくて良い。
+否定の助動詞は、強く読む。肯定の助動詞は弱い。
+
+- talk 助動詞を伴わないと表現力がない
+  - John talked to Susan about his secret.
+  - John talked with Susan about his secret.
+  - What are you talking about?
+  - I'll talk to you about the plan.
+  - I'll talk to you about the schedule.
+  - I'll talk to you about the problem.
+  - Let me talk with you about a problem.
+- tell 文型の自由度が高い
+  - John told Susan his secret.
+  - John told his secret to Susan.
+  - Tell the truth.
+  - He told us his adventure.
+  - He told his adventure to us.
+  - He told me about his name.
+  - He told me that he liked baseball.
+  - I'll tell you everything.
+  - I'll tell you about my dog.
+  - I'll tell you ~it~. # この位置に it を置くことは許されない
+  - I'll tell it to you.
+  - I'll give it to you.
+  - 「わかんない」の表現
+    - I can't ~tell~ John ~form~ Ken. # (双子とか) John と Ken を見分けられない
+    - I can't ~tell~ the difference.
+    - I can't ~tell~ whether Ken is right or not.
+- speak 自由度がない
+  - I'll speak to you about the plan.
+  - I'll speak to you about the schedule.
+  - I'll speak to you about the problem.
+  - I speak English.
+  - I speak Japanese.
+  - I speak German. # Germany = ドイツと注意
+  - I speak Italian. # Italy
+- say 人をとれない
+  - I said no to John.
+  - Please say hello to John.
+  - I said to John I'm not coming home.
+
+** 第9講 第５文型
+
+5文型をとるもの
+- C が名詞タイプ name, call
+- C が形容詞タイプ find, make, keep
+
+- Ken named his dog John.
+- Ken calls his dog John.
+- I named my cat Saburo.
+- Ken left the door closed.
+- Ken found the door closed.
+- Ken kept the door closed.
+- I found the story true.
+- The dog made us happy.
+- I kept the door open. # 意図的にそのままにする
+- I left the door open. # ほったらかしにする（任せる）
+
+open と close
+
+- The shop is open.
+- The shop is closed.
+
+** 第10講 第５文型まとめ・副詞
+
+- We arrived home early today. # この home は副詞！
+- We came home early.
+- We got home early.
+- We arrived in Tokyo.
+- We arrived in Japan.
+- We arrived at school early. # この school は無冠詞
+- We came to school early.
+- We got to school early.
+- We went home.
+- We went there. # これも副詞
+- We came here. # これも副詞
+- We went abroad.
+- We went overseas.
+- We went upstrairs. # 上の階へいく
+- We went downstrairs.
+- We went underground. # 地下に行く
+- We went downtown. # 繁華街
+- Ken me some food.
+
+- Ken got me some food. # SVOO
+- Ken got food ready.   # SVOC
+- We prepared some food for you. # prepare food は調理する
+- Ken got to the station.
+- Ken got angry.
+- Ken got some food.
+
+文型からなんとなく意味を察することができたるするので大事よ。
+go to school は不可算名詞だから冠詞つかない。go to bed とかもそう。
+それらはもとの意味は名詞なんだけど動詞的に扱われているらしい。
+勉強とか、眠るとかっていう意味合いで使うから不可算名詞になるとのこと。
+ちなみに学校の建物をイメージしているなら go to the school ということは普通にあるらしい。
+遠足とか何かしら行事とかあってるかもしれない場合は go to school になる。
+
+** 第11講 時制
+
+現在形は習慣（いつもやること）
+進行形は動作の途中
+
+- Ken plays soccer when he has time. # 接続詞は弱く読まれる！
+- Ken plays soccer every day. # every day. は発音は everyday と一緒。だけど everyday にすると形容詞になってしまうので書く時は every day と書く。
+- Ken plays soccer every Sunday.
+- Ken is playing soccer right now. # right now = 今 は本当によく使う表現
+- Ken is waring glasses. # メガネをかけてる状態
+- Ken is putting on glasses. # メガネをまさにかけようとしている途中
+- Ken is riding the bus. # バスに乗っている状態
+- Ken is getting on the bus. # バスに乗り込んでいる途中
+- Ken is getting on the ship.
+- Ken is getting on the train.
+- Ken is getting in the car.  # 車の時だけ in になるよ
+
+** 第12講 状態動詞と動作動詞
+
+進行形にできない動詞がある。それが状態動詞。
+はじめや終わりがはっきりしない動詞と考えるとよいらしい。
+
+始点? --------> 終点?
+
+| have, own, belong,     | 所有・所属の終わりはわからない           |
+| love, hate             | いつ好きになるか、嫌いになるかわからない |
+| know, remember, forget | しっているとか覚えるとかもわからない  |
+
+Ken is enjoying the story.
+I have a car.
+I own a car.
+I belong to the tennis club.
+I love Ken.
+I hate John.
+I know John.
+I remember John.
+I forget John's face.
+John is always forgetting. # いっつも忘れてる
+
+絶妙に進行形にできるという例外がたくさんある。
+
+I'm loving it. # 超好きみたいなニュアンス？ 基本的に言えない。
+I'm having fun.
+I'm having lunch.
+I'm looking at you.
+You look good.
+You're looking good. # 普段と違う格好をしていて良いねというニュアンス
+Ken is smelling the flowsers.
+The flowers semll good.
+Ken is tasting the wine.
+This wine tastes great.
+
+The tower stands at the top of the hill. # 建築物は「立つ」動作をしないから進行形にならない
+Ken is standing over there.
+
+** 第13講 進行形
+
+時の一点と進行形は相性がいい。
+
+--- 本を読む --|-- 本を読み終わる --->
+               ^
+               電話が鳴る
+
+- Ken was reading a book when his phone rang.
+- Ken was taking a bath when John came.
+- Ken will be traveling to Nara at this time tomorrow. # 未来の時点を表している（がこの表現は普通使わない）
+- Ken will be attending the meeting tomorrow. # 単に予定を表している
+- The library will be closing in ten minutes. # 10分で閉まるという予定を表している
+- Ken is attending the meeting tomorrow. # これも予定（もっとも使われやすい）
+- Ken is going to attend the meeting tomorrow. # これも予定
+- Ken is gonna attend the meeting tomorrow. # これでもいい
+- Ken is attending the meeting right now. # これは予定ではない
+
+
+attend は意識を伸ばすという語義
+xxxant は人
+
+- attend the meeting
+  - attendance # 出席、出席者数
+  - an attendee # 出席者
+- attend to a person # お世話をする ...
+  - an flight attendant # 添乗員
+  - attention # 注目
+
+** 第14講 完了形
+
+完了形は、今について説明するものなので、具体的な時間表現と併用できない
+have は助動詞
+
+- I've finished my homework.
+- I've alreday finished my homework.
+- I've just finished my homework.
+- I finisihed my homework yesterday.
+- I finisihed my homework 1 minute ago.
+- I finisihed my homework last week.
+- I have a lot of homework.
+- I've already bought a pen.
+- I've already eaten dinner.
+- Have you finished your homework yet?
+- Have you eaten dinner yet?
+- Did you eat yet?
+- I haven't finished my homework yet.
+- I haven't eaten my dinner yet.
+-
+
+work は「仕事」というとき、不可算名詞になる。 homework も同じ。
+work は「作品」というとき、加算名詞になる。
+work assignment で加算名詞になる。
+
+** 第15講 完了形2 経験用法
+
+すごいよく使う表現。現在に焦点があたってる。
+once, twice, times, ever, never がよく出てくる
+
+- I have been to Nara twice.
+- Have you ever been to nara?
+- I have never been to nara.
+- I haven't been to nara.
+
+** 第16講 完了形3 継続用法
+
+- since は起点
+- for は期間
+
+- I've known John ~since 2010~.
+- I've been in Tokyo ~since 2010~. # 発音が難しい アイヴビニン tokyo
+- I've known John ~for five years~. # 5年という期間
+- How long have you been in Tokyo?
+
+** 第19講
+
+last year と yesterday は副詞なので前置詞いらない。
+受動態は誰がやったかわからない時や、誰がやったか自明のときに使われる。
+受動態では、目的語が消える（もしくは副詞節になる）
+
+語末のeは発音しない。サイレントe。cake
+母音の音が長い音に変わる（二重母音）という不思議なことが起こる。
+at → ate
+mad → made
+bit → bite
+cut → cute
+pet → Pete (ピート：人の名前)
+hop → hope
+can → cane (ケイン：杖)
+
+** 第21講 受動態
+
+自動詞は受動態にできないので was risen はありえない。
+
+- Ken was born and raised in San Diego.
+- The sun rises in the east. # いつも変わらないことなので現在形
+- The sun rose two hours ago.
+- The sun has already risen.
+- Raise your hand.
+- Ken raised his hand.
+- Ken is raising two kids.
+- We raised a lot of money.
+** 第22講 受動態
+
+自動詞 speak は単体で受動態にできないので to が必要！
+すべての自動詞がそう言う振る舞いをするわけではないので例外として覚えとこう
+
+- A stranger spoke to Ken.
+- Ken was spoken to by a stranger.
+- Everyone looks up to Ken # everyone は単数扱い
+- Ken is looked up to by everyone.
+
+- laugh at
+- look at
+- look up to = respect
+- look down on
+- look after
+- take care of
+
+- John was laughed at by everyone.
+- Everyone laughed at John.
+- John was looked at by everyone.
+- Everyone looked at John.
+- John was looked down on by everyone.
+- Everyone looked down on John.
+- I was looked after by my grandmother.
+- my grandmother looked after me.
+- i was taken care of by my grandmother.
+- my grandmother took care of me.
+
+** 第23講 不定詞
+
+Johns dream is a dream. は SVC の文章だが S = C が微妙に成り立ってないのでおかしい。
+Johns dream is to be a doctor. は S = C が成り立つので正しい。 to be a doctor は名詞句。
+Johns dream is to be a lawer.
+John wants to be a doctor. これは SVO の O が名詞句になってる。
+John wants to go to Canada. 同じ。
+To eat breakfast is good. は、文法上は正しいことになっているが、自然だとは感じられない。
+it is good to eat breakfast. なら正しい。
+it is good to exrcise.
+it is good for you to eat breakfast は you が意味上の主語
+
+** 第24講 不定詞
+
+名詞用法の意味上の主語に for を使うのか of を使うのかという問題
+it is を you are に置き換えた時に S V C が成り立つ時には of を使う
+
+
+- it is very kind of you to help me.
+- it is very kind of you to say that.
+- it is very sweet of you to come here.
+- it is very kind of you.
+- thank you for helping me.
+- You are very kind to come here.
+- its nice of you to come here. = you are nice to come here.
+- its stupid of you to come here. = you are stupid to come here.
+- its wise of you to enter the tokyo university.
+- its clever of you to come here.
+- its rude of you to say such a thing.
+- its careless of you to say such a thing.
+
+まとめ
+
+- it's careless of you to say such a thing = 君がそんなこと言うなんてうかつだな
+- it's important for you to study English  = 君が英語を勉強するのは大事です
+
+it is ... of/for ... の使い分けがいる。これは下記のようにして判断できる。
+
+- you are careless to say such a thing と言い換えできる you = careless なので of
+- you are important to study English と言い換えられない you = important ではないので for
+
+文法問題を解く時はこうするけど日常では文法考えずにパターンで覚えるのでいい
+
+** 第25講 不定詞(形容詞・副詞的な用法)
+
+動詞っぽいけど別の品詞としてはたらくものを準動詞という。
+形容詞の用法例。to xxx は二語以上なので形容詞だけど後ろから修飾している。
+
+- Ken does not have anything to buy. = 買うものが何にもない(not ... any で全否定)
+- I have so many things to do. = たくさんやることがある
+- I have time to see John. = ジョンに会う時間はある
+- I dont have time to go home.  = 帰る時間がない
+
+副詞
+
+- Ken went to London to see John.
+- To see John, Ken went to London. # カンマおかなくてもOK、むしろ置かない派の人もいる。
+- Ken went to London in order to see John. # 「〜のために」という意味は変わらないけど固い表現になる。
+- Ken went to London so as to see John. # 上と同じだけどさらに固い表現
+
+不定詞の目的語が消えてなくなって前にかかっていることが多い。でも目的語あることも当然ある。
+- order
+  - 整理整頓
+    - 順調
+      - 準備しておく
+    - 順序 alphabetical order
+    - 序列
+      - 秩序
+        - 制度
+      - 上下関係
+        - 命令
+        - 注文
+
+** 第26講 不定詞(副詞的な用法)
+
+過去分詞が準動詞になっている時は目的語を取れないので注意。
+不定詞なら目的語をとれる。
+以下は不定詞で、感情の原因を説明する。
+
+Susan was happy to meet Ken.
+I'm happy to meet you.
+I'm glad to meet you.
+I'm pleased to meet you.
+I was surprised to see Ken.
+I was excited to see Ken.
+
+結果の不定詞もある。
+
+John arrived at the store only to find it closed. # only to ... は 😢 なときにしか使わない
+
+発音
+- see はスィ
+- she はシュ
+- She sits and sees the sea. は最初の she だけシュで他はスーでいい
+
+** 第27講 不定詞 too ... to
+
+too が入ることで否定的な意味になる。
+主語にいるから to 不定詞の目的語は消えてなくなる。
+接続詞を使う場合は buy の目的語を省略できない。
+主語にいない to 不定詞の目的語はしっかり残る。
+
+the house is so expensive that we cannot buy it.
+John is too young to drive a car.
+The house is too expensive to buy.
+
+pens ... 吊るす
+depend ... 下に吊るす→依存している
+pendulum ... 振り子
+expensive ... 秤に測って外に出す -> 高価な
+expenditure ... お金を出す
+expend -> spend ... 費やす
+expsense ... 費用
+
+** 第28講 不定詞 enough
+
+John is tall enough to ride the ride.
+Ken ran fast enough to catch the thief.
+John was clever enough to ask that important question. # よく使う表現
+John was so clever as to ask that important question. # 上と同じ意味だけど固い so that より固い
+
+** 第29講 不定詞 tough 構文
+
+副詞的な用法。目的語がいないやつ。
+
+- John is difficult to please.
+- John is hard to talk to.
+- John is tough to talk to.
+- Ken is easy to please.
+
+easy の例文
+
+- You can go to the hotel more easily on foot.
+
+** 第30講 不定詞と動名詞 decide/stop/avoid/...
+
+結局覚えるしかないんや…
+
+不定詞を後ろにとる動詞は want, hope, decide, promise, plan
+これからやること（まだしてないこと）
+
+Ken has decided to quit playing soccer.
+I want to get into Waseda.
+I hope to get into Waseda.
+I've promised to get a job.
+I've decided to get a job.
+I'm planning to get a job.
+
+動名詞をとる動詞は quit give up finish stop
+してしまったこと（すでにしていること）
+
+I quit playing soccer # quit は過去形も quit なので注意
+I gave up playing soccer
+I've finished eating lunch
+I stopped complaining
+
+やめる動詞・延期する動詞 postpone / put off / delay も動名詞を使う
+
+We postponed holding the meeting.
+We pull off holding the meeting.
+We delayed holding the meeting.
+
+さける動詞 avoid / escape / miss / deny / admit
+
+I avoided talking to John.
+I missed taking my medicin.
+I denied cheating on the test.
+I admitted cheating on the test.
+
+enjoy practice
+
+I enjoy plaing golf.
+I practice using the machine.
+
+頭に思い浮かべている系動詞
+
+I'm considering leaving my job.
+Do you mind opening the window?
+I imagined winning the lottery. # 宝くじ
+I suggested buying new car.
+
+メガフェプスダという語呂合わせがあるけど I made PCs がおすすめらしい
+
+** 第31講 不定詞と動名詞 mind
+
+Ken decided to go to the doctor.
+Ken considered going to the doctor. # 考慮する(思い浮かべている)
+Ken missed going to the doctor.
+Ken avoided going to the doctor.
+
+塊の中では動詞だけど全体では名詞として働く
+主語の場合は場所が変わる。
+
+Playing the piano is fun.
+Its fun to play the piano.
+
+補語の場合はほとんど同じ。
+
+My hobby is playing the piano. # 現在進行形ではない SVC なので注意
+My hobby is to play the piano
+
+動名詞は前置詞とくっつくことができる。しかし不定詞はくっつかない。
+
+By working part-time, Ken earned a lot of money.
+
+Would you mind me opening the window? # 意味上の主語 me が出てきて私が窓を開けてもいいですか？
+Would you mind my opening the window? # 厳格な文法上は my だけど、一般には me で言われる
+Would you mind if I open the window?
+
+意味上の主語が書かれてない場合は、主文の主語が使われる。
+
+Would you mind opening the window? # 窓を開けてもらえません？
+Would you mind me using your phone. # 電話使ってもいいですか？（貸してもらえませんか？）
+
+mind は「気にさわる」なので
+
+Yes. だと「😵 開けないで」という意味になる。
+No. だと「😊 開けていいよ」という意味になる。
+
+実際断るときは
+😵 actually, its a bit cold.
+😊 No, go ahead  # どうぞ
+😊 No, not at all # 気にしないよ
+
+** 第32講 不定詞と動名詞 used to do / be used to doing
+
+to は未来志向なので注意しよう
+
+- Don't forget to visit John tomorrow  # 明日 John に訪ねるのを忘れないようにしてね
+- Remember to visit John tomorrow
+- I forgot to visit John # John に会いに行くことをわすれてた
+- I forgot visiting John # John に会ったことをわすれた
+- I remembered to visit John
+- I remembered visiting John
+
+ややこしい
+
+- Ken is used to living in Japan # 日本に住むのに慣れている
+- Ken used to live in Japan # かつて日本に住んでいた
+
+to を前置詞として伴う動詞たち。
+
+| 例文                      | 意味                               |
+|---------------------------+------------------------------------|
+| I'm used to it            | 慣れる                             |
+| I've got used to it       | 慣れた                             |
+| I'm accustomed to it      | 慣れる                             |
+| I've got accustomed to it | 慣れた                             |
+| I'm looking forward to it | 楽しみにしてる                     |
+| I objected to it          | 反対してる                         |
+| What do you say to that.  | それ何て思う？（カジュアルな表現） |
+
+この例文の中の it は全部 living in Japan みたいな動名詞に置き換えられる
+
+I am used to it の文法的解釈は 主語 + be動詞 + 形容詞 used + 前置詞 to + 名詞 it
+
+I used to 動詞 は不定詞というよりも 主語 + 助動詞 + 動詞原型 という感じ。
+なので意味は昔はよく xxxx していた。みたいな表現になる。
+
+** 第33講 分詞
+
+動詞が、形容詞的に働く。
+分詞は英語で participle という。
+動詞の役割も持つけど形容詞の働きも分け与えられてるというニュアンス。
+
+- John welcomed the arriving guests.
+
+形容詞が就職するとき、そこには主述の関係が成り立つ。
+pretty girls => girls are pritty
+
+an arriving guest => guest is arriving # 能動的な関係
+a broken window => a window was broken # 受動的な関係
+
+節が長くなると後ろから前に修飾する。
+
+John welcomed the guests arriving at the wedding.
+Ken fixed the window broken by John.
+I saw some sliming people
+There were many people smiling at the baby.
+Jane sent a written message.
+Jane got a message written by Ken.
+
+- message の mes は送る
+- mission は、送られること（使命）
+- missionary は、使節団
+- emission 外に送る = 排出ガスの排出
+  - emit 発する
+  - admit おくられたものを認める
+  - permit おくられたものを許可する
+
+** 第34講 分詞 surprise/interest/tire/annoy
+
+下記の文 surprised は形容詞として働く surprise の過去分詞。
+
+Ken was surprised at the results.
+
+The results surprised Ken.
+Ken was surprised at the results.
+
+感情「驚く」は一人ではできないから、驚かせる原因がある。
+なので surprise は「驚かせる」という動詞になっている。
+
+The results were surprising.
+The baseball game was very exciting.
+The game excited Ken.
+Ken was excited by the game.
+
+その他の感情動詞
+surprise, amaze, interest, excite, tire, exhaust, annoy, irritate, thrill
+
+thrill はゾクゾク、ワクワクするというプラスの意味
+scare は怖いというマイナスの意味
+
+I was interested in the TV show.
+The TV show was interesting.
+I was tired from the meeting. # つかれちゃった
+I was tired of the meeting. # うんざり
+the meeting was tiring.
+I was annoyed by the weather. # いらいらさせられる
+The weather was annoying
+
+感情の動詞は日本語の感覚からすると自動詞なんだけど、
+英語では他動詞になっている。
+
+主語 = 感情の原因
+目的語 = 人
+
+例:
+
+The dog surprised me. # 犬にびっくりした
+I surprised the dog. # 私が犬をびっくりさせた
+
+John was annoyed  # ジョンはイライラしている
+John was annoying # ジョンはイライラさせる原因になっている（ジョンはうざい）
+Ken was amazed  # けんは驚いた
+Ken was amazing # けんはすごい
+
+** 第35講 分詞構文
+
+Entering the room, I saw John.
+
+副詞節 = Entering the room
+主節 = I saw John
+
+副詞節の中では Entering が動詞、 the room が目的語になっている。
+もし Entered みたいに過去分詞にすると the room を取らなくなる。
+固い表現で小説のようになり口語では利用しない。
+意味上の主語は、主節の主語と一致しているので注意。
+
+意味は「時」だったり「理由」だったりもするのであまり訳を考えず読んでいい。
+
+Seeing John, I became happy.
+
+Seen from the sky, the island looks like a dog.
+
+意味上の主語を一致させるためには Seeing は使えない。
+また、目的語がないので To see も使えない。
+よって過去分詞 Seen になる。
+
+# ニュージーランドはラグビーが人気
+Born in New Zealand, Ken is a great rubgy player.
+
+being xxx の分詞構文は being を省略して、形容詞だけポンとおいてあるケースもある。
+
+Unable to speak English, John was at a loss.
+
+- isle # 小島。発音はアイル
+- island # 島
+- isolate # 切り離す。隔離。
+- insulate # 絶縁する。防音・防熱する。
+- insulation # 絶縁体。防音・防熱の仕切り。
+
+** 第36講 分詞構文 否定系・過去完了の分詞構文
+
+準動詞は接続詞なしで置くことができる。
+意味上の主語が一致していることに注意してみよう。
+否定語の not は ing の前に置かないといけない。
+Not knowing what to do, Ken went home # home は副詞だよ
+→ （どこかに行ってみたが）何をするのかわからなくて、けんは家に帰った
+
+Not looking carefully, Ken got hit by a car.
+→ 注意してなくて、けんは車にぶつかった
+
+分詞構文は、現在完了型をとることもできる。
+とりあえず、主節より前の時間を取りたい時に完了型にするということにしていい。
+Having finished his work, Ken went home
+→ 仕事が終わって、けんは家に帰った
+
+Having eaten too much, Ken got a stomachache.
+→ 食べすぎたから、けんはお腹が痛くなった
+
+ache は可算名詞なことが多い
+pain は不可算名詞なことが多い
+
+stomachache はアメリカでは可算名詞になるが、イギリス英語では不可算名詞。
+headache はどちらも可算名詞になる。
+toothache 2本以上の歯痛でも同じ。
+
+まとめると ache は可算名詞だということでOK。
+
+** 第37講 分詞構文 過去完了の否定系の分詞構文
+
+~Not having finished~ his work, Ken stayed at his office.
+
+I havent finished my homework みたいなのが普通だけど
+分詞構文では not having になるのだ。否定語は分詞構文の直前におく。
+
+~Not having brought~ his wallet, Ken couldn't buy a drink.
+
+| 日本 | アメリカ | イギリス        |
+|------+----------+-----------------|
+| 紙幣 | bill     | note(bank note) |
+| 会計 | check    | bill            |
+
+wallet → 財布
+purse → 手提げ鞄・古銭入れ
+
+ドルは頭につく $10
+セントは後ろにつく 10¢
+
+| 呼び方  | 金額 |
+|---------+------|
+| penny   | 1¢   |
+| nickel  | 5¢   |
+| dime    | 10¢  |
+| quarter | 25¢  |
+| buck    | $1   |
+
+** 第38講 独立分詞構文
+
+主節の主語と、従属節の主語が一致しない特例がある。
+
+# 天候から判断すると、試合は中止されるだろう
+Judging from the weather, the game might be canceled.
+Judging by the weather, the game might be canceled.
+
+こういうのを「独立分詞構文」という。
+話し手が従属節の主語になる。他の例も見ていこう。
+
+# はっきり言って、仕事やめた方がいいぞ
+Flankly speaking, you should quit your job.
+Speaking of john, I heard he got married last month.
+Considering the weather, the game might be canceled.
+
+これはもう considering という前置詞だと考えるほうが筋が通りやすい。
+明治的に従属節の主語が書いてあるケースの独立分詞構文もある。
+
+Weather permitting, the game will be held.
+
+付帯状況の with というのがある。
+
+# けんは腕を組んだまま座っていた
+Ken was sitting with his arms crossed.
+Ken was sitting with his arms folded.
+Ken was sitting with his legs crossed.
+Ken was sitting with his eyes closed.
+
+これもある種の独立分詞構文と考えることもできる。
+his arm が従属節の主語で、crossed が述語。
+
+frank はネガティブな意味で言う。
+# はっきり言って、ジョンは嫌い ☹️
+Flankly speaking, I don't like John.
+To be frank with you, I dont like John.
+
+** 第39講 使役動詞 make/have/let
+
+make は SVOC の形を取ることができる。
+そして C には動詞原型が入ることもある。
+このときの O は主語で C は述語として振る舞う。
+
+# けんは（やや強引に）息子を家に止まらせた
+Ken made his son stay home.
+
+# けんは息子に警察へ電話させた
+Ken had his son call the police.
+
+# けんは息子に海外留学をさせてあげた
+Ken let his son study abroad in Japan.
+
+# police はこれ自体が複数の意味を持つ不可算名詞なのだ…。
+# 一人の警察官には police は使えない。
+There are many police here.
+There are many police officers here.
+There is a police officer here.
+
+
+road [ou]
+broad [a:]
+abroad [a:]
+broaden [a:]
+broadcast [a:]
+
+** 第40講 SVO to do
+
+使役動詞では SVO + 動詞原型だった。
+しかし SVO + to 不定詞をとる動詞もある。
+
+# けんは、息子にけんを手伝わせた
+Ken got his son to help him.
+
+# 来て欲しかった
+I wanted Ken to come.
+
+# 来なさいと話した
+I told Ken to come.
+
+# 来てよと頼んだ
+I asked Ken to come.
+
+# 強引に来させた
+I got Ken to come.
+
+# 力でさせる
+I forced Ken to come.
+
+# 求める
+I required Ken to come.
+
+# お願いする
+I requested Ken to come.
+
+# 忠告する（動詞の advise は語尾が「アドバイズ」で濁るので注意）
+I advised Ken to come.
+
+# 勇気を与える
+I encouraged Ken to come.
+
+His parents permitted Ken to study abroad
+
+# allow は「アラウ」と読む
+His parents allowed Ken to study abroad.
+
+His salary enabled Ken to buy a car.
+His salary allowed Ken to buy a car.
+
+# 勇気を引き剥がす
+Ken discouraged John from quitting his job.
+
+The weather prevented the boys from playing soccer.
+
+The teacher stopped the students from talking.
+
+The rule kept the kids from going out after 8 p.m.
+
+the law bans people from entering the country.
+
+# 禁止 litter はゴミを捨てること
+the law prohibit people from littering.
+
+# おそれ、抑止
+the law deterred people from driving too fast.
+
+** 第41講 受け身の have
+
+使役動詞の動詞部分には原型じゃなくて過去分詞（受動態）を置くこともできる。
+
+# Jane は車を修理してもらった
+Jane had her car fixed.
+Jane got her car fixed.
+
+Jane had John fix her car.
+Jane get John to fix her car.
+Jane made John fix her car.
+
+しかし同じ文型なのに解釈が違うこともあるので注意。
+
+# John は車を盗まれてしまった（被害をうけとるhave）
+John had his car stolen.
+
+# need は to ... 受動態の他に動名詞を目的語にとれる
+# need ... ing は意味上の目的語が主語と一致する
+The machine needs to be fixed.
+The machine need fixing.
+London is worth visiting.
+
+** 第42講 SVOC の make
+
+目的語だけど主語と同じにしたいときは再帰代名詞を使う。
+そして make の特殊な事例。
+
+# Ken は自分の言っていることを英語で理解してもらった
+Ken made himself understood in English.
+--- ---- ------- ---------------------
+ S   V     O(主)  →     C(述)
+
+OC の部分をわかりやすくすると
+
+受動態になっているから真の主語は誰だかわからない。
+??? is understanding Ken's words in English.
+
+# Ken は自分の言っていることを試合で聞いてもらった
+Ken made himself heard at the game.
+
+???? is hearing Ken's words at the game.
+
+** 第43講 知覚動詞
+
+使役動詞ではないのに目的語＋動詞原型を取ることがある。
+それが知覚動詞。
+
+# Ken は Jane が通りを渡っているところを見た
+Ken saw Jane cross the street.
+--- --- ---- ----------------
+ S   V    O     C
+
+動詞の原型だけじゃなくて現在分詞もとることができる。
+
+# Ken は Jane が通りを渡っているところを見た
+Ken saw Jane crossing the street.
+
+意味的な違いはほぼないから和訳する時は使い分ける必要なし。
+
+Ken heard Jane sing.
+Ken heard Jane singing.
+
+実は過去分詞もおくことができる。これは受動態のように訳すれば良い。
+
+# Ken は（誰かに）名前が呼ばれるのを聞いた
+Ken heard his name called
+
+発音
+sing は鋭いス
+thing は柔らかいス
+
+** 第44講 使役動詞、知覚動詞の受動態（マニアックな知識）
+
+# ken は家を離れるのが見られた
+Ken was seen to leave the house.
+--- -------- ------------------
+ S     V             C
+
+これは受動態なので元に戻すと下記になる。
+知覚動詞 + 動詞原型のスタイル。
+
+They saw Ken leave the house.
+
+受動態のときはなぜか to leave になっている。
+これは特別なルールで本当に紛らわしい。
+
+They saw Ken leaving the house.
+
+なら下記のように to はつかなくなる。
+
+Ken was seen leaving the house.
+
+これはもうそういう物だと割り切るしかない…。
+
+Ken was heard to complain.
+Ken was heard complaining.
+Ken was made to clean his room.
+
+不定詞の副詞用法ではないことに注意
+
+Let the reason be known to the group.
+
+Let は原型しかおけないので、受け身系にするには be をつけないといけない。
+
+Let it be
+Let it go
+
+とかを思い出そう。
+
+** 第45講 関係代名詞
+
+Ken interviewed people who were interested in the job.
+--- ----------- ------ -------------------------------
+ S       V         O       これは形容詞として働く
+
+O が先行詞になっている。上の例文では who が主語なので主格。
+関係代名詞を置くと、新たに動詞をおける。
+
+The mountain which I cilmbed last year was Mt. Fuji.
+------------ ------------------------- --- ---------
+    S             形容詞として働く      V      C
+
+形容詞節には climbed 目的語がなくなっている。
+しかし which が目的語として働いている。これを目的格という。
+目的格は省略することができる。
+
+The mountain I cilmbed last year was Mt. Fuji.
+
+Ken saw a girl whose name was Susan.
+--- --- ------ --------------------
+S    V    O          形容詞
+
+形容詞節は主語、動詞、目的語を持っている。
+実は冠詞が足りていない。whose がその代わりに働いている。こういうのを所有格という。
+
+** 第46講 関係代名詞2
+
+先行詞が人じゃなくても whose は使える。
+
+John is from a country whose officieal language is Spanish.
+
+先行詞と関係代名詞は離れていることもある。こういうのを要素の分離という。
+
+There are many students in my class who want to study Spanish.
+----- --- -------------             --- -------------
+       V    S                        S    V
+
+そして、先行詞の後の動詞は students の複数形にかかっているので動詞原型になってる。
+こういうのは主述の一致という。関係代名詞の中でもそういうのがあるという注意。
+
+目的格の whom は滅多に使わない。who でもいいし、省略してもいい。
+
+There are many students in my class whom I do not know.
+There are many students in my class who I do not know.
+There are many students in my class I do not know.
+
+** 第47講 関係代名詞3 what
+
+What I like about Ken is his voice.
+---- - ---- --------- -- ---------
+ O'  S' V'             V    C
+
+like の目的語がなくなっているのは what が補っているから。
+普通の関係代名詞がつくる句は形容詞句だった。
+しかし What がつくる句は名詞句なのだ。
+What は先行詞を持たない。
+
+# ジョンは前の彼と違う
+John is different from what he was.
+---- -- --------- ---- -----------
+            C           C'  S'  V'
+
+上の例も、what が名詞句を作っている。補語になっている。
+
+I don't know what Ken likes.
+             --------------
+                   O'
+
+The world isn't what it was.
+                -----------
+                   C'
+
+こんな感じで what はいろんな使い道がある。
+一貫しているのは、名詞句を作るというところ。
+
+** 第48講 関係代名詞4 where
+
+Japan was the country which I visited two years ago.
+----- --- ----------- -----------------------------
+                        O'  S'  V'
+
+塊は形容詞として働く。
+
+Japan was the country where I went two years ago.
+                      --------------------------
+                            S' V'
+
+この塊は副詞として働く。なぜなら、went は自動詞で目的語を取らない。
+上の例文は言い換えることができる。
+
+Japan was the country which I went to two years ago.
+                      -----------------------------
+                        O'  S' V'
+
+関係副詞の従属節は完全な文になっている。
+
+Japan is the country where I live.
+Japan is the country which I live in.
+Japan is the country in which I live.
+
+I live in Japan      # 長く住んでるイメージ
+I'm living in Japan  # 短期間住んでるイメージ
+
+** 第49講 関係代名詞5
+
+関係副詞の例は下記の通り。
+
+# 地球温暖化が解決されるときがくるかもしれない
+The time might come when global warnming can be solved.
+-------- ----------      --------------- -------------
+  S          V                 S'            V'
+
+従属節に欠けている主語・目的語がないことに注目。
+先行詞は time。先行詞と従属節が離れているのは、
+修飾する文章を後ろに持ってくるという性質があるため。
+
+I do not know the reason why John was late for school.
+- ----------- ----------     ---- --- ---------------
+S    V             O          S'   V'    C'
+
+reason や why のどちらか一方は省略してもいい。
+
+I do not know why John was late for school.
+I do not know the reson John was late for school.
+
+reason が先行詞だからといって常に関係副詞を使うとは限らない。
+
+# ジョンが私に与えた理由は、疑わしいものだった
+The reason which John gave me was suspicious
+---------- ----- ---- ---- -- --- ----------
+    S       O2'    S'   V' O1' V    C
+
+# ケンは来るんじゃね
+I suspect Ken will come.
+I guess Ken will come.
+I bilieve Ken will come.
+
+# ケンは来ねぇだろう
+I doubt Ken will come.
+I don't bilieve Ken will come.
+
+# ウォーで読む単語
+- war
+- warm
+- reward
+
+** 第50講 関係代名詞6
+
+I do not know how John finished the task
+- ----------- --- ---- -------- --------
+S       V      O   S'     V'      O'
+
+上の文では、従属文は主語・述語・目的語全て備わっているので how が使える。
+他の疑問代名詞を使う場合は主語・述語・目的語のどれかを欠いている（疑問詞がそこに入る）。
+
+I do not know who finished the task
+              --- -------- --------
+               S'    V'       O'
+
+I do not know which I choose.
+              ----- - ------
+               O'   S'  V'
+
+I do not know what Ken ate.
+              ---- --- ---
+               O'   S'  V'
+
+疑問副詞のパターン
+
+I do not know where Ken went.
+              ----  --- ----
+               O'    S'  V'
+
+I do not know when Ken finished the task.
+                   --- -------- --------
+
+how は先行詞を持たない。そして従属節では副詞、全体では名詞として働く。
+what も同じく先行詞を持たない。そして従属節では名詞、全体でも名詞として働く。
+
+How John finished the task was unknown.
+
+# 俺たちはやり方はこれ
+This is how we do it.
+
+# 俺たちのやってることはこれ
+This is what we do
+
+I dont know the way John finished the task.
+The way John finished the task was unknown.
+this is the way we do it.
+
+the way S V
+# 下記は同格の that と呼ばれる、これは頻繁に省略される
+the way that S V
+# 下記は関係代名詞を使っている
+This is the way in which John finished the task.
+
+** 第51講 関係代名詞7
+
+Ken saw Susan, who graduated from the University of Tokyo.
+
+このカンマは非制限用法といわれる方法。
+普通の形容詞は、制限を行う
+
+- girls
+- cute girls
+
+Susan という固有名詞は一人しかいないから、非制限用法を使う。
+
+1. Ken has a son who graduated from the University of Tokyo.
+2. Ken has a son, who graduated from the University of Tokyo.
+
+1 は複数いる子供のうち東大卒に制限している。
+2 は子供は一人しかいないイメージになる。
+
+とはいえ、そこまで細かく文意を読み取らなくても差し支えない。
+
+I'm from Tokyo, which a lot of people visit.
+I'm from Tokyo, where a lot of foreiners come.
+
+graduate from Tokyo University は「東京大学を卒業する」という意味。
+もともとは「学位を受け取る」という意味だから from を使うらしい。
+graduate school で大学院をさしたりもする。
+
+grade は（ラテン語では歩くみたいな意味）
+grades = 成績。
+gradually = 徐々に。（一歩ずつ）
+degree = 学位。段階。
+to some degree = ある程度。
+to some extent = ある程度。
+
+** 第52講 関係代名詞8
+
+# ケンはスーザンに会えた。そのことが彼を幸せにした。
+Ken finally saw Susan, which made him happy.
+
+文を先行詞にとる非制限用法。
+非制限用法では、that を使えないので注意。
+
+# ケンはスーザンをみたと言った。それは全くの嘘だった。
+John said he saw Susan, which was a complete lie.
+
+# 最近、一緒に育ってきた人が連絡してきた。
+A person with whom I grew up contacted me recently.
+--------                     --------- --
+  S                             V      O
+
+who は主格なので with の後ろには whom になる。
+元の文を考えてみよう。
+
+A person (who) I grew up with contacted me recently.
+I grew up with a person. he contacted me recently.
+
+ハイレベル問題
+
+I talked to the protesters, all of whom were students.
+                            -----------
+                                S
+
+これは覚えるしかない。
+
+** 第53講 関係代名詞9(連鎖関係代名詞)
+
+The man who I thought was a manager was actually the president.
+
+これは I thought をどかして考えてみよう
+
+The man who was a manager was actually the president.
+------- --- --- --------- --- ----------------------
+  S      S'  V'    C'      V          C
+
+ということで主格の関係代名詞が入っていることがわかる。
+そしてこのケースでは、主格なのに省略できてしまう。
+後ろに S V があって区切りが明確なので省略できる。
+
+# 受講するのに一番良いクラスだよとKenが言っていたクラスは満員だった
+The class which Ken said was the best to take was already full
+
+こんなふうに間に S V が入っているときは連鎖関係代名詞という。
+already のさまざまな使い方。
+already = all ready = 全部できている
+
+Do it already!  はやくやれ！
+Enough already! もういい！
+I've already done it.
+I'm already doing it.
+Are you leaving already?
+Yes, it's already 11. もう11時だから
+
+** 第54講 関係代名詞10(複合関係代名詞)
+
+# 早くきた人は誰でもギフトをもらえます
+Whoever comes early can receive a free gift.
+
+先行詞がない関係代名詞。whoever は先行詞を飲み込んで「複合関係代名詞」を作れるようになる。
+
+# 誰がリーダーになっても、サポートします
+Whoever becomes our leader, I'll support her.
+
+# Ken がどれを買っても、きっと喜ぶよ
+Whichever ken buys, Susan will probably be happy.
+Whatever ken buys, Susan will probably be happy.
+
+# 好きなものを選びなさい
+Choose witchever you like.
+
+これは目的語が消えているのは、 whichever が複合関係代名詞だから。
+whichever の選択肢を減らしたい時は名詞を置くことができる。
+
+# なんでも好きな本を選びなさい
+Choose whichever book you like.
+Choose whatever book you like.
+
+- この文章は choose, like の二つの動詞があるから関係代名詞を含んでいる。
+- 命令文の動詞(Choose) + 目的語は従属節(whatever book you like) という構成。
+- 従属節は主語(you) + 動詞(like) + 目的語(whatever book) という構成。
+- whatever book が関係代名詞で、特に -ever で終わるものは複合関係代名詞と呼ばれる。
+- 複合関係代名詞は、先行詞を持たない。「なんでも」という意味を加える特徴がある。
+- ここで whatever book の book は文法的になんやねんという話もあるけど無視していい。
+- たとえば I like this book という時に this book はひと塊の名詞として考えるのと同じ。
+
+what や which は後ろに名詞を置くことがあるのと一緒。
+
+what do you like?
+which color do you like?
+what food do you like?
+what sports do you like?
+
+Do you like this color? <- これの this と同じようなもの。
+
+I don't know what color Susan likes.
+
+John painted the wall in indigo, which color is close to violet.
+
+** 第55講 関係代名詞11(複合関係副詞)
+
+Wherever Susan goes, john follows her.
+whenever Susan is happy, John is happy.
+
+これらは「複合関係副詞」というもの。接続詞のように覚えてもOK。
+従属節の塊の中で副詞、そして従属節自体を副詞にする。
+
+# タスクがどれだけ難しくても、ジョンは諦めない
+However difficult The task is, John won't give up.
+
+however 形容詞 / however 副詞という用法。
+語順が however に引っ張られて語順が入れ替わる。
+セミコロンを使えば however を接続副詞として使うこともできる。
+
+# タスクが難しい、しかしジョンは諦めない
+The task is difficult; however, john won't give up.
+
+# どんなに彼が試みても、John は Susan を幸せにできない
+However hard he tries, John cannot make Susan happy.
+
+** 第56講 助動詞1
+
+筆者の気持ちが入ることが多いのでヒントになる。喋ったり書いたり読んだりで役立つ。
+でも対応する日本語を知るのではなくて使ってみて感覚をつかむまで時間かかる。むずい。
+
+# ここに居たいなら、いてもいいよ（許可）
+You can stay here if you want to.
+You may stay here if you want to. # やや硬め
+
+# 上手に歌えますね（能力）
+You can sing well
+
+# このタスクは難しいかも（可能性）
+The task may be difficult
+The task might be difficult
+The task can be difficult # 使えないこともある
+
+# はずがない
+The task cannot be difficult
+That story can't be true
+
+# 助動詞がうまく使えないと、決めつけになるのでひどい表現になる
+They don't have frinends
+
+ここら辺の訳は文脈で判断する。ルールはないので、雰囲気で OK。
+
+# must はとても強い。親が子供を叱っている感じ。絶対そうしろ！というイメージ
+You must stay here.
+
+# have to も制限する。理由があるからそうしてくださいというイメージ
+You have to stay here.
+You have got to stay here.
+
+must は変化しないが、have to は動詞変化する。
+
+You had to stay here.
+John has to stay here.
+
+# ここにいてはいけない（禁止）
+You must not stay here.
+You mustn't stay here. # イギリス英語
+
+# ここにいる必要はない
+You don't have to stay here.
+John doesn't have to stay here.
+
+I have to study English everyday.
+
+# そのストーリーは事実に違いない
+That story must be true.
+
+# そのストーリーは事実ではなさそう
+That story can't be true.
+
+** 第57講 助動詞2
+
+# トイレ（バスタブのあるトイレ）に行っても良いですか？
+# アメリカ英語は toilet は便器のことだったりする
+Can I go to the bathroom?
+
+# より丁寧な表現
+May I go to the bathroom?
+
+# ええ、どうぞ
+Sure, go ahead.
+
+# お願い、洗ってもらえません？
+Please clean the bathroom?
+
+# 洗ってもらえませんか？
+Can you clean the bathroom?
+
+# さらに丁寧な表現
+Could you clean the bathroom?
+Would you clean the bathroom?
+Would you mind cleaning the bathroom?
+
+Shall we dance?
+
+# 非常に丁寧な言葉、店員が喋っている感じ
+# めったに出てこない言葉
+Shall I make a reservation for you?
+
+# Ken に電話しましょうか？
+Do you want me to call Ken?
+Would you like me to call Ken?
+
+# 来ちゃだめだよ（許可）
+You may not come
+You cannot come
+
+# 許可かもしれないし、可能性かもしれないので文脈で判断
+Ken may not come.
+Ken cannot come.
+
+# こないだろう
+Ken might not come
+
+I should go home
+Should I buy the car?
+
+# これも文脈でしかわからない
+Ken should be here.
+
+# 私たちがどう頑張っても、ドアがどうしても開かない
+However hard we try, the door will not open.
+
+# will not open は「どうしても開かない」という意味。
+# won't open という短縮もできる。
+# wouldn't open は「どうしても開かなかった」と訳す。
+
+** 第58講 助動詞3
+
+めっちゃややこしい
+
+# a lot は「たくさん」の意味で副詞として使える
+# be able to と can はほぼと同じだけど過去形だと意味が変わってくるので注意
+Because I had practiced a lot, I was able to win the game yesterday.
+
+# 若い時は泳ぐことはできていた（一定期間の能力）
+I could swim when I was young.
+
+# could は「1回できた」という意味は持たないので使えない
+I could win the game yesterday.
+
+# 昨日、試合に勝つことができた
+I was able to win the game yesterday.
+
+# しかし否定分なら気にせず使える
+I couldn't win the game yesterday.
+
+# こういう知覚動詞なら could も使える
+I could hear the sound.
+
+# won の発音はワン
+# win は「勝ち得る」という意味があって「倒す」ではない
+
+# 正しくない
+Japan won France.
+
+# 正しい
+Japan won the prize.
+Japan won the game.
+
+Japan beat France.
+Japan defeated France.
+Japan defeated the opponent.
+
+opponent は「敵」
+oppose は「反対する」
+
+I communicate with opponents. # ダメな用法
+I communicate with others. # 正しい例
+
+You need not come with me.
+
+助動詞の need は肯定文（平叙文）では使えない。
+イギリス英語かつ否定文・疑問文でしか使わない。
+アメリカ英語なら下のようにする。
+
+You need to come with me.
+You don't need to come with me.
+
+need to は have to とほぼ同じ。
+
+** 第59講 助動詞4 2023/04/20
+
+should はよく使う。
+
+# should で過去のことを表現するには should + have + 過去分詞を使う。
+# そしてその時は意味が微妙に変わってくるので注意。
+
+# 昨晩パーティーにくるべきだった。（実際はきてない）
+You should have come to the party last night.
+
+# 昨晩パーティーにはくるべきじゃなかった。（実際に来た）
+You shouldn't have come to the party last night.
+
+- should've という言い方もできる
+- should of は俗語
+- shoulda   も俗語
+
+Ken may have come to the party.  # 可能性
+Ken might have come to the party. # 可能性が低い
+Ken cloud have come to the party. # 可能性が低い
+Ken must have come to the party.  # 可能性が高い
+Ken had to come to the party. # こなければならなかった（義務）
+Ken cannot have come to the party # 来たはずがない（可能性の否定）
+Ken cloud not have come to the party. # 来たはずがない（可能性の否定）
+
+# かつてそこに図書館があった。過去を強調する。
+There used to be a library over there.
+
+# 間違い
+There would be a libary over there.
+
+# かつて釣りをしたものだ
+I would often go fishing.
+
+# ドアは開かなかった。
+The door whouldnt open.
+
+- would が使える条件
+  - would は人を主語に取る（けど物のときもあるよ・・・）
+  - often のような頻度とか習慣だということがわかる副詞を取る。
+  - 後に続く動詞は、動作動詞をとる。
+
+- used to は過去と今の違いを暗に示している
+
+go ...ing に使える動詞は決まっている。余暇にできることだけ。
+
+go shopping
+go fishing
+go swimming
+go hunting
+
+go working # NG
+
+** toeic 講座
+*** 第0講
+
+- TOEIC ... the test of english for international communication
+- 実はビジネス要素はなくてコミニュケーションを問うような問題が出る
+- しゃべれなくても点数はとれる
+- TOEFL が難しすぎたので簡単にしてもらった
+  - どんどん難しくなって2006年,2016年に高難易度化した
+
+- 意味・音・品詞・コロケーション
+
+*** 第1講 写真描写問題
+
+写真から文を想像するのは難しいので、写真から事前に単語を思い浮かべよう
+消去法で解いてみよう。
+
+- a man is talking on the phone. # フーンに聞こえる
+- a man is assembling the workstation.
+- a man is lifting a computer monitor.
+- a man is looking out the window. # 窓の外をみている
+
+TOEIC 写真問題では、現在進行形を使う。
+* リスニング練習
+
+ディクテーションで、音が聞き取れてるかがわかる。
+これができてないなら文字での理解ができてないということ。
+これができないとオーバラッピングやシャドーイングはまずできない。
+
+** 練習
+part3 や part4 も同じやり方でやろう。
+
+- can i get fifteen maters ~of the~ fabric on display?
+- who needs to sign the budget approval form?
+- where ~are~ the cleaning supplies kept?
+- arent you afraid the shipment ~may be~ delayed at the customs?
+- when is my article going to be pusblished?
+- do you want to leave now?
+- sally handles the payroll, doesnt she?
+- why is this office +close+ ~closed~ today?
+- shouldnt machines on ~the~ factory floor be cleaned?
+- where should we advertise for more volunteers?
+- the workshop participants are arriving in 30 minutes?
+- could you make some +change+ ~changes to~ the building +plan+ ~plans~?
+- how often are ~the~ storage +tence+ ~tanks~ expected.
+- would you like to +set+ ~sit~ outside ~on~ the patio or inside?
+- whos going to the post office today?
+
+冠詞とか前置詞とかを落としていることが多い。
+
+- We are looking into replacing the artificial turf with natural grass.
+- We are concerned about how match water it will require.
+- I take a look inside.
+- We'll be offering a bigger selection.
+- I wanted to congratulate you.
+- Actually, that's not true # ああいや、そうじゃないんです
+- I'm interrupting something? Acturally, you are.
+- I actually think I miss Jim.
+- The consultant actually helped me quite a bit.
+- Comets look like fireballs but are actually giant chunks of ice and dust.
+- I'd like us to talk about the movie.
+- I'm in charge of the project . # 責任者
+- I'm involved in the project.   # 関係者
+- That's a lot of work.
+- Why don't we go swimming?
+- Why don't we go somewhere?
+- Why don't you come in?
+- Why don't you ever eat tofu?
+
+現在完了と義務の have to がくっつくと過去分詞になる
+
+- we have had to refund money.
+- we've had to refund money.
+- quality linens aren't cheap. # 高品質なリネン
+
+** unit1
+
+- Ive been abroad three times.
+- We played cards after dinner.
+- There was a fire around here last night
+- He is falimier with ancient greek culture. # ~is familier~ はくっついて ~f~ が飛ぶので注意
+- the man +was come+ comes from ~a~ snowy country.
+- can you tell me the way to open the box
+- peoples of asian countries. # ~peoples of~ はくっついてしまうので注意
+- canada exports wood to japan.
+- she is a famous movie star.
+- my grandmother cant read small letters.
+- we have six english classes +in+ a week.
+- mark is ~a~ student of literature.
+- my daughter has some friends in her class.
+- takashi belongs to a private gloup.
+- greate ability as a teacher.
+- his words moved us deeply.
+- open your english-japanese dictionary.
+- i looked for +the+ ~a~ book +of+ ~about~ japanese calstles in the library
+- our university has a seven colleges.
+- road to the future.
+- bob sent +to+ me a mail to tell me a meeting place.
+- they live in a quiet place in ~the~ country.
+- a ticket for the concert.
+- please press ~the~ rubber stamp here.
+- things are different if you go abroad.
+
+** phrases051-076
+
+- prease do it yourself
+- my boss said lets go to the meeting room
+- the new student came from italy
+- i have a book to read on the bus
+- dont tell a lie
+- i met my boss this morning
+- cut the cloth with scissors
+- i got the concert ticket for him
+- i gave my wife a birthday present
+- my mother is making a cake
+- prease take me with you
+- look at the map on the black board
+- my father likes to play the guiter
+- i lived in scotland when i was young
+- i like to read history books
+- i must write a report
+- i cant open this bottle
+- i ~ran~ to catch the first bus
+- i work ~five~ days of week
+- my father is sitting on the sofa
+- all the students wear a tie
+- the teacher lives in a big house
+- mr brown did a good job
+- ~pull~ down the old building
+- did you make many mistakes
+
+** phrases176-200
+
+- michel is the tallest in his class
+- before it is too late
+- when will you be free?
+- martin is as fat as his father # is-as fat as-his というくっつき方をする
+- my grandfather is sick in bed
+- this island is always warm.
+- we +stop+ ~stopped~ for a break by ~a~ great waterfall # 聞き分け無理だから文法的に判断するしかない
+- my father likes dry fish
+- lets meet next weekend
+- steve is kind +with+ ~to~ women # ただ間違えただけ… be kind to は慣用表現かな
+- my boss +is+ usually +carrying+ ~carries~ a heavy bag
+- you are so lucky
+- this is the special gift for you
+- its getting cool
+- the student spliped on the wet ground
+- I hope to see you again
+- I always study in the living room
+- I sometimes eat ice cream
+- mr smith often +go+ ~goes~ to the library
+- the task takes just ten minutes
+- get away from this place
+- we went out for shopping
+- the tourlist went there for three days ago.
+- this plants grew fast.
+- I want to live abroad when i retired.
+
+** phrases201-225
+
+- [ ] be careful when ~you~ use a knife
+- [X] tie up this box with string
+- [X] i lost my purse somewhere
+- [ ] she never +carry+ ~carries~ any cache
+- [X] jack is the best person for the job
+- [X] have a good image of the country
+- [ ] my brother won +the+ ~a~ prize +on+ ~at~ the contest
+- [ ] finally they got +the+ ~a~ victory
+- [X] the concert will be held here
+- [X] swim to the buttom of the sea
+- [ ] some parts of this novel +is+ ~are~ boring
+- [ ] the station is in the +central+ ~center~ of the city
+- [ ] +as part of+ ~a spot for~ enjoing flowers. # a-spot はアスパットに聞こえる
+- [X] you cant change the past
+- [ ] tell me the reason you +are+ ~were~ late
+- [ ] the teacher +ask+ ~asked~ ~the~ students ~for~ their opinions
+- [X] he never misses a chance
+- [ ] paul +faces the+ ~faced~ ~a~ big problem
+- [ ] studing abroad is ~a~ big callenge for me
+- [X] excises is good for your health
+- [X] as a basis of healthy life
+- [X] tell me your date of birth
+- [ ] the statesmen will be +a+ ~the~ presient in the future
+- [ ] see a play ~at~ this theater
+- [X] i like adventure stories
+
+冠詞・前置詞・時制がつらみ
+a/the の聞き分けはある程度諦めるにしても
+時制とか文法上の矛盾がないように聞き取りたい
+
+** 2023/02/07 phrases226-250
+
+- here is an example
+- kete jumped up +to+ ~with~ joy
+- i became a member of ~the~ musium staff
+- that was a nice event for me
+- do you believe in +ghost+ ~ghosts~
+- john is a very good carpenter
+- +they were entering+ their entry into japan delayed at +custom+ ~customs~
+- i bought a pair of gloves
+- kevin saw something move in ~the~ +shadow+ shadows
+- our child found a hole on the wall
+- the earth ~is~ surrounded by gas
+- the sun sank +belong+ ~below~ ~the~ horrizon
+- the boys lived +in the+ ~on a~ small island
+- that girl +have+ ~has~ a sence of rhythm
+- count +on+ the number of items
+- can i use your telephone
+- we talked about +a+ ~the~ teacher
+- i know her from +her+ childhood
+- the president said to me Hi
+- i stood up +for+ ~to~ greet my aunt
+- im waiting for ~my~ friend here
+- the guest enjoyed ~the~ party
+- i belong to the tennis club
+- the baby cried all night
+- i dreamed ~a~ strange dream last night
+
+10/25
+
+** 2023/02/08 phrases251-275
+
+- the people need water and food.
+- i +drink+ ~drank~ a glass of water.
+- i keep my room clean.
+- the boy helped his mother to ~lift the~ heavy bag.
+- my son ~caught~ a lot of fish.
+- i love my family
+- i sent my mother a birthday gift.
+- i cook breakfast every day
+- the carpenters built this house
+- i changed my mind
+- dont tell foolish ~jokes~
+- the nurses have been busy
+- i am angry with you
+- my life is different from yours
+- it wount be easy work
+- the people ~here~ are afraid of ~floods~
+- i like fresh vegitables
+- i have ~an~ important meeting today
+- this fish lives in deep ocean water
+- you are not alone
+- its a difficult question
+- i like every subject
+- i dont like hard beds
+- this skert is too large for me
+- they ~were a~ poor family
+
+ 18/25
+
+** 2023/02/09 phrases276-300
+
+- my daughter is afraid of dark rooms
+- a boul ~that is~ full of fluit
+- finish ~an~ early dinner
+- the old man was careful not to fall
+- dear mrs Smith
+- Andy is quick ~at~ everything
+- the ~far end of the~ rode
+- i would like something sweet
+- i ~will move~ abroad ~in the~ near future
+- is that true?
+- small cellphones are popular
+- your answer is right
+- did you have much snow there
+- we can only see very bright stars ~tonight~
+- i think my daughter is pretty
+- i visited soul once
+- lets cook dinner together
+- the athlete finally got ~a gold~ medal
+- i usually go to ~a~ gim on ~Thursdays~
+- i still remember the game
+- what were you doing then
+- almost ~all of the~ children
+- even children can do that
+- the girl sings very well
+- she goes to venis twice a year
+
+メモ
+
+- quick at everything なにごとにおいても早い
+- full of fluit は聞き取りむずいフーオブフー、そして不可算名詞
+- would like は want と全く同じに使えるので後ろに名詞をとり i would like something sweet とかける
+- once がついてても過去完了とは限らない
+- twice a week は twice per one week という意味になる twice は名詞の意味しかないのだが a が冠詞ではなく前置詞として機能する
+
+** 2023/02/10 phrases301-325
+
+- the owner invited about fifty guests.
+- my father began a new business.
+- they communicated with gestures.
+- our journey started here.
+- im looking forward ~to~ my vacation.
+- i walked along the stream.
+- ~a~ thief stole my expensive watch.
+- i enjoyed ~our~ conversation with my kato.
+- im interested in the ~countries history~.
+- i have a pain in my stomach.
+- i had a fever last night.
+- my mother ~suffers~ from head akes.
+- john had an accident yesterday.
+- a pilot must have good site.
+- the boy has a talent for music.
+- ~the office i work in is small~.
+- we get energy from food.
+- a new gymnasium is ~being~ built now.
+- keep the balance of power.
+- how many ~continants~ are there.
+- devide the nation ~into~ blocks
+- the farmer ~gathered the~ clops
+- we spent a night in the cave.
+- lets take a break.
+- everyone is equal under the law.
+
+16/25
+
+** 2023/02/12 phrases326-350
+
+- clean up the dust
+- you should follow your fathers advice
+- look for ~a~ space to play soccer
+- an old festival ~is~ held in this village
+- i was supprized to see the price
+- my hasband told us ~his~ plan ~for~ the vacation
+- where is the exit
+- ran the cource ~in~ ten second
+- the man was standing the edge of the pond
+- can i use your eraser
+- these are important documents
+- we are suprised ~at~ the ~misteries~ of nature
+- the guest had a lot of buggage
+- im not good at the mathmatics
+- i want to be an astronote in the future
+- i understood what was said
+- i want to be independent
+- my wife ~speaks~ english well
+- everyone laughed at me
+- please show me your picture
+- i found the lost glasses
+- i sleep well every night
+- i spent this summer in hawaii
+- John traveled around France
+- dont swim in this river
+
+20/25
+
+** 2023/02/14 phrases350-375
+
+- my son ~pulled~ my hand
+- ill stay home ~tonight~
+- my sister teaches english ~at a~ school
+- i finished ~studying~ for ~the~ exam
+- ill drive my new car today
+- push a door open
+- penguis cant fly
+- the women ~is~ holding her baby
+- i tried eating ~brown~ rice
+- the man killed ~the~ owner of the house
+- finish work in a short time
+- this soup ~tastes~ strange
+- it is dangerous to rush ~into~ the train
+- im watching a popular TV program
+- i drove the car at ~a~ slow speed
+- copy both sides of ~a document~
+- i like the other one
+- draw a straight line
+- it is possible to do so
+- the sweater is light and soft
+- our teacher gave homework to each students
+- i always keep the bathroom clean
+- you are safe in this area
+- his english pronanciation is perfect
+- it was a wonderful night
+
+14/25
+
+** 2023/02/15 phrases375-400
+
+- this knife is only fit ~for peeling~ fluit
+- i had a delicious dinner last night
+- the movie got an international prize
+- make it ~as~ clear ~as~ possible
+- emily is a foreign student
+- i picked wild flowers
+- my house is close to the station
+- are you hungry?
+- i dont smoke in public places
+- i am sorry to here that
+- she doesnt have a thin scerf
+- my hasband is really honest
+- mr murofushi is a born astlete
+- we all have human rights
+- it smelled like dead fish
+- he is going to buy a table ~and~ also some chairs
+- recently i went to the park
+- may i come inside
+- i took the bus instead of the train
+- ive eaten breakfast already
+- lets discuss something else
+- my mother put the gabage outside
+- it is certainly ~a~ good idea
+- the man will probably come
+- i havent had supper yet
+
+21/25
+
+** 2023/02/16 phrases400-425
+
+- I fell from ~a~ ladder
+- this is a machine for selling tickets
+- dr. jackson studied animal science
+- this area seems dangerous
+- sum began to write a novel
+- my mother likes reading poems
+- mike is studing to be a lawer
+- jane has ~a~ clear brain
+- the goverment decided to raise a ~taxes~
+- there are ~a~ lot of passenger on ~this~ bus
+- these leaves turn yellow ~in~ fall
+- do you know the author of this book
+- you shouldnt depend on luck
+- the castle was built three handred years ago
+- owen likes taking photographs
+- the passage to the lake is dangerous
+- serious damage from ~the~ flood
+- signs ~usd in~ mathmatics
+- the shock ~of a~ plane crash
+- tsureduregusa is a collection of the old japanese ~essays~
+- view ~passengerby in the~ street
+- my uncle is a furniture marchant
+- most ~of~ my neighbors have ~dogs~
+- the capital of japan is tokyo
+- fight against an emeny
+
+14/25
+
+** 2023/02/17 phrases425-450
+
+- bob left a good impression on me
+- you should tell us ~the facts~
+- the growth of ~a~ child is rapid
+- they are all kind nurses
+- there are a lot of faults ~with~ this car
+- give this key a press
+- the pilot changed ~his~ flight course
+- the battery in my radio is dead
+- there was a large crowd in the stadium
+- my wifes sarally is higher than mine
+- i drew the lace curtain
+- the dog is lying on the lawn
+- lets meet at ~that~ monument
+- the number of ~households~ in this village
+- my son gose to ~this~ kindergatain
+- enter the doctors office
+- i visited my aunts house
+- climb the highest mountain
+- decided to get up at six a.m.
+- the traffic accident happened here
+- i forgot sending her ~a~ letter
+- we moved the desk
+- i dont understand what this signs means
+- stones fell from the cliff
+- the actor died ~of~ cancer
+
+17/25
+
+** 2023/02/19 phrases450-475
+
+- fight for equality
+- carry a heavy suitcase
+- would you lend me ~your~ pen
+- create ~a~ new type ~of~ art
+- paint the wall green
+- pick ~a~ book from the bookshelf
+- the cute baby smiled at me
+- start cleaning the office
+- we crossed that path
+- i invited my frinends to dinner # dinner は不可算名詞
+- please ask me anything
+- hurry to catch the train
+- taro learned mathematics easily
+- answer the question quickly
+- mary touched my arm
+- i hate insects
+- my grandmother lost her glasses
+- my son practices soccer every day
+- the dog barked at me
+- my mother set ~a~ fork and knife ~on~ the table
+- mr gordon is rich
+- im proud of you
+- can i have another glass
+- your help is necessary
+- her answer was excellent
+
+20/25
+
+** 2023/02/21 phrases475-500
+
+- the sofa is comfirtable
+- sara has been lonely
+- my father was silent during dinner
+- this ring made of ~pure~ gold
+- tommy is a wise child
+- be gentle with your wife
+- i washed dirty dishes
+- this book is based on a real story
+- this question is simple
+- my wife is very delicate person
+- the teacher was mad
+- kete always keeps her pencils sharp
+- i traveled to ~a~ tropical island
+- this flying pan is useful
+- there are a few buildings
+- suddenly ~it~ started to snow
+- ken actually solved the problem
+- perhaps mr white is absent
+- besides my mother speaks korean to
+- im a lucky person indeed
+- therefore this is very important
+- see you later
+- he eventually got sick
+- it was rainy however he went out
+- i hardly know the new student
+
+まあ2回目だったから…
+
+** 2023/02/22 phrases500-525
+
+- a bus tour to kyusyu
+- the undergroud of tokyo station
+- a lot of sheep ~are~ eating glass in the meadow
+- the japanese comunity in brazil
+- this is just ~a~ custom of the past
+- ~rules of~ the human society
+- we must protect nature
+- ~meet the local~ village forks ??
+- act with ones body and soul
+- this cake is ~the~ shape of ~a~ heart
+- draw a square on the blackboard
+- he produced a lot of cartoons during his life
+- ~read chapter~ two of the book ??
+- economy of time and effort
+- my sister is ~an~ office clerk
+- the task is too hard
+- jorge is expart in this area
+- my wife ~has~ no ~interest~ in soccer
+- check the goods of ~the~ same standard.
+- i have a job interview tomorrow
+- no errors were found
+- a symbol of peace
+- do you have any special techniques?
+- he lost the power of speech
+- we have different ~views~ ~on~ this problem
+
+日本語なしで聞いてみたら難易度上がったので今度からやってこう
+
+** 2023/02/23 phrases525-550
+
+- jeff smiled at me with presure
+- shell we take a rest for a while
+- kevin shared the glory with his friends
+- the avenue was crowded a lot of many people
+- the lecture was interesting ~to~ me
+- tom has a good character
+- my wife took the curtain to the laundary
+- i like her ~manner~ of speaking
+- i ate a piece of cheese
+- i like to read detective fiction
+- im not a coward
+- this snake has strong poison
+- i promised to keep your secret
+- i left a note for my mother
+- the department store lost its customer
+- mr smith left great ~wealth~
+- carry the laggage into the room
+- he was wonded in the battle
+- tom started ~quarrel~ with his father
+- i was moved by the last seen of the movie
+- a sword in the video game
+- many solders were killed
+- mother ~telesa~ prayed for piece (マザーテリーサー)
+- she was ~arrested for~ marder
+- her death made us very sad
+
+** 2023/02/25 phrases550-575
+
+- jim arrived at my house.
+- i hope ~for~ world piece.
+- order two glasses of wine.
+- i paid them their saraly.
+- the students wear a uniform.
+- beat the drums
+- save the ~drowing~ child
+- they reported todays sales
+- succeeded ~in the~ new business
+- her marriage surprized me
+- our services will satisfy you
+- ~they attacked the~ enemy
+- this ~call~ will be recorded
+- turn left at the next corner
+- a year has past since then
+- the man repeated "dont go"
+- never mind
+- i wish i could come
+- the children followed their mother
+- thats sound stupid
+- my uncle is a famous writer
+- we spent a quiet night
+- i stayed at a cheap hotel
+- give a child ~soild~ baby food
+- moist air is unconfortable
+
+** 2023/02/27 phrases575-600
+
+- dont be shy
+- barbara has visited various countries.
+- they live a normal life. # 目的語取るlive
+- paul is a clever child.
+- how fine this painting is.
+- I enjoyed the formal dinner party.
+- ~supper~ is ~ready~.
+- i never change my usual way of life.
+- i ~would~ never say such a thing.
+- she doesnt like her round face.
+- he made a stupid mistake.
+- most thai food is sour.
+- i cant buy expensive jewelry.
+- stay for several days.
+- you have the wrong number.
+- its ~an especially~ difficult problem.
+- prease tell me exactly.
+- thank you anyway.
+- the twins wear quite different clothes.
+- meanwhile we were waiting.
+- im very sleepy nevertheless i must do homework.
+- study hard, otherwise ~youll~ failed the exam.
+- i like tea rather than cofee.
+- i can scarcely here you.
+- the man seldom gose out.
+
+** 2023/02/28 phrases600-625
+
+- study for the entrance examination
+- you had better ~sit in the shade~
+- everyone should be ~paid for their labor~
+- my son has a good sence of smell
+- the eldering women is suffering from a desease
+- shallock homes is a detective
+- i will pay the whole amount
+- Napoleon is a famous emperor
+- what is the distance from here to the station
+- will you put out the candle
+- sing in front of a large audience
+- ichiro has the spilit of fair play
+- carry out a project
+- i cant stand this hunger any more
+- smoke is drifting over my head
+- i was caught in a traffic jam
+- does he have any political skills
+- we can see mount fuji from this position
+- this tale is for children
+- mark one of the four options
+- ~trade~ with other countries
+- our generation has no experience of war
+- this book ~goes in the~ science category
+- i took the elevetor to the seventh floor
+- he drove me home ~as a~ favor
+
+** 2023/03/02 phrases625-650
+
+- the trick was successful.
+- i had a contact with the pacients. 病人
+- we have a stock of water.
+- the task will be finished by the middle of next month
+- the host gave me a big welcome
+- everything has some merit
+- whats the score of this game
+- a new ~method~ of learning english
+- i felt terror them
+- ~the wheel of this car are~ large
+- she is watching her calories
+- place a bomb in the building
+- ~the mail carrier~ didnt come to my house today(2)
+- we dont have ~mass lessons~ on sunday
+- we tried to climb the cliff
+- the temple stands against the background of a mountain
+- what is the ~weight~ of this statue
+- put a bandage of a wound
+- dont believe the gossip
+- a lot of birds ~were~ on the branch
+- the old man put coal on the fire 不可算名詞
+- i was bitten by a mosquito
+- my uncle died of stomach cancer
+- find an image on the internet
+- i bought a new cellphone
+
+** 2023/03/03 phrases650-675
+
+- will you marry me?
+- i remember my childhood
+- this kind of paper burns easily.
+- you can choose the drink.
+- the country ~won the~ war.
+- he promised not to tell a lie.
+- tom acted aganst his teachers advice.
+- ride a new bycicle
+- sell books for 30 dollers
+- the man rushed to the bathroom.
+- i graduated from high school last year.
+- join a buscket ball team
+- dont shake this bottle
+- i cared about my sick friend
+- parents must educate their children
+- the water is boiling
+- throw a ball at wall(?)
+- someone showted help
+- fill the ~bowl~ with water
+- he finally solved the problem
+- i woke up at 7 oclock
+- i mistook hir answer
+- sarry left her hometown
+- he wants to control others
+- my wife dropped her wallet
+
+** 2023/03/06 phrases675-700
+
+- the game excited the ~spectators~.
+- a strong wind blew.
+- she named her dog john.
+- the women seemed tired.
+- the music pleased the children.
+- everyone was present.
+- i was absent from the meeting.
+- enough ~tomatoes~ to make a sarad.
+- tom is polite to others.
+- ruth is a smart student.
+- my father lives an active life.
+- harry is a brave young man.
+- mr tajima is a chief editor.
+- my brother is lazy.
+- he has been idle for a year.
+- the movie was dull.
+- i was surprized ~to see~ a naked man at the station.
+- she walked on a narrow path.
+- it was really tough work.
+- i read a ~local~ news paper this morning.
+- i cant understand modern art.
+- i am sure ~youll~ be successful
+- it is a daring idea
+- mr willson is a richest person in the whole world.
+- throw away empty bottles
+
+** 2023/03/07 phrases700-
+
+- it is a lot of fun to dance (fun is uncountable)
+- ~our~ 20th wedding aniversary
+- walk along a corrider
+- the box is filled with jewelry
+- i said farewell to my host family
+- he stayed here for a long period
+- ~a ship~ pass through the canal
+- the boys house is in a glove
+- he wants to live in laxuary
+- tom paid the bill
+- in ~that~ case i dont agree with you
+- put the ~lid~ on the kettle
+- i havent ~gotten a response from him yet~ (gotten はほぼ got にしか聞こえない ten は超弱い)
+- cause a lot of ~harm to the~ people
+- the climinals ~was sent~ to the prison
+- these is some risk of cancer
+- my sister alway follow the fashion
+- it is school policy
+- a mixture of soda and grape juice
+- my students always follow the school code
+- we enjoyed our leisure on the weekend
+- the earthquake made a gap in the ground
+- i felt sorrow at my dog death
+- its a matter of degree
+- the state of his health
+
+** 2023/03/09 phrases725-
+
+- the boxer has past his peak.
+- a notion that life is a dream.
+- sweat ~ran~ down my cheaks.               # ran はレン
+- my father had bad ~temper~. ?
+- the pacient got a ~series of~ treatment.
+- ~I'll have an occasion to meet her~ ??    # Ill はアウ
+- i have a vision of my feature.
+- i ~put a stamp~ on the envelope.
+- there are many chemicals in the laboratory.
+- write your answer in one sentence.
+- change a social structure.
+- thailand is a kingdom in asia.
+- the roman empire had great power.
+- microwave can heat food.
+- a site for the new house.
+- the origin of the universe.
+- he doesnt care about a status.
+- finish this work in haste.
+- oranges are grown in this orchard.
+- nuclear weapon must be given up.
+- you need some recrecation.
+- that island is in out territory.
+- get a good ~grip on your stick~.
+- kyoto has great charm for forigners.
+- linda is an aquaintance of mine.
+
+** 2023/03/10 phrases750-
+
+- my husbands income increased.
+- respect your parents.
+- gather ~pieces of glass~.
+- marys answer disappointed him.
+- i promise to hire you.             # 不定詞を取る動詞の仲間
+- dont judge other people from the outside.
+- the compass points north.
+- please shut the window.
+- export cars to the U.S.
+- the sun shines brightly.
+- the bomb destroyed the building.
+- i failed to give my opinion.
+- he suddenly dived into the sea.
+- i returned to my hometown from tokyo.
+- memorized the password.
+- i guided the tourlist to famous park.
+- sail around tokyo bay.
+- i jamed my clothes into a suitcase.
+- the man hunted the fox.
+- my house faces the street.
+- the groud is covered with snow.
+- the airplane landed.
+- wrap the fish in foil.
+- my stomach aches
+- expend a lot of money on medicine
+
+** 2023/03/12 phrases775-
+
+- the soap smells good.
+- dont warry about anything.
+- i ~appeal to her for help~.   # appeal は自動詞なのだ
+- ill lead you to the park.
+- stub the fish with a fork.
+- be calm, please.
+- please be punctual.
+- my wife fell asleep on the bed.
+- i am bery thirsty.
+- we live in a coastal area.
+- be kind to blind people.
+- the loud noise is ~bugging~ me.
+- build a house on the ~flat~ ground.
+- the ethnic war is over.
+- japanese people like a raw fish dish called sashimi.
+- the actor has a unique talent.
+- according to a recent study.
+- ~matthew~ looked weak.
+- the two stones equal in weight. # ここでは自動詞としての equal、他動詞としても使える
+- some rare animals live here.
+- they are aware of the problems. # aware は形容詞なのだ
+- ~reduce~ green house gases.
+- this term is completery alien to me.
+- join the volunteer activity.
+- i dont want to show my girlfriend ugly side of me.
+-
+
+** 2023/03/13 Test1 Q1-Q4
+
+- Q1
+  - a table ~lamp~ it turned on.
+  - some ~beverages are~ on display. # beverages =飲み物
+  - some pictures ~frames are~ in a box.
+  - a ~rug is rolled up~ in a corner.
+- Q2
+  - one of the women is holding the file folder
+  - one of the women is talking on a telephone.
+  - one of the women is ajusting a height of the chair.
+  - one of the women is stainding in front of the desk.
+- Q3
+  - ~some loaves of the bread~ are piled on the counter. # loaves of the bread = 切り分ける前の大きなパン
+  - one of the man is placing food in a refrigerator.
+  - one of the man is putting on an apron.
+  - some food is ~being handed to~ the customer.
+- Q4
+  - the man is entering a waiting area.
+  - the man is holding the door open.
+  - one of the women is looking at the monitor.
+  - one of the women is ~reaching for a bag on the floor~.
+
+** 2023/03/14 Test1 Q5-Q11
+
+- Q5
+  - a worker is replacing some windowpanes. # 窓ガラス
+  - a worker is operating policing machine.
+  - some items ~have been~ stacked on a cart.
+  - a hose ~has been~ wraped around a ~wheel~. # まきつける
+- Q6
+  - the women is ~locking up her bycicle~.
+  - the women is ~strolling down~ the garden path. # 散歩する
+  - a picknich buscket ~has been unpacked~ on the grass.
+  - some ~tents have been set~ in a park
+- Q7
+  - which floor has the largest conference room?
+  - the seventh floor
+  - we installed new telephones
+  - the janitor cleans floors
+- Q8
+  - how often does the train stop here?
+  - around trip ticket
+  - every half hour
+  - only two miles
+- Q9
+  - haventyou heard back from the project manager
+  - the back of the room
+  - no not yet
+  - can i see a menu
+- Q10
+  - does the faniture store offers free shipping
+  - one table and for chairs
+  - a retail business
+  - yes it was
+- Q11
+  - what do you think of using cover photo in our web site
+  - i can cover your shift
+  - in the file folder
+  - sure that looks great
+
+** 2023/03/22 Test1 Q12-
+
+- Q12
+  - do you like the red logo, or the blue logo?
+  - some colorful flowers.
+  - the designer didnt think so.
+  - can we do yellow instead?
+- Q13
+  - ~youve been to this warehouse~ before havent you?
+  - no i havent
+  - bin no4
+  - the house at the corner
+- Q14
+  - ~why havent the tables been set~ for dinner service
+  - because we are short on staff
+  - the seasonal menu is great
+  - yes at 5 oclock
+- Q15
+  - would you like to speak to a customer service representative
+  - the key note speach
+  - thanks id love to
+  - i already saw that movie
+- Q16
+  - i thought the ticket to the show were sold out
+  - 20 dollars i think.
+  - the nomination were just anounced
+  - one of my friends had an extra.
+- Q17
+  - can i get fifteen meter of fabric on display.
+  - the parking meter is paid.
+  - not too far.
+  - sure do you want to same color?
+- Q18
+  - who needs to sign the budget approval form.
+  - lets hang the sign here
+  - i just send it to noriko
+  - 30 thousand euro
+- Q19
+  - where are the cleaning supplys kept?
+  - a mop and a bloom
+  - ill happy to show you
+  - every two weeks
+- Q20
+  - arent you afraid the shipment may be delayed at the custom
+  - no ive done the all paperwork
+  - please set it down at the corner
+  - he has custom made guiter
+- Q21
+  - when is my article going to be published
+  - your editor is out of town this week
+  - yes that illustration works
+  - because the finished earlier than expected
+
+** 2023/03/23 Test1 Q22-
+
+- Q22
+  - do you want to leave now?
+  - I havent eaten my desert yet.
+  - its great seeing you again.
+  - i live there now.
+- Q23
+  - sarry handle the payroll doesnt she?
+  - thats right she does
+  - yes everything discounted this week
+  - conguratulations on the promotion
+- Q24
+  - why is this office closed today?
+  - at the management conference.
+  - when the new director arrives.
+  - theres some repair works going on.
+- Q25
+  - shouldnt the machine on factory floor be clened?
+  - no i havent seen him
+  - definitely ill put in a request now
+  - actually its main street
+- Q26
+  - where should we advertise for more volunteer?
+  - because i used to work there
+  - every thirsday at noon
+  - the positions ~have all been failed~
+                ざぼーる びん フェイルド
+- Q27
+  - the workshop participants are arriving in 30 minutes.
+  - it was a great senimar
+  - ill put out the namecards
+  - yes i work ~at an auto shop~
+          わーか  an auto shop
+- Q28
+  - cloud you make some changes to the building plans?
+  - no i didint go there
+  - all right but i need logon my computer first
+  - i bought a new car
+- Q29
+  - how often are ~storage tanks inspected~
+  - you can check the record
+  - there is a few station nearby
+  - no the inspector has left.
+- Q30
+  - would you like to sit the outside on the patio or inside
+  - no tomorrow at noon
+  - its quite windy this morning
+  - 2 glasses of water please
+- Q31
+  - who is going to the post office today?
+  - in yesterday delivered
+  - whenever she can
+  - do you have mail to send
+
+** デクテーションで間違えたものメモ
+
+- 間違: which has loudest start work on the interior
+- 答え: which has allowed us to start work on the interior
+
+- 間違: TV cameras can be set up later for shots.
+- 答え: TV cameras can be celebrate a shots.
+
+- 間違: the firstifgator(?)
+- 答え: the first refrigerator
+
+- 間違: the poor weather is behind the schedule slightly.
+- 答え: the poor weather has put us behind schedule slightly.
+
+- 間違: this fridge knows when you run ouf of central items.
+- 答え: this fridge knows when you run ouf of essential items.
+
+- 間違: it is truly but harb of kitchen.
+- 答え: it is truly the hub of kitchen.
+
+
+* リーディング練習
+** [[https://www3.nhk.or.jp/nhkworld/en/news/20230211_19/][Quake deaths pass 24,000 in Turkey, Syria]]
+
+# toll は犠牲者
+The death toll from Monday's earthquakes in Turkey and Syria has topped 24,000.
+
+# authorities は機関/組織
+Disaster management authorities and volunteers from around the country have gathered there to help those who have lost their homes.
+
+# formed a long ilne は「列をなす」
+Those living in tents formed a long line to receive warm food, including soup.
+
+# 過去完了が使われている could not have done anything は「何もやることができなかっただろう」
+A woman with an eight-month-old baby said she was thankful as she could not have done anything without the support.
+
+# temperatures may fall further は「気温がさらに下がるだろう」
+She said it is very cold, and that if it rains, temperatures may fall further.
+
+# further の例文
+I can't walk any ~further~.
+~Further~ detailed investigation is required.
+I ~furthered~ a relationship with Komei.
+
+** [[https://www3.nhk.or.jp/nhkworld/en/news/20230211_17/][Russia steps up missile attacks on Ukraine as anniversary of invasion approaches]]
+# steps up は段階を上げるということ
+# an anniversary は「一周年」必ずしも記念日というわけではない
+# invasion は「侵入」で音はにごる。「インベージョン」
+
+# a major offensive は「大攻勢」という感じ
+The ministry said on social media that Russia fired 106 missiles in a major offensive, and that 61 of them were shot down by Ukraine's air defenses.
+
+# added that は「付け加えた」という感じ
+# offensive campaign はキャンペーンというよりは「攻撃作戦」という感じ
+It added that the Russians were deploying elements of three divisions, including tank and airborne divisions, as part of its offensive campaign in the region.
+
+# underscored は下線を引くことの連想から「強調した」
+# a significance of Bakhmut は「バフムトの重要性」
+In an interview with NHK on Friday, Ukrainian military analyst Ihor Kabanenko underscored the significance of Bakhmut, a major operational base of the Ukrainian forces in the eastern Donetsk region.
+
+# seizes control of the area は「支配権を取る」
+# これは仮定法ではなくて条件節なので現在動詞を使う、だから条件が満たされたときの文は will になっている
+If Russia seizes control of the area, it will be able to deploy its troops in the eastern Kharkiv and southern Zaporizhzhia regions
+
+# continue は SVO の形をとる。
+He said that's why Russia continues its offensive against Bakhmut.
+
+# 長い例文。不定詞の show が4文型をつくっている。
+# to show the russian public は「ロシア国民に見せる」
+# major gains は「大躍進」
+Kabanenko also said that Russia is sacrificing its military resources to show the Russian public that major gains are being made in its invasion of Ukraine that began almost a year ago.
+
+# 4文型のもっと簡単な例文
+I'll show him that I'm a genius.
+
+# major の例文
+She spends a ~major~ part of her income on food.
+The Middle East supplies a ~major~ portion of the oil that Japan consumes. # portion は「部分」
+My father holds the ~major~ interest in the corporation. # interest は「株・株券」
+That is your ~major~ problem.
+
+**
+
+** [[https://www3.nhk.or.jp/nhkworld/en/news/20230214_18/][Govt. presents candidate for new BOJ governor to Diet]]
+
+一読してもよくわからなかった。日銀総裁の後継者の話？
+上田さんは BOJというのに関係している？氷見野さんはなんで出てきた？
+
+# the appointment は日本語でよく言われる「アポ」（約束）という意味だけではなく「任命」という意味もある
+> The Japanese government has officially proposed the appointment of Ueda Kazuo as the Bank of Japan's new governor.
+
+# incubment は現職
+> He would replace incumbent Kuroda Haruhiko, whose term ends in early April.
+
+# nomination は「推薦」「任命」
+# executive members は「重役」「取締役」
+# the Steering Committees は「運営委員会」 steer で舵取り commitee は任された人
+# the Diet は「国会」
+# both houses は衆議院と参議院の両方のこと
+> The government presented the nomination to executive members of the Steering Committees of both houses of the Diet on Tuesday.
+
+# serve は「働く」
+# the BOJ Policy Board は「日銀政策会議」
+# quantitative easing は「量的緩和」
+> He previously served on the BOJ Policy Board for seven years and helped the bank introduce its zero interest rate policy and quantitative easing.
+
+# customarily は慣例的に
+# former xxx は元xxx
+# official は職員・公務員をさす
+> The bank's top post has customarily been occupied by a former BOJ or Finance Ministry official.
+
+# presented the Diet は「国会に提示した」という感じで with の後に提示した内容が続く
+# deputy は「補佐官」という意味
+> The government also presented the Diet with the nomination of Himino Ryozo as deputy governor.
+
+# ここの was tapped は「選ばれた」という感じ
+> Current BOJ Executive Director Uchida Shinichi was tapped as the other deputy.
+
+** [[https://www3.nhk.or.jp/nhkworld/en/news/20230215_18/][New routes opened to deliver aid to Syrians]]
+
+18:32-18:40
+トルコからシリアに向かって援助物資が運ばれてる。
+反政府によって制限されてたのが解放されてルートが増えた。
+
+# aid は援助、救援物資
+> Providing aid to survivors has been especially hard in Northwest Syria as the civil war in the country continues.
+
+# border crossing は国境検問所
+> They came from Turkey through one of two additional border crossings -- routes the organization says are essential.
+
+# UN agency は国連機関
+>The country's president says the two routes will stay open for three months and accept support through UN agencies.
+
+# suffer 苦しむ
+# epic 壮大な
+# make even worse 悪化させる。ここでは even は more の意味になる。
+# obstacles 妨害
+> The human suffering from this epic natural disaster should not be made even worse by man-made obstacles.
+
+** [[https://www3.nhk.or.jp/nhkworld/en/news/20230216_14/][Inbound tourists to Japan surged in January]]
+
+# inbound tourist 国外からの観光客
+# surged 押し寄せる
+
+# accounted 占める（原因になる）
+>Tourists from East Asia during the Lunar New Year holidays accounted for much of the increase.
+
+# what は関係代名詞
+> But January's figure is still only about half what it was for the same month in 2019 before the pandemic.
+
+# shift A from X to Y
+> The government is shifting its focus from visitor numbers to trying to attract high-spending holidaymakers.
+
+** [[https://www3.nhk.or.jp/nhkworld/en/news/20230216_39/][Egg prices in Tokyo hit record high]]
+
+18:49-18:57
+
+卵が高騰しているという話。円安とロシアのウクライナ侵略が原因。
+お菓子屋？が特に困っているようだ。
+
+# the pinch ピンチ・差し迫った事態
+> Consumers and businesses are feeling the pinch as egg prices in Tokyo hit a record high.
+
+# the spread of bird flu 鳥インフルエンザの蔓延
+# are to blame 原因だと言われている
+> Growing costs for chicken feed and the spread of bird flu in Japan are to blame.
+
+# culled 間引きする・殺処分
+> Egg shipments have also dropped as a large number of chickens have been culled due to bird flu.
+
+# hiked 値上げ
+> The shop already hiked prices for some products last autumn.
+
+# less than 以下が SV になっていて「今買っているよりも少なく」という比較級になっている
+> because customers would buy even less than they do now
+
+# make up for 補う・埋め合わせる
+> But he said he needs to make up for the higher costs.
+
+** 2023/02/23 [[https://www3.nhk.or.jp/nhkworld/en/news/20230223_11/][Putin declares intent to boost Russia's nuclear forces]]
+
+# intent は意思
+
+# make the remarks で「意見を述べる」
+Putin made the remarks in a video released on Thursday to mark the Defender of the Fatherland public holiday.
+
+# hail は「賞賛」
+The president hailed Russian forces in Ukraine
+
+# participation は「参加」
+# the New START nuclear arms treaty は「START核兵器条約」
+Putin announced that the country would suspend its participation in the New START nuclear arms treaty with the United States.
+
+# it ... to の構文
+"It is a special mission to receive military education right now."
+
+** 2023/02/25 [[https://www3.nhk.or.jp/nhkworld/en/news/20230225_07/][Zelenskyy welcomes China's peace plan but will watch what Beijing does next]]
+
+# a ceasefire = 停戦
+
+# a moment of silence to mourn the jounalists killed in the conflict = 黙祷
+The news conference started with a moment of silence to mourn the journalists killed in the conflict.
+
+# stress はストレスを与えるという意味で「重圧をかける」と訳せる。転じて「強調する」とも。
+He stressed that such talks would be beneficial for their countries as well as for global security.
+
+# take place は「開催する」
+He added that it has not yet been decided when this will take place.
+
+# lasted for ... = ... まで続いた
+The question-and-answer session lasted for about two and a half hours.
+** 2023/02/27 [[https://www3.nhk.or.jp/nhkworld/en/news/20230227_05/][Crowded migrant boat capsizes off Italy, killing at least 59]]
+
+# migrants = 移住者（出稼ぎ労働者）
+A boat crowded with migrants from Afghanistan,
+
+# capsize off = 転覆
+Iran and other countries has capsized off the coast of Italy, killing at least 59 people.
+
+# Italian authorities = イタリア当局
+# vessel = 船
+Italian authorities and media say the wooden vessel crashed against rocks
+
+# video footage = 証拠映像的なもの
+# wreckage = 残骸
+Video footage released by the Italian coast guard shows wreckage from the wooden boat washing up on the beach.
+
+# adverse = 不都合な
+# adverse weather = 悪天候
+"It is criminal to launch a boat just 20 meters long with 200 people on board in adverse weather."
+
+# pledged = 約束する・誓う
+# trafficking = 不正取引
+# accountable = 責任がある状態
+# hold O C の文型
+She pledged to hold those involved in trafficking accountable.
+
+# commissioner = 最高権力者
+# refugees = 難民
+# urge = 説得する
+Filippo Grandi, the UN High Commissioner for Refugees, urged countries to agree on effective measures to avoid more tragedies.
+** 2023/03/03 [[https://www3.nhk.or.jp/nhkworld/en/news/20230303_14/][Quad foreign ministers of Japan, US, Australia, India kick off meeting in India]]
+
+# quad = 4つの
+# underway = 始まっている
+A meeting of foreign ministers from the Quad nations of Japan, the United States, Australia and India is underway in New Delhi.
+
+The gathering followed the Group of 20 foreign ministerial talks that ended on the previous day.
+
+# Chinas hegemonic acts grow = 中国の覇権主義的な行いの拡大 = 他国を政治的・経済的に支配しようとする行為
+The Quad foreign ministers will likely discuss issues including the situation in the Indo-Pacific as China's hegemonic acts grow.
+
+# status quo = 現状(維持)
+# amid = 〜のただ中で（前置詞）
+# any attempts to = 〜という色々の試み
+They are expected to oppose any attempts to change the status quo by force amid Russia's ongoing invasion of Ukraine.
+** 2023/03/07 [[https://www3.nhk.or.jp/nhkworld/en/news/20230307_19/][Japan's flagship H3 rocket launch ends in failure]]
+
+# flagship = 重要な製品・フラッグシップ
+The H3 lifted off from the Tanegashima Space Center in southwestern Japan at 10:37 a.m. Tuesday on what was to be its maiden flight.
+
+# at an altitude of about 675 kilometers. = 高度 675キロメートルにて
+It was scheduled to place an Earth observation satellite into orbit about 17 minutes later at an altitude of about 675 kilometers.
+
+# took place in October = 10 月に実行された
+The last failed launch took place in October and involved the Epsilon-6 rocket.
+** 2023/03/09 [[https://www3.nhk.or.jp/nhkworld/en/news/20230309_24/][International Women's Day rallies held in Turkey, Peru and Rio de Janeiro]]
+
+# defy(defied) = 反抗する、挑む、逆らう
+# rally(rallied) = 呼び集める、結集する
+# protest = 講義
+Thousands of Turkish women defied an official ban on protests and rallied in the largest city of Istanbul on Wednesday.
+
+# chant(chanted) = 唱える、繰り返す
+They chanted, "We will not be silenced, we will not be afraid."
+
+# scuffle = 小競り合い
+# break out = 突然発生する、ぶち抜く
+# disperse = 解散させる、追い散らす
+Scuffles broke out between some of the protesters and riot police, who used tear gas to disperse them.
+
+# masculine = 男らしさ、マッスルな
+# state = 国
+A student said, "We came here to fight against masculine state violence surrounding our lives."
+
+# eradication = 根絶
+# discrimination = 差別、えこ贔屓
+# call for = 求める
+In the Peruvian capital of Lima, protesters called for the eradication of discrimination against women.
+
+# scare = 恐れさせる
+"Our fight is fair, and nothing scares us."
+
+# abortion = 妊娠の中絶
+# legalization = 合法化
+a large number of women took to the streets, calling for the legalization of abortion and the end of gender-based violence.
+** 2023/03/10 [[https://www3.nhk.or.jp/nhkworld/en/news/20230310_23/][Poll: Majority in South Korea against plan for settling wartime labor issue]]
+
+# polls = 世論調査
+# settle(settling) = 和解する、精算する、支払いを済ませる
+# wartime = 戦時中の
+The latest polls in South Korea show that almost 60 percent of the respondents are against the government's plan for settling the wartime labor issue with Japan.
+
+# domestic = 国内の
+# donations = 寄付
+# government-backed = 政府が支援する
+# fund = 基金
+# compensate = 埋め合わせる、補償をする
+# firm = 会社、商会、事務所
+The plan announced on Monday says a government-backed fund supported by donations from domestic companies
+is to compensate people who say they or their relatives were forced to work for Japanese firms during World War Two.
+
+# Regarding = ...については
+# ties = ひも、繋がり、関係
+# compromise = 妥協、歩み寄り com-promise お互いの約束
+Regarding ties with Japan, 31 percent said they should be improved as soon as possible even if South Korea offers some level of compromise.
+
+# plaintiff(s) = 原告
+# compensation = 補償 compensate の名詞
+South Korea's public broadcaster KBS reported that three of the plaintiffs seeking compensation from Japanese firms said they will refuse any payments from the government-backed fund.
+** 2023/03/12 [[https://www3.nhk.or.jp/nhkworld/en/news/20230312_01/][Japan defeats Czech Republic at World Baseball Classic]]
+
+# stellar = よい？ → 星のような・素晴らしい・輝かしい
+# trounced(trounce) = たおす？ → 大差で打ち負かす
+In the World Baseball Classic, Japan delivered another stellar performance and trounced the Czech Republic 10-2 in the first round.
+
+# gave up a run = 走るのを諦めた？/出塁させてしまった？/失点した？ → 失点した
+In Saturday's game in Tokyo, Japan's starting pitcher Sasaki Roki gave up a run in the first inning after his teammate made an error.
+But, he did not allow any additional runs from the second inning on.
+
+# turned the game around with a two-run double = 2走者で2打点とって試合を逆転した？ → 2ラン2塁打
+With Japan trailing by one in the third inning, Yoshida Masataka turned the game around with a two-run double.
+
+# notched = やりきった？ → 刻む・記録する・転じて勝利を記録する
+# consecutive = すごい？ → 連続した
+# double-digit wins = ２倍差の勝利？ → 2桁点の勝利
+# streak = しま・幸運や不幸などの連続・稲妻・転じて猛スピードで動く
+# has extended its winning streak to three games = 連勝を3に伸ばした？ → OK.
+Japan has notched two consecutive double-digit wins and has extended its winning streak to three games.
+
+** 2023/03/15 [[https://www3.nhk.or.jp/nhkworld/en/news/20230315_24/][China's economy shows signs of recovery | NHK WORLD-JAPAN News]]
+
+# Bureau = ビューロー = 事務局
+# retail = 小売
+The National Bureau of Statistics says retail sales in the first two months rose by 3.5 percent from the same period a year ago.
+
+# declines = 減少する・辞退する
+# going back to A = Aに話を戻って
+It was the first increase after three straight months of declines going back to October of 2022.
+
+# lifted restrictions = 制限を解除する
+Restaurant sales improved after Beijing lifted COVID restrictions in January.
+
+# brisk = 活発な
+Sales of food were also brisk during the Lunar New Year holidays.
+
+# industries = 産業
+But one of the country's biggest industries remained weak.
+
+# investment = 投資
+# real estate = 不動産
+# sluggish = 低調・にぶい・のろのろしている
+Investment in real estate development was down 5.7 percent. The real estate market in general remains sluggish.
+
+# despite = にもかかわらず
+# overall = 全体的に
+There are other reasons for concern, despite the overall positive trend.
+
+# uncertain = 不透明・はっきりしない
+The picture for exports is uncertain as concerns rise of an economic slowdown in the US and Europe.
+
+** 2023/03/22 [[https://www3.nhk.or.jp/nhkworld/en/news/20230321_15/][Poll: Ukrainians hope Japan will take leading role in reconstruction]]
+** 2023/03/23 [[https://www3.nhk.or.jp/nhkworld/en/news/20230323_16/][Japan, South Korea ministers discuss North Korea]]
+
+# stressed = 強調した
+# human rights issues = 人権問題
+# matters = 問題・事件・事態
+# described A as B = A は B だと呼ぶ
+He described North Korea's nuclear program and human rights issues
+ as matters that affect not only South Korea but also the rest of the world,
+ and stressed the need for his country to deepen ties with its closest neighbor, Japan.
+** 2023/03/25 [[https://www3.nhk.or.jp/nhkworld/en/news/20230325_13/]['Hotel Rwanda' hero released from prison | NHK WORLD-JAPAN News]]
+
+# former = 元
+# portrayed as a hero = 英雄と表現された
+A former hotel manager portrayed as a hero in the film "Hotel Rwanda" has been released
+from prison in the East African country.
+
+# it had commuted = 減刑された
+# the 25 year sentence = 25年の懲役
+The Rwandan government announced on Friday that
+it had commuted the 25-year sentence of Paul Rusesabagina.
+He was set free on the same day.
+
+Rusesabagina is known for sheltering nearly 2,000 people
+when he was manager of a high-end hotel in Rwanda's capital, Kigali,
+during the 1994 genocide that left more than 800,000 people dead.
+His actions inspired the production of the film.
+
+# a vocal critic = 忌憚のない批評家
+Rusesabagina later became a vocal critic of the government.
+# other charges = その他の容疑
+# alleged involovement in terrorism = テロへの関与の疑い
+He was sentenced to 25 years in prison in 2021 for alleged involvement in terrorism and other charges.
+
+Rusesabagina is a US permanent resident.
+Reuters news agency reports that pressure from the US government helped lead to his release.
+
+# statement = 声明
+In a statement issued on Friday,
+# reaffirmed = 再度断言する
+# through peaceful means = 平和的手段を通じて
+US Secretary of State Antony Blinken welcomed the move and reaffirmed the US principle of
+"seeking political change in Rwanda and globally through peaceful means."
+
+** 2023/03/27 [[https://www3.nhk.or.jp/nhkworld/en/news/20230327_18/][Japan to call on China to act responsibly over Russia's invasion of Ukraine | NHK WORLD-JAPAN News]]
+
+# call on A to do
+# call on China to act = 行動することを中国に要請する
+Japan's Prime Minister Kishida Fumio says he will call on China to act responsibly on the Ukraine crisis.
+
+# urges = 説得する・訴える
+# dialogue and aceasefire = 対話と停戦
+Beijing issued a document last month that urges Russia and Ukraine to seek dialogue and a ceasefire.
+
+# inappropriate = 不適切・ふさわしくない
+# the withdrawal = 撤退
+# stipulated = 規定する
+it would be inappropriate if the withdrawal of all Russian forces from Ukraine is not stipulated.
+
+# Upper House plenary session = 参議院の議会
+Kishida made the remarks on Monday when he reported his recent visit to Ukraine during an Upper House plenary session.
+
+# concession = 譲歩する
+# as ... = 〜であるため（接続詞）
+He said Russia has shown no signs of concession as it continues to attack Ukraine.
+
+# it is up to the ukrainian people = それは、ウクライナの人々次第である
+The prime minister went on to say that it is up to the Ukrainian people whether
+they will start negotiations that would determine their country's future.
+
+*** call on/appeal to/demand/ask が似たような使い方ができるよという話
+
+# 私は彼に、私の上司に会うように求める。
+*I call on him to see my boss.*
+
+# 私たちは komei に勉強するように求める。
+*We call on Komei to study.*
+
+# 彼は、君にベストを尽くすようにと求めるだろう。
+*He will call upon you to do your best.*
+
+# 私はボブにプロジェクトの援助を求めた。
+*I appealed to Bob to help my project.*
+
+# 私は上司に何日かの休暇がほしいと要求した。
+*I demanded my boss to give some holidays.*
+
+# 日常生活では ask が使えれば十分
+# ボブに机の上にあるカップを取ってと頼んだ。
+*I asked Bob to take a cup on the desk.*
+
+# 彼女はいつも彼氏に迎えを頼む。
+*She always asks her boyfriend to come pick her up.*
+
+** 2023/03/28 [[https://www3.nhk.or.jp/nhkworld/en/news/20230328_10/][US police call fatal shooting at Nashville school premeditated | NHK WORLD-JAPAN News]]
+
+# claim = 奪う
+# premeditated = 計画的な
+US investigators say a fatal school shooting in the southern state of Tennessee
+that claimed the lives of six people was premeditated.
+
+# a former student of the school = 元学校の生徒
+Police say the shooter, who was armed with two AR-15 assault rifles and a handgun,
+was a former student of the school.
+
+*** 例文
+
+claim は日本語の意味と違って文句を言うことを意味しない。
+
+1. *He claimed that the sales representative lied about his product.*
+   彼は、その営業担当者が商品に関してうそをついたと主張した。
+2. *The victim claimed 10 million yen in damages*
+   被害者は、1000万円の損害賠償を請求した。
+3. *a fatal shooting claimed the lives of six people*
+   襲撃が6人の命を奪った。
+
+former は元〜を表すのに使う。
+
+1. *He's a former soldier, and now a policeman.*
+   彼は元兵士で、今は警察官です。
+2. *A former French president visited Japan last week.*
+   前フランス大統領が先週、日本を訪れた。
+
+** 2023/03/30 [[https://www3.nhk.or.jp/nhkworld/en/news/20230330_39/][FIFA removes Indonesia as host of under-20 World Cup | NHK WORLD-JAPAN News]]
+
+# govern = 支配する・納める・統治する
+# body = 組織・団体
+Soccer's world governing body FIFA has stripped Indonesia of the right to host the Under-20 World Cup.
+
+# circustamces = 環境
+# participation = 参加
+# provoked anger = 怒りを巻き起こす
+FIFA only said the decision was due to 'current circumstances,'
+but Israel's participation has provoked anger in the Muslim-majority nation
+
+# sanctions = 制裁
+It added that the Indonesian soccer federation could face sanctions at a later stage.
+
+** 2023/04/07 [[https://www3.nhk.or.jp/nhkworld/en/news/20230407_02/][Macron, Xi oppose use of nuclear weapons]]
+
+# oppose = 反対する
+# multilateralism = 多国間主義
+# prosperity = 繁栄
+# insist = 主張する
+# settlement = 解決する・精算する
+# stay rational and restrained = 理性と自制を持ち続ける
+# further = さらに
+# deteriorate = 悪化する・劣化する
+# further make crisis deteriorate = さらに危機を悪化させる
+# international treaties = 国際条約
+# under no circumstances = いかなる状況においても
+# goes against commitment = 約束に反する
+# sovereignty = サーバレンティ・主権
+# integrity = 誠実さ・完全さ
+# sovereignty and territorial integrity = 主権と領土の保全
+
+** 2023/04/11 [[https://www3.nhk.or.jp/nhkworld/en/news/20230411_34/][Yellow sand likely to reach Japan on Wednesday, weather officials say | NHK WORLD-JAPAN News]]
+
+# ランチ食べ終わったら、でかけよう
+I will go out after I finish lunch.
+
+*** 接続詞の after
+
+He went out after he finished his homework
+He went out after he has finished his homework
+
+after を使う文章では、主文 after 従属文という構成になる。
+時間軸としては 従属文 → 主文 という時間関係が明白。
+従属文で have finished のような過去完了を使ってもいいし使わなくても良い。
+
+# originate = 始まる・起源とする
+Yellow sand originates in China’s desert regions after massive amounts of sand are blown up by strong winds.
+
+# 主文：黄砂は中国の砂漠地帯で発生する
+Yellow sand originates in China’s desert regions
+
+# 従属文：大量の砂が強い風に吹かれた
+massive amounts of sand are blown up by strong winds.
+** 2023/04/13 [[https://www3.nhk.or.jp/nhkworld/en/news/20230413_35/][Man behind documents leak worked on US military base: Washington Post]]
+
+# その新聞は独占ニュースを報じた
+The newspaper reported the exclusive news.
+
+# 先生は私を不良だとみなしていた
+The teacher regarded me as a bad boy
+
+# この as はイコールで繋ぐ意味になる me = bad boy
+# もっと難しい例文：彼は、アメリカの法執行機関と諜報機関は、市民を抑圧しようとする不吉な勢力だとみなしていた。
+He regarded US law enforcement and the intelligence community as "a sinister force" that sought to suppress its citizens.
+
+# 彼は他のメンバーに対して、彼につながる情報を削除するようにと言っていた
+He is said to have asked other group members to delete any information that could possibly relate to him.
+** 2023/04/16 [[https://www3.nhk.or.jp/nhkworld/en/news/20230415_13/][Elon Musk reportedly creates new AI company]]
+** 2023/04/20 [[https://www3.nhk.or.jp/nhkworld/en/news/20230420_29/][Khartoum citizens stuck at home amid fighting, Japanese female resident reports | NHK WORLD-JAPAN News]]
+
+# stuck = 動けない stick の過去形
+# 戦闘のさなかで、家から逃れられない
+citizens stuck at home amid fighting.
+
+# kilometers = 発音がやばい。カラーメター
+
+# 彼女は、備蓄の水と食料を使い果たしていると述べ、
+# 状況がどのように発展するかについての不安を表明した.
+She said she is using up her stockpiles of water and food,
+and expressed her anxiety about how the situation will develop.
+
+# 彼女は友達と連絡を取り合っている
+She keeps in touch with her friends.
+
+# 戦闘は激しいと考えられています。
+The fighting is believed to be intense.
+
+# 彼女は、民主主義に対する厳しい見通しと、
+# このような不安定な状況下でスーダンの一般の人々が直面する可能性のある困難について深い懸念を表明しました。
+She expressed her deep concern about the grim outlook toward democracy
+and the hardship that ordinary people in Sudan may face under such an unstable situation.
+                                                       ^ 目的語がないので、関係代名詞 that にかかっている。
+
+
+*** develop は良い意味とは限らない。
+
+仕事で本当によく使うのは「作る」という意味。
+He is developing a new computer.
+
+しかし「よくないものが発生する」という意味もある。
+My father developed stomach cancer last year.
+
+転じて「問題が悪化する」時にも使う。
+The little rain developed into a storm.
+
+* メモ
+
+- 単語テスト全範囲
+- TOEIC の part5 単語・文法チェック、説明できるか？
+- キクタン600、でる1000
+
+- So far we've been discussing the runtime errors # 今までずっとランタイムエラーのことを議論してきた
+- TypeScript can also prevent us from making those mistakes in the first place # TS はそもそも間違いを起こさないようにすることもできる
+- There are scenarios where those checks get in the way. # これらのチェックが邪魔になるシナリオがあります
+  - get in the way で「邪魔をする」っていう動詞になるらしい https://osanpo-english.com/illust/w_get_in_the_way.html
+  - Your social life must not get in the way of your studies.
+  - My pride got in the way of asking for help.
+  - I promise I won't get in your way.
+  - I won't stand in the way of your dream.
+  - So TypeScript doesn't get in your way.
+- According to the speakers, what are the contents of a shipment? # according to ... の例になってる
+- Have you ever heard Xamarin?
+- Do you like katsudon?
+
+** 勉強方法
+
+筋トレみたいなもの
+
+英文聴き終わったあとにすぐ書く → ディクテーション
+英文聴き終わった後頭に残しておいて3秒後に書く → リテンション
+文字を見ながら被せて喋る → オーバーラッピング
+声だけ聞いて、繰り返す → シャドーイング
+
+- [X] Does the furniture store offer free shipping?
+- [-] Why havent the table s been set ~for~ dinner service?
+- [-] I thought the ticket to the show were sold out.
+
+s がないのが2箇所、for が落ちてた
+
+** 文法
+*** section5 不定詞・動名詞
+準動詞とは、動詞の形を変えることによって、動詞以外の品詞として働くもののこと。
+**** 不定詞とは
+
+不定詞とは、動詞を to 動詞の原型の形に変えたもののこと。
+名詞、形容詞、副詞として働くことができる。
+
+**** 不定詞（名詞的用法）
+***** 形式主語
+
+To master a foreign language is difficult for us.
+
+上記の例では主語があるべき位置に to master a foreign language がある。
+主語の to master が不定詞であり「マスターすること」という名詞として働いている。
+さらに目的語 a foreign language もくっついて「外国語をマスターすること」という名詞句を作っている。
+不定詞を主語に取るときは主語を it に置き換え、to ... は文末に持ってくることが多い。下記のようになる。
+
+It is difficult for us to master a foreign language
+
+この it は仮主語、形式主語と呼ばれる。
+
+ところで for us は「外国語をマスターすること」が誰にとって難しいのかを指している。
+そのため、文法上の主語は to master a foreign language だが、その主体は「私たち」と解釈できる。
+これを区別するために for us で指示した us を「意味上の主語」と呼ぶらしい。
+
+***** 形式目的語
+
+Her help made it possible for us to finish the work.
+
+これは S + V + O + C の第五文型の文章。
+目的語があるべき位置に it を仮置きして、文末に真の目的語を置いている。
+形式主語と違って、it なしで目的語を配置することはできない点に注意。
+
+**** 不定詞（形容詞的用法）
+
+I need something cold to drink.
+
+これは S + V + O の第三文型の文章。
+to drink は something cold を修飾して「冷たい飲み物」と訳す。
+普通の文章と品詞の語順が逆になっていることに注意。
+
+- 普通は 形容詞→名詞
+- 不定詞は 名詞←形容詞
+
+something to 動詞原型は会話表現でよく見られる。
+
+I was the first person to arrive here
+
+これは S + V + C の第二文型。
+to arrive が the first person を修飾して「最初に到着した人」と訳す。
+
+I have the plan to go to USA.
+
+これも同じように考えることができる。
+
+**** 不定詞（副詞的用法）
+
+Jack came to Japan to study Japanese.
+
+これは S + V の文章。to study Japanese は行為の目的を表している。
+
+**** 原型不定詞
+
+これまでの例からすると限定的なケース
+
+The manager made us work overtime.
+
+この文章は S V O O の文章なんだけれども、最後の O には work overtime は「残業する」という動詞が置かれている。
+不定詞なのになぜか to がつかないという決まりになっているようだ。
+原型不定詞をとる動詞は決まっている。下に代表例を書く。
+
+- 知覚動詞 see, hear, feel
+- 使役動詞 make, let, have, help
+
+I see him enter the room
+
+は原型不定詞を使った例。これは受動態で書き直すことができて下のようになる。
+
+He was seen to enter the room.
+
+受動態では to を省略できない。
+
+**** 動名詞
+
+My hobby is walking in the mountains.
+
+動詞の進行形にして名詞の働きをする。使える場所が決まっている。
+たとえば enjoy は to 不定詞を目的語にとることができず、動名詞だけを目的語に取る。
+
+I enjoy talking with you. # GOOD
+I enjoy to talk with you. # BAD
+
+- 不定詞だけとるもの ... plan, promise, wish 未来に関わる動詞
+- 動名詞だけとるもの ... enjoy, finish, mind 今に関わる動詞
+- 両方取るもの       ... remember
+
+とくに remember は意味が変わってくる。
+
+I remember to take the trash out after dinner. # 夕食後にゴミを捨てるのを覚えておく
+I remember taking the trash out.  # ゴミを捨てたのを覚えている
+
+不定詞には未来の意味合いがあるというのがポイント。
+**** 余談
+
+I was grad to see you again.
+
+これは S V C to ... という形。これは不定詞の副詞的用法。
+to ... の形容詞的用法はあまり使われない。
+ただ使われるのは I want something to drink みたいなの。
+enjoy, stop, finish, give up, mind とかが動名詞をとる。
+
+stop ...ing # ... を辞めた
+stop to ... # ... するために立ち止まった
+
+動名詞は実は、主語とかにも使えるので注意。
+
+*** section6 分詞
+さらに準動詞を学ぶ
+
+**** 現在分詞・過去分詞
+
+Look at the people sitting on the grass.
+
+動詞の進行形に変えて形容詞の働きをさせるのが「分詞」
+現在分詞は「今〜している」という意味合いを持たせる。
+過去分詞は「〜した」という意味合いを持たせる。
+
+running man のように1個の単語で修飾する時は形容詞→名詞
+man running on the road のように2個以上の単語で修飾するときは名詞←形容詞
+
+「〜させる」という動詞の分詞を使う時は過去分詞を受動態のようなニュアンスで使うことができる。
+たとえば excite は「興奮させる」という意味だが excited spectators というと「興奮した観客」という意味になる。
+
+Excited spectators rushed to the gate.
+
+exciting spectators とは言わない。it is very exciting game のように言うことはできる。
+
+**** 分詞構文
+
+分詞構文はいきなり分詞から初めて副詞として働くもののこと。
+
+Knowing the story, he could not enjoy the movie.
+
+これは楽しむことができなかった理由を表す副詞句となっている。
+分詞構文は恐ろしいことに下記のような意味がある。
+
+- 理由
+- 時
+- 付帯状況
+- 譲歩
+- 結果
+
+ただ、なんとなくくっついているだけで意味は推測するようになっているとのこと。
+分詞構文は、文としては不完全で主語が落ちている。
+なので、分詞構文では主語が一致していなければならない。
+
+分詞構文は微妙に時間をずらすことができる。
+主文よりももっと過去の話をしたいときには having + 過去分詞を使った分詞構文が使える。
+
+Having eaten lunch, he went out to buy some ice cream.
+
+上の例は、主文では「彼はアイスクリームを買いに行った」という過去のことを言っている。
+分詞構文は、これよりも前のことを話しているので「昼食を食べたあと」と訳することになる。
+
+**** 受動分詞構文
+
+When it is seen from here, the mountain looks like a human face.
+
+上の受動態の文章を素直に分詞構文にすると下のようになる。
+
+Being seen from here, the mountain looks like a human face.
+
+しかし分詞構文ではどういうわけか受動態の be 動詞が落ちて下のように書かれる。
+
+Seen from here, the mountain looks like a human face.
+
+これには理屈はない。なんとなく読めてしまうからそうなっているのかもしれない。
+
+Because it was damaged by the storm, the bridge is not usable.
+
+こんな感じで、主文と従属文で時間がずれている場合にも受動分詞構文を使うことはできる。
+
+Damaged by the storm, the bridge is not usable.
+
+この場合、受動態が使われているせいで主文と副詞句の時制がわからなくなっている。
+それでも気にせず使ってしまうらしい。それでも主語が一致しないといけないというのがポイント。
+
+**** 余談
+
+分詞構文は日常的には使わない。
+ニュースの見出しとかには使われる。
+
+*** section7 関係詞
+先に言ったことを補足する手法。
+英語は後置修飾が多い。
+
+**** 関係代名詞（主格）
+
+the man who lives next door is my uncle
+Did you attend the meeting which was held yesterday?
+
+- the man, the metting は「先行詞」
+- who は「関係代名詞」
+
+先行詞自身の振る舞いを説明するのが主格
+後ろに付随した文は主語が関係代名詞の完全な文となっている
+主格は省略不可能。
+
+**** 関係代名詞（所有格）
+
+Did you meet the man whose son got the prize?
+The house whose roof you can see over there is owned by Bill.
+
+先行詞の持っているものに対して説明するのが所有格
+関係代名詞は主語にならないことがあり、目的語が消失することもある
+
+You can see the roof of the house over there. it is owned by Bill. って感じかな
+
+**** 関係代名詞（目的格）
+
+That is the man Meg loves very much.
+Did you bring the pictures you took yesterday?
+
+先行詞を目的語とするような文が後ろに付随するのが目的格
+先行詞が目的語になっているため、後ろに付随した文から目的語が消えている
+that や whom, which をいれてもいいけど基本的に省略される。
+
+**** 関係副詞
+
+This is the spot where he had the accident yesterday.
+Do you know the reason why she was absent?
+
+where, when, why が関係副詞
+先行詞の説明をする
+後ろに付随した文は完全な文となっている
+
+これらは省略してより短くすることができる
+
+This is where he had the accident yesterday.
+Do you know why she was absent?
+
+目的語をとるような場合は関係副詞が使えない。
+
+**** 前置詞 + 関係代名詞
+
+This is the house where he lived in his youth.
+This is the house which he lived in in his youth.
+This is the house in which he lived in his youth.
+
+関係副詞は関係代名詞を言い換えることができる
+
+**** 関係詞の非制限用法
+
+I went to Seoul, where I first met her.
+She laughed at me, which offended me a lot.
+
+特定の語にかかる関係詞ではなくて、文全体にかかる関係詞にしたいときは、カンマを打つ。
+
+**** 関係代名詞の what
+
+先行詞かつ関係代名詞として振る舞う。
+
+That's what happened yesterday.
+What he did is wrong.
+
+便利な使い方ができる。日本語で「〜することは」みたいな表現をしやすい。
+
+*** section8 仮定法
+本当はかなりの情報量があるはずだがシンプルにまとめてる。
+could, would が丁寧語になるのは、あれが仮定法だから。
+Would you open the door? みたいなの。
+I would like to eat the ice cream. とかもそう。
+
+**** 仮定法の基本
+
+If I had a lot of money, I could buy a new house
+If I were you, I would not say so.
+
+If I had missed the last train, I could not have come home.
+
+時制が過去または過去完了になっていることに注意。
+そして後半の文章は助動詞 would, cloud, might を使う。
+
+**** I wish と as if
+
+あまり出てこないので知っておく程度でOK。
+
+I wish I were a bird.
+He talks as if he had discovered it for himself.
+
+これらは過去形を使う基本表現からそれるけど仮定表現に使える文章。
+
+I wish ... はあり得ないことを願う表現。
+as if  ... 現実に反することをまるで現実のように言う表現。
+
+** 不定詞と動名詞
+
+to を取るのは未来に関わる（まだしてない）
+ing をとるのは既にしている（していることをやめるとか、延期するとか、思い浮かべるとか）
+
+- Ken has decided to quit playing soccer.
+- I want to get into Waseda.
+- I hope to get into Waseda.
+- I've promised to get a job.
+- I've decided to get a job.
+- I'm planning to get a job.
+- I quit playing soccer.
+- I gave up plaing soccer.
+- I've finished eating lunch.
+- I stopped complaining.
+- We postponed holding the meeting.
+- We put off holding the meeting.
+- We delayed holding the meeting.
+- I avoided talking to John.
+- I missed talking my medicine. # 薬飲むのを逃した（忘れてた）
+- I denied cheating on the test.
+- I admitted cheating on the test.
+- I enjoy plaing golf.
+- I practice using the machine.
+- I'm considering leaving my job.
+- Do you mind opening the window.
+- I imagined winning the lottery. # lottery 宝くじ
+- I suggested buying a new car.
+
+# imagine, mind, miss, avoid, admit, deny, enjoy, escape, practice, consider, suggest
+I made PCs.
+
+- grip the point.
+- make a mistake.
+
+** 比較の話
+
+- My mother always got up earlier than me.
+- My mother always got up far earlier than me.
+- My mother always got up much earlier than me.
+- This is the best movie I have ever seen.
+- This is by far the best movie I have ever seen.
+- This is much the best movie I have ever seen.
+- This is the very best movie I have ever seen.
+- This is one of the most important things.
+- She can run as fast as you can.
+- She can run twice as fast as you can.
+- She should run as soon as possible.
+- How cool this is! # 形容詞の感嘆文
+- What a cool car this is! # 名詞の感嘆文
+- there are much equipment # 不加算名詞（集合名詞）の強調表現
+- there are many devices  # 加算名詞の強調表現
+
+** リスニング練習問題
+
+- which floor has the largest conference room
+  - the seventh floor
+  - well installed new telephone
+  - the janitor cleans floor
+- how often dose the train stop here
+  - around trip ticket
+  - every half hour
+  - only 2 miles
+- havent you heard back from the project manager
+  - the back of hte room
+  - no not yet
+  - can i see a menu
+- does the faniture store offer free shipping?
+  - 1 table and 4 chairs
+  - a retail business
+  - yes it does
+- what do you think of using this cover photo on our website
+  - i can cover your shift
+  - in the file folder
+  - sure, that looks great
+- do you like the red logo or the blue logo
+  - some colorful flowers
+  - the designer didnt think so
+  - can we yellow instead
+- you ve been to this warehouse before, havent you?
+  - no i havent
+  - bin number 4
+  - the house at the corner
+- why havent been set for dinner service?
+  - because we re short on staff
+  - seasonal menu is great
+  - yes at 5 oclock
+- would you like to  talk a customer representative?
+  - the key note speech
+  - thanks i d love to
+  - i already saw that movie
+- i thought the ticket to the show were sold out
+  - 20$ i think
+  - the nomination was just anounced
+  - one of my friend have an extra
+
+** リスニングテスト
+*** a
+- payroll soft
+- load, guide,
+- dont match screen login screen
+- instration guide tell me a mail
+
+*** b
+
+speaking business university seveal year.
+my shop active success
+cookies tea
+
+*** c
+
+animal
+natural arcitecture
+
+*** d
+
+over sea trip
+
+form. sorry.
+update.
+travel policy.
+
+*** e
+
+bought store.
+website .
+
+*** f
+
+ボランティアイベント
+ロングスリーブは高い
+２食でもいいロゴ印刷したい
+
+*** g
+
+ジェームズ、メディカル
+スケジュール4:30パーキングコンプレックス
+フライデー40
+
+*** h
+
+ビジネスカレッジ
+ファイナンスとか色々
+ローンできる10%引き
+セプテンバーファーストになくなる
+
+** TOEIC テスト結果
+
+|            |   L |   R | L+R |
+|------------+-----+-----+-----|
+| 2022/05/23 | 180 | 275 | 455 |
+| 2023/01/20 | 230 | 200 | 430 |
+| 2023/02/24 | 305 | 270 | 575 |
+| 2023/07/21 | 355 | 270 | 625 |
+| 2023/08/29 | 405 | 335 | 740 |
+
+** 単語の話
+
+- case は動詞だが名詞としても使える。 take care of ... で世話をする。
+- lazy はだらしない。自分がだるい時に使える。日常的に使う。
+- detective は形容詞っぽく見えるけど名詞。探偵。tive で名詞はたまにある。
+- category はキャテゴリと読み、アクセントは先頭にくる。
+- brave は以外と使うらしい。褒める時とか。
+- cellphone より mobile の方が自然。きっちり言うなら mobile phone とも言う。
+- educate はエドュケイト。
+- stock は株式の意味もある。
+- option は[ア]プションに近い。
+
+** 単語
+
+| 英語       | 日本語             |
+|------------+--------------------|
+| dum sum    | 点心               |
+| dumpling   | ぎょうざ、蒸し団子 |
+| eatery     | 料理店             |
+| encourage  | 奨励する           |
+| anticipate | 予想する           |
+| either     | どちらか一方       |
+
+
+
+| 例文                                                | 意味と備考                                                                        |
+|-----------------------------------------------------+-----------------------------------------------------------------------------------|
+| we are hiring new sales associates.                 | sales associates = 販売員                                                         |
+| youll need to train them.                           | train = 鍛える・トレーニングする                                                  |
+| state-of-the-art Aegis destroyer                    | 最新鋭のイージス艦                                                                |
+| This Macbook is state of the art.                   |                                                                                   |
+| You will win the round-trip tickets to Paris        | round-trip tickets = 往復チケット                                                 |
+| a travel brochure                                   | 発音はブロシュアー、意味はパンフレット                                            |
+| You should enroll in the rewards program.           | rewards の発音はリウォード、意味は報酬、動詞にもなる                              |
+| selection of snack                                  | selection は選択・選択したものという2つの意味がある。ここでは選りすぐりの軽食     |
+| prized mushroom                                     | 厳選きのこ（貴重なきのこ）                                                        |
+| Make sure you have a sturdy ladder.                 | sturdy = 頑丈な、たくましい                                                       |
+| shut off the electricity in the room.               | 電気を切る。かなりくっついて発音が難しい。シャトフジエレクトリシティ in the room. |
+| Now, I'd like to open the floor to questions.       | 会議の特有の表現らしい。ここでの the floor は参加者席という意味。                 |
+| It is a speech regarding the economic problems.     | regarding は前置詞で about とほとんど同じ働きをするがよりフォーマルな印象         |
+| In terns of location, the hotel was great.          | in terms of も about と似ている。ただいくつかある要素の１つの面に注目する         |
+| He regards this restaurant as the best in the city. | regard は「〜とみなす」という意味で regarding とは違う                            |
+| I just got an email.                                | めちゃくちゃくっつく アイジャスガン email という感じ                              |
+| I'll hand you this book.                            | hand O1 O2 手渡しする。4文型をとる。                                              |
+| a tiny fraction of land.                            | ちいさな小さな土地                                                                |
+| stick it in my backpack.                            | バックパックに差し込む                                                            |
+| Let me know what you'd like to substitute.          | substitute = 代わりにする                                                         |
+| She's always willing to learn new things.           |                                                                                   |
+| in the next decade.                                 | 次の10年                                                                          |
+| shortly after opening.                              | 開店後すぐに                                                                      |
+| in the supply closet.                               | 備品保管庫                                                                        |
+| We offered rewards for practical suggestion.        | 有用な提案には報酬を払うと言う                                                    |
+| We anticipates profits to be between 4 and 6%.      |                                                                                   |
+| technical difficulties                              | 技術的障害                                                                        |
+| a decrease in demand                                | 需要の減少                                                                        |
+| it should cause minimal traffic problems.           | 最小限の交通渋滞を起こすだろう                                                    |
+| He opposes adding a line of bike.                   | 彼は自転車の（生産）ラインを追加することに反対している。                          |
+| I promoted to manager.                              | 役職は不可算名詞となることに注意。                                                |
+| Sarugaku is developed at the same time as Noh.      | 能と一緒に猿楽が発展したと言われる                                                |
+| Can I edit a note at the same time as someone else? |                                                                                   |
+
+
+| 英語                                         | 意味                                 | 品詞   |
+|----------------------------------------------+--------------------------------------+--------|
+| Take either book.                            | どっちの本でも持っていけ             | 形容詞 |
+| Either day is OK.                            | どっちの日でもいい                   | 形容詞 |
+| I don't like either team.                    | どっちのチームも好きじゃない         | 形容詞 |
+| I haven't met either of them.                | どっちにも会ったことがない。         | 名詞   |
+| Either you or your brother has to go there.  | どちらか一人はいかなくてはいけない。 | 接続詞 |
+| I can't play either the piano or the guitar. | どちらも演奏できない。               | 接続詞 |
