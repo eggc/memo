@@ -73,4 +73,15 @@ https://www.shoeisha.co.jp/book/detail/9784798183916
   - diversity, inclusion & belonging ... いろんな人がいて、それぞれ満遍なく働くことができ、帰属意識もある
     - ...
 
-* 第4部
+* 第4部 リモートワークの実践続き
+
+- 個人の評価方法：成果と行動の両方を求める
+- OKRを使ってる
+- object には責任者を決めている
+- 指示待ちではなくマネージャーを使うという発想で仕事をする
+- 情報収集はみんなでやり、意思決定は責任者だけがやる
+- スキル不足なら教育支援
+- スキル不足以外なら専門部署による人間関係の支援
+- 失ったら困る key talent 人材の把握と後継者の育成
+
+- 9box - https://handbook.gitlab.com/handbook/people-group/talent-assessment/#the-performancegrowth-potential-matrix

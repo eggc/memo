@@ -1,0 +1,32 @@
+* 2024/05/05
+** die with zero
+
+今日は、朝の勉強会で [[https://www.diamond.co.jp/book/9784478109687.html][DIE WITH ZERO]] という本の話を聞いた。この本の著者は「死ぬ時には預金ゼロで死ぬのが一番良い」という主張をしている。死んだ後は、自分自身がお金を使うことはできない。遺産は残るが、老いていては使い道がない。だから、子供が若いうちに、学費を出したり遊びに連れ出したりすることにお金を使うべきだ。こう言われてみると、確かに理にかなっている。私も、お金を使うのが下手なので、もっとお金を使っていこうと思う。
+
+** dev containers
+
+職場で dev containers というのが便利だと聞いたので調べてみた。[[https://containers.dev/][development containers(dev containers)]] とは、開発環境の仮想化のやりやすくするものらしい。なんだかよくわからないが、補助ツールとか拡張機能とかを開発者ごとに任せるのではなくて設定ファイル devcontainer.json にあらかじめ書いておいて、誰が作っても同じようなツールの構成になるようにするらしい。VSCode を使ってる人なら、リポジトリクローンして devcontainer の起動ボタンを押すだけで環境構築できる・・・ということらしいが本当かどうかはわからない。Emacs での情報も調べてみたが、ほとんどヒットしない。無理に調べてもあまり良いことがなさそうだったので、諦めることにした。
+
+** rspec-mode
+
+dev container で思い出した。本業でも副業でも docker を使っていて rspec をコンテナ実行していた。Emacs の中から rspec を呼び出すとローカル実行でエラーになる。この壊れた状態をそろそろなんとかしようと思った。[[https://github.com/pezra/rspec-mode][rspec-mode]] のドキュメントをみると、docker container にも対応しており、実行時のコマンドはカスタマイズできるようだ。
+
+> You can run specs inside a Docker container. This can be enabled through the rspec-use-docker-when-possible option. This enabled, rspec is executed through docker-compose run. The following customization options are available:
+> To define the options for different projects, have a look at Per-Directory Local Variables.
+
+なるほど、案外難しくなさそうなので設定してみよう。プロジェクトにファイルを置くのは気が引けるので ~/.config/git/ignore に .dir-locals.el を書いておく。いけそうだなと思ったが意外と難しい。私のプロジェクトでは binstub で生成した bin/rspec を使う前提になっているので、これを使えるようにしないと話が始まらない。ソースコードをみてみると、案外簡単にできそうだったので fork して[[https://github.com/pezra/rspec-mode/pull/219][プルリクエスト]]を作ってみた。もし、マージされなくても使えるように、[[https://github.com/eggc/dotemacs2/commit/8d5d41fc6547512de366ec879664a89eae0c6ae7][設定ファイルを書き換えた。]]
+
+** eggc.net
+
+eggc.net をかなり放置していたので、少しメンテナンスしようと思う。
+
+** others
+
+その他調べたいことがいくつか。ruby の lsp 周りが改善されているようなので入れてみたい。
+
+https://github.com/Shopify/ruby-lsp
+https://koic.hatenablog.com/entry/rubocop-lsp
+
+あと orgroam というのを見かけたけどこれはなんだろう。
+
+https://www.orgroam.com/
