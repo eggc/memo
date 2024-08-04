@@ -98,3 +98,39 @@ team = user.transform_to_team
 * 第7章 リファクタリングのカタログ2 - カプセル化
 
 * 第8章 リファクタリングのカタログ3 - 特性の移動
+
+- Move function (関数の持ち主を変える)
+- Move field (属性の持ち主を変える)
+- Move statement into function(関数の責任を増やす)
+- Move statement to caller(関数の責任を減らす)
+- Slide statement
+- ⭐ Split loop
+- Replace loop with pipeline
+- Remove dead code
+- etc.
+
+* 第9章 リファクタリングのカタログ4 - データの再編成
+
+- Split variable(変数の再利用をやめる)
+- Rename field
+- ⭐ Replace derieved variable with query(計算結果を変数に記憶するのをやめて毎回計算する)
+- Change reference to value(変数にオブジェクト参照を持つのではなく値を持つ)
+- Change value to reference(リポジトリパターンを使って値の再利用をやめて参照を持つ)
+
+* 第10章 リファクタリングのカタログ5 - 条件記述の単純化
+
+- Decompose conditional(if文の判定、中身をそれぞれ関数にする)
+- Consolidate conditional expression(判定後の振る舞いが同じなら判定をandやorで一個にまとめる)
+- Replace nested conditional with guard caluses(ガード節でネストを減らす)
+- ⭐ Replace conditional with Polymorphism(if文をポリモーフィズムでまとめる)
+- ⭐ Introduce special case(値がないことを示すために特別な値)
+- ⭐ Introduce assertion
+
+assetion は ruby ではサポートしてない。無理して使うことはない。
+
+* 第11章 リファクタリングのカタログ6 - API
+
+- ⭐ Separate query from modifier(副作用のある関数呼び出しと、その途中計算を分割する)
+-
+
+コマンドとクエリの分離原則というのがあるらしい。
