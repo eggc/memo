@@ -131,6 +131,38 @@ assetion は ruby ではサポートしてない。無理して使うことは�
 * 第11章 リファクタリングのカタログ6 - API
 
 - ⭐ Separate query from modifier(副作用のある関数呼び出しと、その途中計算を分割する)
--
+- Parameterize function(似た振る舞いの関数について、引数を増やして1個にまとめる)
+- Remove flag argument(bool引数を持つ関数はtrueとfalseの2つの関数に分ける)
+- Preserve whole object(引数を属性分解して渡さずオブジェクトのまま渡す)
+- Replace plarameter with query(オブジェクトとそこから導出可能な値を引数にするよりオブジェクトだけ引数にする)
+- Replace query with parameter(上記の逆、導出方法に対する依存関係を切るために使う)
+- Remove setting method
+- Replace constructor with factory function(オブジェクト初期化のバリエーションを増やしたい時に)
+- ⭐ Replace function with command(関数自身をコマンドオブジェクトにする / serviceと似ている)
+- Replace command with function
 
-コマンドとクエリの分離原則というのがあるらしい。
+コマンドとクエリの分離原則というのは、状態変更する関数と、状態観測する関数を分けよう、という話。
+デザインパターンの Command とはまた別の話。
+
+* 第12章 リファクタリングのカタログ6 - 継承
+
+- Pull up method(サブクラスのメソッドを、スーパークラスに移動する)
+- Pull up field(サブクラスの属性を、スーパークラスに移動する)
+- Pull up constructor body
+- ⭐ Pull down method
+- Pull down field
+- ⭐ Replace type code with subclasses(type属性の代わりにサブクラスを作る)
+- Remove subclass(サブクラスを削除しtype属性だけにする)
+- Extract superclass(共通部分をスーパークラスにし継承する)
+- Collapse Hierarchy(継承を削除して実装を一個のクラスにまとめる)
+- 🤔 Replace subclass with delegate(サブクラスを移譲に置き換える:例が特殊な印象)
+- Replace superclass with delegate
+
+クラスを別のクラスに作り変える beXxx メソッドというのも面白い。
+
+* 感想
+
+リファクタリングの例がかなり詳細に書かれているので、具体的にイメージしやすい。
+ただ、読むのに時間がかかるので、途中からリファクタリング例はあまり細かくみないようにした。
+序盤で説明されているリファクタリングの重要さや、仕様を変えないことの重要さなどは非常に大切。
+今後リファクタリングしようとする時や、コードレビューするときに役立てたいと思った。
